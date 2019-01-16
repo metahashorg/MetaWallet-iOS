@@ -1,0 +1,612 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2ADBD8090DF9A600CBDFC441 /* Pods_metawallet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E42A71E7E8861CA64DFC23D0 /* Pods_metawallet.framework */; };
+		811D99C621ECE65D002C15F7 /* CoreBitcoin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 811D99C421ECE658002C15F7 /* CoreBitcoin.framework */; };
+		811D99C721ECE65D002C15F7 /* CoreBitcoin.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 811D99C421ECE658002C15F7 /* CoreBitcoin.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		811D99CD21EF2D9C002C15F7 /* WebKitHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 811D99CC21EF2D9B002C15F7 /* WebKitHelper.swift */; };
+		8140EF2021C90DAD00D8B149 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8140EF1F21C90DAD00D8B149 /* APIClient.swift */; };
+		815CD0BF21DD73E200D6EB39 /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 815CD0BE21DD73E200D6EB39 /* Storage.swift */; };
+		815FEF6021C214A10044AB5F /* BridgeCommander.js in Resources */ = {isa = PBXBuildFile; fileRef = 815FEF5E21C214A10044AB5F /* BridgeCommander.js */; };
+		815FEF6121C214A10044AB5F /* BridgeCommander.swift in Sources */ = {isa = PBXBuildFile; fileRef = 815FEF5F21C214A10044AB5F /* BridgeCommander.swift */; };
+		8181EF9621624D9D00B660A6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8181EF9521624D9D00B660A6 /* AppDelegate.swift */; };
+		8181EF9821624D9D00B660A6 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8181EF9721624D9D00B660A6 /* MainViewController.swift */; };
+		8181EF9B21624D9D00B660A6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8181EF9921624D9D00B660A6 /* Main.storyboard */; };
+		8181EF9D21624D9F00B660A6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8181EF9C21624D9F00B660A6 /* Assets.xcassets */; };
+		8181EFA021624D9F00B660A6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8181EF9E21624D9F00B660A6 /* LaunchScreen.storyboard */; };
+		81B1651D21E8D4CA00A89984 /* Hashing.m in Sources */ = {isa = PBXBuildFile; fileRef = 81B1651821E8D4CA00A89984 /* Hashing.m */; };
+		81B1651E21E8D4CA00A89984 /* KeyFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 81B1651B21E8D4CA00A89984 /* KeyFormatter.m */; };
+		81B1651F21E8D4CA00A89984 /* WalletService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81B1651C21E8D4CA00A89984 /* WalletService.swift */; };
+		81B1652121E8E42A00A89984 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81B1652021E8E42A00A89984 /* Security.framework */; };
+		81B1652321E8E43A00A89984 /* AVKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81B1652221E8E43A00A89984 /* AVKit.framework */; };
+		81B1652521E8E44200A89984 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81B1652421E8E44200A89984 /* AVFoundation.framework */; };
+		81C3593F21BFFBB7004F27A7 /* Pinger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81C3593E21BFFBB7004F27A7 /* Pinger.swift */; };
+		81C3594121BFFEDE004F27A7 /* HostProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81C3594021BFFEDE004F27A7 /* HostProvider.swift */; };
+		81C3A4C921E527A2004E636E /* Wallet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81C3A4C821E527A2004E636E /* Wallet.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		811D99C321ECE616002C15F7 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				811D99C721ECE65D002C15F7 /* CoreBitcoin.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		3681D5265CC0CB428CA5C2C3 /* Pods-metawallet.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-metawallet.debug.xcconfig"; path = "Pods/Target Support Files/Pods-metawallet/Pods-metawallet.debug.xcconfig"; sourceTree = "<group>"; };
+		811D99C421ECE658002C15F7 /* CoreBitcoin.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = CoreBitcoin.framework; sourceTree = "<group>"; };
+		811D99CC21EF2D9B002C15F7 /* WebKitHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebKitHelper.swift; sourceTree = "<group>"; };
+		8140EF1F21C90DAD00D8B149 /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
+		815CD0BE21DD73E200D6EB39 /* Storage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
+		815FEF5E21C214A10044AB5F /* BridgeCommander.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = BridgeCommander.js; sourceTree = "<group>"; };
+		815FEF5F21C214A10044AB5F /* BridgeCommander.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BridgeCommander.swift; sourceTree = "<group>"; };
+		8181EF9221624D9D00B660A6 /* metawallet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = metawallet.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8181EF9521624D9D00B660A6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		8181EF9721624D9D00B660A6 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		8181EF9A21624D9D00B660A6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		8181EF9C21624D9F00B660A6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		8181EF9F21624D9F00B660A6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		8181EFA121624D9F00B660A6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		81A5E99321ECE36C001A221D /* CoreBitcoinIOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBitcoinIOS.framework; path = /Users/mmd/Desktop/Work/GIT/metawallet/metawallet/Vendor/CoreBitcoin/CoreBitcoinIOS.framework; sourceTree = "<absolute>"; };
+		81B1651721E8D4C900A89984 /* metawallet-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "metawallet-Bridging-Header.h"; sourceTree = "<group>"; };
+		81B1651821E8D4CA00A89984 /* Hashing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Hashing.m; sourceTree = "<group>"; };
+		81B1651921E8D4CA00A89984 /* KeyFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeyFormatter.h; sourceTree = "<group>"; };
+		81B1651A21E8D4CA00A89984 /* Hashing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Hashing.h; sourceTree = "<group>"; };
+		81B1651B21E8D4CA00A89984 /* KeyFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeyFormatter.m; sourceTree = "<group>"; };
+		81B1651C21E8D4CA00A89984 /* WalletService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WalletService.swift; sourceTree = "<group>"; };
+		81B1652021E8E42A00A89984 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		81B1652221E8E43A00A89984 /* AVKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVKit.framework; path = System/Library/Frameworks/AVKit.framework; sourceTree = SDKROOT; };
+		81B1652421E8E44200A89984 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		81C3593E21BFFBB7004F27A7 /* Pinger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pinger.swift; sourceTree = "<group>"; };
+		81C3594021BFFEDE004F27A7 /* HostProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HostProvider.swift; sourceTree = "<group>"; };
+		81C3A4C821E527A2004E636E /* Wallet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wallet.swift; sourceTree = "<group>"; };
+		A6A10872236301B2F9A5E447 /* Pods-metawallet.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-metawallet.release.xcconfig"; path = "Pods/Target Support Files/Pods-metawallet/Pods-metawallet.release.xcconfig"; sourceTree = "<group>"; };
+		E42A71E7E8861CA64DFC23D0 /* Pods_metawallet.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_metawallet.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8181EF8F21624D9D00B660A6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				811D99C621ECE65D002C15F7 /* CoreBitcoin.framework in Frameworks */,
+				81B1652521E8E44200A89984 /* AVFoundation.framework in Frameworks */,
+				81B1652321E8E43A00A89984 /* AVKit.framework in Frameworks */,
+				81B1652121E8E42A00A89984 /* Security.framework in Frameworks */,
+				2ADBD8090DF9A600CBDFC441 /* Pods_metawallet.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		55242EE8A5B7EE224B4752A3 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3681D5265CC0CB428CA5C2C3 /* Pods-metawallet.debug.xcconfig */,
+				A6A10872236301B2F9A5E447 /* Pods-metawallet.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		811D99C021ECE5F8002C15F7 /* Recovered References */ = {
+			isa = PBXGroup;
+			children = (
+				81A5E99321ECE36C001A221D /* CoreBitcoinIOS.framework */,
+			);
+			name = "Recovered References";
+			sourceTree = "<group>";
+		};
+		815FEF5D21C214A10044AB5F /* BridgeCommander */ = {
+			isa = PBXGroup;
+			children = (
+				815FEF5E21C214A10044AB5F /* BridgeCommander.js */,
+				815FEF5F21C214A10044AB5F /* BridgeCommander.swift */,
+			);
+			path = BridgeCommander;
+			sourceTree = "<group>";
+		};
+		8181EF8921624D9D00B660A6 = {
+			isa = PBXGroup;
+			children = (
+				8181EF9421624D9D00B660A6 /* metawallet */,
+				8181EF9321624D9D00B660A6 /* Products */,
+				55242EE8A5B7EE224B4752A3 /* Pods */,
+				CE2402F8C05A177D35C52121 /* Frameworks */,
+				811D99C021ECE5F8002C15F7 /* Recovered References */,
+			);
+			sourceTree = "<group>";
+		};
+		8181EF9321624D9D00B660A6 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8181EF9221624D9D00B660A6 /* metawallet.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		8181EF9421624D9D00B660A6 /* metawallet */ = {
+			isa = PBXGroup;
+			children = (
+				81C3594221C002AC004F27A7 /* Vendor */,
+				8181EF9521624D9D00B660A6 /* AppDelegate.swift */,
+				8181EF9721624D9D00B660A6 /* MainViewController.swift */,
+				8181EF9921624D9D00B660A6 /* Main.storyboard */,
+				8181EF9C21624D9F00B660A6 /* Assets.xcassets */,
+				8181EF9E21624D9F00B660A6 /* LaunchScreen.storyboard */,
+				8181EFA121624D9F00B660A6 /* Info.plist */,
+				81C3593E21BFFBB7004F27A7 /* Pinger.swift */,
+				81C3594021BFFEDE004F27A7 /* HostProvider.swift */,
+				8140EF1F21C90DAD00D8B149 /* APIClient.swift */,
+				81C3A4C821E527A2004E636E /* Wallet.swift */,
+				815CD0BE21DD73E200D6EB39 /* Storage.swift */,
+				81B1651A21E8D4CA00A89984 /* Hashing.h */,
+				81B1651821E8D4CA00A89984 /* Hashing.m */,
+				81B1651921E8D4CA00A89984 /* KeyFormatter.h */,
+				81B1651B21E8D4CA00A89984 /* KeyFormatter.m */,
+				81B1651C21E8D4CA00A89984 /* WalletService.swift */,
+				811D99CC21EF2D9B002C15F7 /* WebKitHelper.swift */,
+				81B1651721E8D4C900A89984 /* metawallet-Bridging-Header.h */,
+			);
+			path = metawallet;
+			sourceTree = "<group>";
+		};
+		81B1651221E8D4B400A89984 /* CoreBitcoin */ = {
+			isa = PBXGroup;
+			children = (
+				811D99C421ECE658002C15F7 /* CoreBitcoin.framework */,
+			);
+			path = CoreBitcoin;
+			sourceTree = "<group>";
+		};
+		81C3594221C002AC004F27A7 /* Vendor */ = {
+			isa = PBXGroup;
+			children = (
+				81B1651221E8D4B400A89984 /* CoreBitcoin */,
+				815FEF5D21C214A10044AB5F /* BridgeCommander */,
+			);
+			path = Vendor;
+			sourceTree = "<group>";
+		};
+		CE2402F8C05A177D35C52121 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				81B1652421E8E44200A89984 /* AVFoundation.framework */,
+				81B1652221E8E43A00A89984 /* AVKit.framework */,
+				81B1652021E8E42A00A89984 /* Security.framework */,
+				E42A71E7E8861CA64DFC23D0 /* Pods_metawallet.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8181EF9121624D9D00B660A6 /* metawallet */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8181EFA421624D9F00B660A6 /* Build configuration list for PBXNativeTarget "metawallet" */;
+			buildPhases = (
+				FB7A6DF1789EB1A83D83A56A /* [CP] Check Pods Manifest.lock */,
+				8181EF8E21624D9D00B660A6 /* Sources */,
+				8181EF8F21624D9D00B660A6 /* Frameworks */,
+				8181EF9021624D9D00B660A6 /* Resources */,
+				4EB5628DD8B3C7068220A8EA /* [CP] Embed Pods Frameworks */,
+				81247CEE21CA689E00643FE4 /* ShellScript */,
+				811D99C321ECE616002C15F7 /* Embed Frameworks */,
+				811D99C821ECEDEC002C15F7 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = metawallet;
+			productName = metawallet;
+			productReference = 8181EF9221624D9D00B660A6 /* metawallet.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		8181EF8A21624D9D00B660A6 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1000;
+				LastUpgradeCheck = 1000;
+				ORGANIZATIONNAME = MAD;
+				TargetAttributes = {
+					8181EF9121624D9D00B660A6 = {
+						CreatedOnToolsVersion = 10.0;
+						LastSwiftMigration = 1010;
+					};
+				};
+			};
+			buildConfigurationList = 8181EF8D21624D9D00B660A6 /* Build configuration list for PBXProject "metawallet" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 8181EF8921624D9D00B660A6;
+			productRefGroup = 8181EF9321624D9D00B660A6 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8181EF9121624D9D00B660A6 /* metawallet */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8181EF9021624D9D00B660A6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				815FEF6021C214A10044AB5F /* BridgeCommander.js in Resources */,
+				8181EFA021624D9F00B660A6 /* LaunchScreen.storyboard in Resources */,
+				8181EF9D21624D9F00B660A6 /* Assets.xcassets in Resources */,
+				8181EF9B21624D9D00B660A6 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		4EB5628DD8B3C7068220A8EA /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-metawallet/Pods-metawallet-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/GBPing/GBPing.framework",
+				"${BUILT_PRODUCTS_DIR}/OneStore/OneStore.framework",
+				"${BUILT_PRODUCTS_DIR}/QRCodeReader.swift/QRCodeReader.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GBPing.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/OneStore.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/QRCodeReader.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-metawallet/Pods-metawallet-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		811D99C821ECEDEC002C15F7 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "echo \"Target architectures: $ARCHS\"\n\nAPP_PATH=\"${TARGET_BUILD_DIR}/${WRAPPER_NAME}\"\n\nfind \"$APP_PATH\" -name '*.framework' -type d | while read -r FRAMEWORK\ndo\nFRAMEWORK_EXECUTABLE_NAME=$(defaults read \"$FRAMEWORK/Info.plist\" CFBundleExecutable)\nFRAMEWORK_EXECUTABLE_PATH=\"$FRAMEWORK/$FRAMEWORK_EXECUTABLE_NAME\"\necho \"Executable is $FRAMEWORK_EXECUTABLE_PATH\"\necho $(lipo -info \"$FRAMEWORK_EXECUTABLE_PATH\")\n\nFRAMEWORK_TMP_PATH=\"$FRAMEWORK_EXECUTABLE_PATH-tmp\"\n\n# remove simulator's archs if location is not simulator's directory\ncase \"${TARGET_BUILD_DIR}\" in\n*\"iphonesimulator\")\necho \"No need to remove archs\"\n;;\n*)\nif $(lipo \"$FRAMEWORK_EXECUTABLE_PATH\" -verify_arch \"i386\") ; then\nlipo -output \"$FRAMEWORK_TMP_PATH\" -remove \"i386\" \"$FRAMEWORK_EXECUTABLE_PATH\"\necho \"i386 architecture removed\"\nrm \"$FRAMEWORK_EXECUTABLE_PATH\"\nmv \"$FRAMEWORK_TMP_PATH\" \"$FRAMEWORK_EXECUTABLE_PATH\"\nfi\nif $(lipo \"$FRAMEWORK_EXECUTABLE_PATH\" -verify_arch \"x86_64\") ; then\nlipo -output \"$FRAMEWORK_TMP_PATH\" -remove \"x86_64\" \"$FRAMEWORK_EXECUTABLE_PATH\"\necho \"x86_64 architecture removed\"\nrm \"$FRAMEWORK_EXECUTABLE_PATH\"\nmv \"$FRAMEWORK_TMP_PATH\" \"$FRAMEWORK_EXECUTABLE_PATH\"\nfi\n;;\nesac\n\necho \"Completed for executable $FRAMEWORK_EXECUTABLE_PATH\"\necho $(lipo -info \"$FRAMEWORK_EXECUTABLE_PATH\")\n\ndone\n";
+		};
+		81247CEE21CA689E00643FE4 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Fabric/run\" 9da5b1d770dc9afadf6823e363e12ea2849e48c5 abf6e05f64f497d9c80daf1c99d5d1904ef5548ff0122dabfa82e478ba4a484e\n";
+		};
+		FB7A6DF1789EB1A83D83A56A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-metawallet-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8181EF8E21624D9D00B660A6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				81C3A4C921E527A2004E636E /* Wallet.swift in Sources */,
+				81C3593F21BFFBB7004F27A7 /* Pinger.swift in Sources */,
+				8181EF9821624D9D00B660A6 /* MainViewController.swift in Sources */,
+				815FEF6121C214A10044AB5F /* BridgeCommander.swift in Sources */,
+				815CD0BF21DD73E200D6EB39 /* Storage.swift in Sources */,
+				81B1651F21E8D4CA00A89984 /* WalletService.swift in Sources */,
+				81C3594121BFFEDE004F27A7 /* HostProvider.swift in Sources */,
+				811D99CD21EF2D9C002C15F7 /* WebKitHelper.swift in Sources */,
+				81B1651E21E8D4CA00A89984 /* KeyFormatter.m in Sources */,
+				81B1651D21E8D4CA00A89984 /* Hashing.m in Sources */,
+				8181EF9621624D9D00B660A6 /* AppDelegate.swift in Sources */,
+				8140EF2021C90DAD00D8B149 /* APIClient.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		8181EF9921624D9D00B660A6 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8181EF9A21624D9D00B660A6 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		8181EF9E21624D9F00B660A6 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8181EF9F21624D9F00B660A6 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		8181EFA221624D9F00B660A6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = PFFDVPVH43;
+				ENABLE_BITCODE = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		8181EFA321624D9F00B660A6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = PFFDVPVH43;
+				ENABLE_BITCODE = NO;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		8181EFA521624D9F00B660A6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3681D5265CC0CB428CA5C2C3 /* Pods-metawallet.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = PFFDVPVH43;
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/metawallet/Vendor",
+					"$(PROJECT_DIR)/metawallet/Vendor/CoreBitcoin",
+				);
+				INFOPLIST_FILE = metawallet/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/metawallet/Vendor/CoreBitcoin",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = org.metahash.metawallet;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "MetaWallet Dev";
+				SWIFT_OBJC_BRIDGING_HEADER = "metawallet/metawallet-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		8181EFA621624D9F00B660A6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A6A10872236301B2F9A5E447 /* Pods-metawallet.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = PFFDVPVH43;
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/metawallet/Vendor",
+					"$(PROJECT_DIR)/metawallet/Vendor/CoreBitcoin",
+				);
+				INFOPLIST_FILE = metawallet/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/metawallet/Vendor/CoreBitcoin",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = org.metahash.metawallet;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "MetaWallet Dev";
+				SWIFT_OBJC_BRIDGING_HEADER = "metawallet/metawallet-Bridging-Header.h";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		8181EF8D21624D9D00B660A6 /* Build configuration list for PBXProject "metawallet" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8181EFA221624D9F00B660A6 /* Debug */,
+				8181EFA321624D9F00B660A6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8181EFA421624D9F00B660A6 /* Build configuration list for PBXNativeTarget "metawallet" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8181EFA521624D9F00B660A6 /* Debug */,
+				8181EFA621624D9F00B660A6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 8181EF8A21624D9D00B660A6 /* Project object */;
+}

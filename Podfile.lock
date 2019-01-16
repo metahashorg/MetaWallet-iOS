@@ -1,0 +1,41 @@
+PODS:
+  - Alamofire (4.8.0)
+  - Crashlytics (3.12.0):
+    - Fabric (~> 1.9.0)
+  - Fabric (1.9.0)
+  - GBPing (1.5.1)
+  - OneStore (0.10.0)
+  - QRCodeReader.swift (9.0.1)
+  - SwiftyJSON (4.2.0)
+
+DEPENDENCIES:
+  - Alamofire
+  - Crashlytics
+  - Fabric
+  - GBPing
+  - OneStore
+  - QRCodeReader.swift (~> 9.0.1)
+  - SwiftyJSON
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Alamofire
+    - Crashlytics
+    - Fabric
+    - GBPing
+    - OneStore
+    - QRCodeReader.swift
+    - SwiftyJSON
+
+SPEC CHECKSUMS:
+  Alamofire: 3ec537f71edc9804815215393ae2b1a8ea33a844
+  Crashlytics: 07fb167b1694128c1c9a5a5cc319b0e9c3ca0933
+  Fabric: f988e33c97f08930a413e08123064d2e5f68d655
+  GBPing: d7fb1b91990f1d2a0f07f72e0fe79e91ee9fc3ba
+  OneStore: b6dd99458693951c291ed780ec8085a935230844
+  QRCodeReader.swift: 96292a5612fbc2fd9a0b26f93fa5164c8d02f59d
+  SwiftyJSON: c4bcba26dd9ec7a027fc8eade48e2c911f229e96
+
+PODFILE CHECKSUM: 06c75d6d4d846e6cb67db2ab54abed011834dda7
+
+COCOAPODS: 1.5.3
