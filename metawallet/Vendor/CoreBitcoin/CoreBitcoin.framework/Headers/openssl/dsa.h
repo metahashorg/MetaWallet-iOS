@@ -80,7 +80,7 @@
 #ifndef OPENSSL_NO_DEPRECATED
 #include <CoreBitcoin/openssl/bn.h>
 #ifndef OPENSSL_NO_DH
-//# include <openssl/dh.h>
+#include <CoreBitcoin/openssl/dh.h>
 #endif
 #endif
 

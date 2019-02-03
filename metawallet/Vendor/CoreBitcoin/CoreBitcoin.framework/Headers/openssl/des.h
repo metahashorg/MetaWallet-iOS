@@ -98,7 +98,7 @@ typedef struct DES_ks
 #endif
 
 #ifdef OPENSSL_ENABLE_OLD_DES_SUPPORT
-# include <openssl/des_old.h>
+#include <CoreBitcoin/openssl/des_old.h>
 #endif
 
 #define DES_KEY_SZ 	(sizeof(DES_cblock))

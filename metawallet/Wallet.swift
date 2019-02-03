@@ -16,6 +16,7 @@ struct Transaction {
     var data: String
     var pubKey: String
     var sign: String
+    var currency: String
 }
 
 struct Wallet: Codable {
@@ -63,7 +64,7 @@ struct Wallet: Codable {
     }
     
     func updateBalance(completion: @escaping (Double, Double) -> Void) {
-        APIClient.shared.getWalletBalance(for: address, completion: completion)
+        APIClient.shared.getWalletBalance(for: address, currency: currency, completion: completion)
     }
     
     func getDescription() -> [String : Any] {

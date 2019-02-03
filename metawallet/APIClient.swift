@@ -174,7 +174,11 @@ class APIClient {
                           "token" : "",
                           "params" : ["address" : wallets[i].address]
                 ] as [String : Any]
-            Alamofire.request(HostProvider.shared.torrentBaseURL!, method: .post, parameters: params, encoding: JSONEncoding.default, headers: nil).validate().responseJSON { (response) in
+            var url = HostProvider.shared.devTorrentBaseURL!
+            if currency == "4" {
+                url = HostProvider.shared.mainTorrentBaseURL!
+            }
+            Alamofire.request(url, method: .post, parameters: params, encoding: JSONEncoding.default, headers: nil).validate().responseJSON { (response) in
                 walletsCount += 1
                 if response.error == nil, let value = response.value {
                     let json = JSON(value)
@@ -195,14 +199,18 @@ class APIClient {
         }
     }
     
-    func getWalletBalance(for address: String, completion: @escaping (Double, Double) -> Void) {
+    func getWalletBalance(for address: String, currency: String, completion: @escaping (Double, Double) -> Void) {
         let params = ["id" : deviceIdentifier,
                       "version": "1.0.0",
                       "method" : "fetch-balance",
                       "token" : "",
                       "params" : ["address" : address]
             ] as [String : Any]
-        Alamofire.request(HostProvider.shared.torrentBaseURL!, method: .post, parameters: params, encoding: JSONEncoding.default, headers: nil).validate().responseJSON { (response) in
+        var url = HostProvider.shared.devTorrentBaseURL!
+        if currency == "4" {
+            url = HostProvider.shared.mainTorrentBaseURL!
+        }
+        Alamofire.request(url, method: .post, parameters: params, encoding: JSONEncoding.default, headers: nil).validate().responseJSON { (response) in
             if response.error == nil, let value = response.value {
                 let json = JSON(value)
                 let received = json["result"]["received"].doubleValue
@@ -225,9 +233,15 @@ class APIClient {
                         "sign" : transaction.sign
             ]
             ] as [String : Any]
-        let firstProxy = "http://\(HostProvider.shared.proxyIPs.first!):\(HostProvider.Constants.proxyPort)"
-        let secondProxy = "http://\(HostProvider.shared.proxyIPs[1]):\(HostProvider.Constants.proxyPort)"
-        let thirdProxy = "http://\(HostProvider.shared.proxyIPs[2]):\(HostProvider.Constants.proxyPort)"
+        var firstProxy = "http://\(HostProvider.shared.devProxyIPs.first!):\(HostProvider.Constants.proxyPort)"
+        var secondProxy = "http://\(HostProvider.shared.devProxyIPs[1]):\(HostProvider.Constants.proxyPort)"
+        var thirdProxy = "http://\(HostProvider.shared.devProxyIPs[2]):\(HostProvider.Constants.proxyPort)"
+        if transaction.currency == "4" {
+            firstProxy = "http://\(HostProvider.shared.mainProxyIPs.first!):\(HostProvider.Constants.proxyPort)"
+            secondProxy = "http://\(HostProvider.shared.mainProxyIPs[1]):\(HostProvider.Constants.proxyPort)"
+            thirdProxy = "http://\(HostProvider.shared.mainProxyIPs[2]):\(HostProvider.Constants.proxyPort)"
+        }
+        
         var completedRequests = 0
         sessionManager.request(firstProxy, method: .post, parameters: params, encoding: JSONEncoding.default, headers: nil).validate().responseJSON { (response) in
             var proxyArray = WalletService.shared.txInfo["proxy"] as! [Any]
@@ -285,16 +299,22 @@ class APIClient {
         }
     }
     
-    func checkTransaction(transactionHash: String, updateStatus: @escaping () -> Void, completion: @escaping () -> Void) {
+    func checkTransaction(transactionHash: String, currency: String, updateStatus: @escaping () -> Void, completion: @escaping () -> Void) {
         let params = ["uid" : deviceIdentifier,
                         "method":"get-tx",
                         "params":["hash":transactionHash],
                         "token":"",
                         "version":"1.0.0"
         ] as [String : Any]
-        let firstTorrent = "http://\(HostProvider.shared.torrentIPs.first!):\(HostProvider.Constants.torrentPort)"
-        let secondTorrent = "http://\(HostProvider.shared.torrentIPs[1]):\(HostProvider.Constants.torrentPort)"
-        let thirdTorrent = "http://\(HostProvider.shared.torrentIPs[2]):\(HostProvider.Constants.torrentPort)"
+        var firstTorrent = "http://\(HostProvider.shared.devTorrentIPs.first!):\(HostProvider.Constants.torrentPort)"
+        var secondTorrent = "http://\(HostProvider.shared.devTorrentIPs[1]):\(HostProvider.Constants.torrentPort)"
+        var thirdTorrent = "http://\(HostProvider.shared.devTorrentIPs[2]):\(HostProvider.Constants.torrentPort)"
+        
+        if currency == "4" {
+            firstTorrent = "http://\(HostProvider.shared.mainTorrentIPs.first!):\(HostProvider.Constants.torrentPort)"
+            secondTorrent = "http://\(HostProvider.shared.mainTorrentIPs[1]):\(HostProvider.Constants.torrentPort)"
+            thirdTorrent = "http://\(HostProvider.shared.mainTorrentIPs[2]):\(HostProvider.Constants.torrentPort)"
+        }
         var completedRequests = 0
         sessionManager.request(firstTorrent, method: .post, parameters: params, encoding: JSONEncoding.default, headers: nil).validate().responseJSON { (response) in
             var torrentArray = WalletService.shared.txInfo["torrent"] as! [Any]

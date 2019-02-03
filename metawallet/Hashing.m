@@ -14,9 +14,9 @@
 + (NSData *)signData:(NSData *)data with:(BTCKey *)key {
     unsigned char digest[CC_SHA256_DIGEST_LENGTH];
     CC_SHA256([data bytes], (CC_LONG)[data length], digest);
-    unsigned int size = ECDSA_size(key.key);
+    unsigned int size = ECDSA_size(key.ec_key);
     unsigned char signature[size];
-    int result = ECDSA_sign(0, digest, CC_SHA256_DIGEST_LENGTH, signature, &size, key.key);
+    int result = ECDSA_sign(0, digest, CC_SHA256_DIGEST_LENGTH, signature, &size, key.ec_key);
     return [NSData dataWithBytes:signature length:size];    
 }
      

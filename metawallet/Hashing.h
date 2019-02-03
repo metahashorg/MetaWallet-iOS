@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <CoreBitcoin/CoreBitcoin.h>
+#import <CoreBitcoin/BTCKey.h>
 
 @interface Hashing : NSObject
 + (NSData *)signData:(NSData *)data with:(BTCKey *)key;

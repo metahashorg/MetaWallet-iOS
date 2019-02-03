@@ -3,6 +3,7 @@
 #import <Foundation/Foundation.h>
 #import <CoreBitcoin/BTCSignatureHashType.h>
 #include <CoreBitcoin/openssl/ec.h>
+#include <CoreBitcoin/openssl/ecdsa.h>
 
 @class BTCCurvePoint;
 @class BTCPublicKeyAddress;
@@ -15,8 +16,6 @@
 // When instantiated with a public key, only signature verification is possible.
 // When instantiated with a private key, all operations are available.
 @interface BTCKey : NSObject
-
-@property EC_KEY* key;
 
 // Newly generated random key pair.
 - (id) init;
@@ -63,6 +62,7 @@
 
 // Returns public key as a point on secp256k1 curve.
 @property(nonatomic, readonly) BTCCurvePoint* curvePoint;
+@property(nonatomic, readonly) EC_KEY* ec_key;
 
 // Verifies signature for a given hash with a public key.
 - (BOOL) isValidSignature:(NSData*)signature hash:(NSData*)hash;
@@ -110,6 +110,7 @@
 // Private key encoded in sipa format (base58 with compression flag).
 @property(nonatomic, readonly) BTCPrivateKeyAddress* privateKeyAddress;
 @property(nonatomic, readonly) BTCPrivateKeyAddressTestnet* privateKeyAddressTestnet;
+
 
 
 

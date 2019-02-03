@@ -60,10 +60,10 @@
 #define HEADER_ENVELOPE_H
 
 #ifdef OPENSSL_ALGORITHM_DEFINES
-# include <openssl/opensslconf.h>
+#include <CoreBitcoin/openssl/opensslconf.h>
 #else
 # define OPENSSL_ALGORITHM_DEFINES
-//# include <openssl/opensslconf.h>
+#include <CoreBitcoin/openssl/opensslconf.h>
 # undef OPENSSL_ALGORITHM_DEFINES
 #endif
 

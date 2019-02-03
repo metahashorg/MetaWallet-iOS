@@ -18,7 +18,9 @@ final class WebCacheCleaner {
                 print("[WebCacheCleaner] Record \(record) deleted")
             }
         }
-        HostProvider.shared.proxyBaseURL = nil
-        HostProvider.shared.torrentBaseURL = nil
+        HostProvider.shared.devProxyBaseURL = nil
+        HostProvider.shared.devTorrentBaseURL = nil
+        HostProvider.shared.mainProxyBaseURL = nil
+        HostProvider.shared.mainTorrentBaseURL = nil
     }
 }

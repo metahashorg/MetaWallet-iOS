@@ -179,23 +179,24 @@ class MainViewController: UIViewController, WKNavigationDelegate {
     }
     
     func addCreateTransactionRequest(to commander: BridgeCommander) {
-        commander.add("sendTMHTx") { (command) in
+        commander.add("sendTx") { (command) in
             let args = command.args.split(separator: ",")
-            guard args.count == 4 else {
+            guard args.count == 5 else {
                 return
             }
             let fromAddress = String(args[0])
             let password = String(args[1])
             let toAddress = String(args[2])
             let amount = String(args[3])
+            let currency = String(args[4])
             let fee = "0"
             let data = ""
-            WalletService.createTransaction(address: fromAddress, password: password, to: toAddress, amount: amount, fee: fee, data: data, update: { (updateResult) in
+            WalletService.createTransaction(address: fromAddress, password: password, to: toAddress, amount: amount, fee: fee, data: data, currency: currency, update: { (updateResult) in
                 command.send(args: updateResult)
                 self.webView.evaluateJavaScript("onTxChecked('\(updateResult)')", completionHandler: nil)
             }, completion: { (errorString, resultString) in
                 command.send(args: errorString ?? "")
-                self.webView.evaluateJavaScript("sendTMHTxResult('\(errorString ?? "")')", completionHandler: nil)
+                self.webView.evaluateJavaScript("sendTxResult('\(errorString ?? "")')", completionHandler: nil)
             })
         }
     }
@@ -218,7 +219,7 @@ class MainViewController: UIViewController, WKNavigationDelegate {
     }
     
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
-        if (hostProvider.torrentBaseURL == nil || hostProvider.proxyBaseURL == nil) {
+        if (hostProvider.mainTorrentBaseURL == nil || hostProvider.mainProxyBaseURL == nil) {
             hostProvider.configureIpAddresses(completion: { (success) in
                 if Storage.shared.token != nil {
                     APIClient.shared.checkToken(completion: { (error, _) in

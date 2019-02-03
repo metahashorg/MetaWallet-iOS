@@ -34,18 +34,24 @@ class HostProvider {
     
     let pinger = Pinger()
     
-    var torrentBaseURL: URL?
-    var proxyBaseURL: URL?
+    var devTorrentBaseURL: URL?
+    var devProxyBaseURL: URL?
     
-    var torrentIPs = [String]()
-    var proxyIPs = [String]()
+    var devTorrentIPs = [String]()
+    var devProxyIPs = [String]()
+    
+    var mainTorrentBaseURL: URL?
+    var mainProxyBaseURL: URL?
+    
+    var mainTorrentIPs = [String]()
+    var mainProxyIPs = [String]()
     
     static let shared = HostProvider()
 
     func configureIpAddresses(completion: @escaping (Bool) -> Void, progress: @escaping (([String : Any]) -> Void)) {
         getIpAddresses(for: Constants.urlTorrentDevURL) { (torrentIps) in
             if (torrentIps.count > 0) {
-                progress(["proxy" :
+                progress(["type":"dev", "data" : ["proxy" :
                     ["stage" : 1,
                      "status" :
                         ["total" : 20,
@@ -57,12 +63,12 @@ class HostProvider {
                                         ["total" : torrentIps.count,
                                          "current" : torrentIps.count - 3
                             ]
-                    ]])
-                self.torrentIPs = torrentIps
-                self.torrentBaseURL = URL(string: "http://".appending(torrentIps.first!).appending(":").appending(HostProvider.Constants.torrentPort))
+                    ]]])
+                self.devTorrentIPs = torrentIps
+                self.devTorrentBaseURL = URL(string: "http://".appending(torrentIps.first!).appending(":").appending(HostProvider.Constants.torrentPort))
                 self.getIpAddresses(for: Constants.urlProxyDevURL, completion: { (proxyIps) in
                     if (proxyIps.count > 0) {
-                        progress(["proxy" :
+                        progress(["type":"dev", "data" : ["proxy" :
                             ["stage" : 3,
                              "status" :
                                 ["total" : 10,
@@ -74,10 +80,52 @@ class HostProvider {
                                                 ["total" : 10,
                                                  "current" : 10
                                     ]
-                            ]])
-                        self.proxyIPs = proxyIps
-                        self.proxyBaseURL = URL(string: "http://".appending(proxyIps.first!).appending(":").appending(HostProvider.Constants.proxyPort))
-                        completion(true)
+                            ]]])
+                        self.devProxyIPs = proxyIps
+                        self.devProxyBaseURL = URL(string: "http://".appending(proxyIps.first!).appending(":").appending(HostProvider.Constants.proxyPort))
+                        self.getIpAddresses(for: Constants.urlTorrentURL) { (torrentIps) in
+                            if (torrentIps.count > 0) {
+                                progress(["type":"prod", "data" : ["proxy" :
+                                    ["stage" : 1,
+                                     "status" :
+                                        ["total" : 20,
+                                         "current" : 6
+                                        ]
+                                    ],
+                                                                  "torrent" : ["stage" : 1,
+                                                                               "status" :
+                                                                                ["total" : torrentIps.count,
+                                                                                 "current" : torrentIps.count - 3
+                                                                    ]
+                                    ]]])
+                                self.mainTorrentIPs = torrentIps
+                                self.mainTorrentBaseURL = URL(string: "http://".appending(torrentIps.first!).appending(":").appending(HostProvider.Constants.torrentPort))
+                                self.getIpAddresses(for: Constants.urlProxyURL, completion: { (proxyIps) in
+                                    if (proxyIps.count > 0) {
+                                        progress(["type":"prod", "data" : ["proxy" :
+                                            ["stage" : 3,
+                                             "status" :
+                                                ["total" : 10,
+                                                 "current" : 10
+                                                ]
+                                            ],
+                                                                          "torrent" : ["stage" : 3,
+                                                                                       "status" :
+                                                                                        ["total" : 10,
+                                                                                         "current" : 10
+                                                                            ]
+                                            ]]])
+                                        self.mainProxyIPs = proxyIps
+                                        self.mainProxyBaseURL = URL(string: "http://".appending(proxyIps.first!).appending(":").appending(HostProvider.Constants.proxyPort))
+                                        completion(true)
+                                    } else {
+                                        completion(false)
+                                    }
+                                })
+                            } else {
+                                completion(false)
+                            }
+                        }
                     } else {
                         completion(false)
                     }

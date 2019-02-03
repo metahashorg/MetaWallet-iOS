@@ -30,9 +30,9 @@ class WalletService {
         return wallet
     }
     
-    static func createTransaction(address: String, password: String, to: String, amount: String, fee: String, data: String, update: @escaping (String) -> Void, completion: (String?, String?) -> Void) {
+    static func createTransaction(address: String, password: String, to: String, amount: String, fee: String, data: String, currency: String, update: @escaping (String) -> Void, completion: (String?, String?) -> Void) {
         guard let wallet = Storage.shared.wallets.first(where: { (wallet) -> Bool in
-            return wallet.address == address && wallet.privateKeyData != nil
+            return wallet.address == address && wallet.privateKeyData != nil && wallet.currency == currency
         }) else {
             completion("NO_PRIVATE_KEY_FOUND", nil)
             return
@@ -55,7 +55,7 @@ class WalletService {
             let signatureString = BTCHexFromData(signature)!
             let publicKeyHex = publicKeyHexString(from: wallet.publicKeyData!).lowercased()
             
-            let transaction = Transaction.init(to: to, value: amount, fee: fee, nonce: String(nonce), data: dataHexString, pubKey: publicKeyHex, sign: signatureString)
+            let transaction = Transaction.init(to: to, value: amount, fee: fee, nonce: String(nonce), data: dataHexString, pubKey: publicKeyHex, sign: signatureString, currency: currency)
             
             let initUpdate = try! String.init(data: JSONSerialization.data(withJSONObject: shared.txInfo, options: .sortedKeys), encoding: .utf8)!
             update(initUpdate)
@@ -64,7 +64,7 @@ class WalletService {
                 let updateString = try! String.init(data: JSONSerialization.data(withJSONObject: shared.txInfo, options: .sortedKeys), encoding: .utf8)!
                 update(updateString)
             }, completion: {
-                APIClient.shared.checkTransaction(transactionHash: shared.txInfo["id"] as! String, updateStatus: {
+                APIClient.shared.checkTransaction(transactionHash: shared.txInfo["id"] as! String, currency: transaction.currency, updateStatus: {
                     let updateString = try! String.init(data: JSONSerialization.data(withJSONObject: shared.txInfo, options: .sortedKeys), encoding: .utf8)!
                     update(updateString)
                 }, completion: {

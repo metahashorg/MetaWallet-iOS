@@ -13,18 +13,19 @@
 #include <CoreBitcoin/openssl/x509.h>
 #include <CoreBitcoin/openssl/evp.h>
 #include <CoreBitcoin/openssl/asn1.h>
+#include <CoreBitcoin/BTCData.h>
 
 #define FORMAT_ASN1 4
 #define PRIVATE 1
 
 @implementation KeyFormatter
 + (NSData *)derPrivateKey:(BTCKey *)key {
-    EC_KEY_set_asn1_flag(key.key, OPENSSL_EC_NAMED_CURVE);
+    EC_KEY_set_asn1_flag(key.ec_key, OPENSSL_EC_NAMED_CURVE);
     char buffer[256];
     strcpy(buffer, getenv("HOME"));
     strcat(buffer, "/Documents/priv.der");
     FILE *f = fopen(buffer, "w");
-    int res = i2d_ECPrivateKey_fp(f, key.key);
+    int res = i2d_ECPrivateKey_fp(f, key.ec_key);
     fclose(f);
     NSURL *fileURL = [NSURL fileURLWithPath:[NSString stringWithUTF8String:buffer]];
     NSData *data = [NSData dataWithContentsOfURL:fileURL];
@@ -32,12 +33,12 @@
 }
 
 + (NSData *)derPublicKey:(BTCKey *)key {
-    EC_KEY_set_asn1_flag(key.key, OPENSSL_EC_NAMED_CURVE);
+    EC_KEY_set_asn1_flag(key.ec_key, OPENSSL_EC_NAMED_CURVE);
     char buffer[256];
     strcpy(buffer, getenv("HOME"));
     strcat(buffer, "/Documents/public.der");
     FILE *f = fopen(buffer, "w");
-    int res = i2d_EC_PUBKEY_fp(f, key.key);
+    int res = i2d_EC_PUBKEY_fp(f, key.ec_key);
     fclose(f);
     NSURL *fileURL = [NSURL fileURLWithPath:[NSString stringWithUTF8String:buffer]];
     NSData *data = [NSData dataWithContentsOfURL:fileURL];

@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <CoreBitcoin/CoreBitcoin.h>
+#import <CoreBitcoin/BTCKey.h>
 
 @interface KeyFormatter : NSObject
 
