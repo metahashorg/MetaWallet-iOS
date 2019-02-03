@@ -5,6 +5,7 @@ PODS:
   - Fabric (1.9.0)
   - GBPing (1.5.1)
   - OneStore (0.10.0)
+  - OpenSSL-Universal (1.0.2.14)
   - QRCodeReader.swift (9.0.1)
   - SwiftyJSON (4.2.0)
 
@@ -14,6 +15,7 @@ DEPENDENCIES:
   - Fabric
   - GBPing
   - OneStore
+  - OpenSSL-Universal (from `https://github.com/krzyzanowskim/OpenSSL.git`, branch `master`)
   - QRCodeReader.swift (~> 9.0.1)
   - SwiftyJSON
 
@@ -27,15 +29,26 @@ SPEC REPOS:
     - QRCodeReader.swift
     - SwiftyJSON
 
+EXTERNAL SOURCES:
+  OpenSSL-Universal:
+    :branch: :master
+    :git: https://github.com/krzyzanowskim/OpenSSL.git
+
+CHECKOUT OPTIONS:
+  OpenSSL-Universal:
+    :commit: 7aec3d9d8e6d279c1ed8d51514ebffc4731855f0
+    :git: https://github.com/krzyzanowskim/OpenSSL.git
+
 SPEC CHECKSUMS:
   Alamofire: 3ec537f71edc9804815215393ae2b1a8ea33a844
   Crashlytics: 07fb167b1694128c1c9a5a5cc319b0e9c3ca0933
   Fabric: f988e33c97f08930a413e08123064d2e5f68d655
   GBPing: d7fb1b91990f1d2a0f07f72e0fe79e91ee9fc3ba
   OneStore: b6dd99458693951c291ed780ec8085a935230844
+  OpenSSL-Universal: 60db51d46fdf2af071f141d9c4fec5430276d3ed
   QRCodeReader.swift: 96292a5612fbc2fd9a0b26f93fa5164c8d02f59d
   SwiftyJSON: c4bcba26dd9ec7a027fc8eade48e2c911f229e96
 
-PODFILE CHECKSUM: 79fe33f27801b2263db41636dee20772585831d8
+PODFILE CHECKSUM: 1b27698be4c12260d0be3081130d2f8f357896a3
 
 COCOAPODS: 1.5.3

@@ -11,7 +11,7 @@ target 'metawallet' do
   pod 'Crashlytics'
   pod 'OneStore'
   pod 'QRCodeReader.swift', '~> 9.0.1'
-
+  pod 'OpenSSL-Universal', :git => 'https://github.com/krzyzanowskim/OpenSSL.git', :branch => :master
 end
 
 post_install do |installer|

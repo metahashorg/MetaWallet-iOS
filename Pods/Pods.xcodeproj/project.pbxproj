@@ -7,63 +7,63 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		059D92B7BBFBEC53E9A3B6E11C5C3B3A /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5615BDD0D54083CFB2309BB8F2A9E1 /* Response.swift */; };
-		0A39AF55285A3A4F7CBABB6D822FA4A3 /* Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D5756293FEB7CB12D2D029AAF784ABF /* Alamofire.swift */; };
+		059D92B7BBFBEC53E9A3B6E11C5C3B3A /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17ED6C359D7A3694AA9B9A64CDA9A813 /* Response.swift */; };
+		0A39AF55285A3A4F7CBABB6D822FA4A3 /* Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15A6A5672BB68FA9FB628648E723722B /* Alamofire.swift */; };
 		0CC6F8AD42011BA1FDAEBD4A8B32633A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC350AAE8CA3FEB3F37E6BB16B77F571 /* Foundation.framework */; };
-		1257E14E522DE0508D9558C5FFF55EC1 /* ReservedOneStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36E303E5667CCAF29A767EF49381DBC2 /* ReservedOneStore.swift */; };
-		1D29D2ACADF961F69D32B06FA6A09E28 /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 722B91903F4E5C683F9D69F7F076187A /* Notifications.swift */; };
-		286223B931FAADF703177AB6C9801C4C /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74B681DF05CDEDBDC5E6960A96AD644D /* SwiftyJSON.swift */; };
-		2905E7179E0CABBE8913771D9505994A /* GBPing.h in Headers */ = {isa = PBXBuildFile; fileRef = 255F524DC5A6D2F8D9110C58E45DD615 /* GBPing.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1257E14E522DE0508D9558C5FFF55EC1 /* ReservedOneStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A8D56B7D88DB0CD461D29F38B255286 /* ReservedOneStore.swift */; };
+		1D29D2ACADF961F69D32B06FA6A09E28 /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54021FC8410712DA5FD6E981F610B559 /* Notifications.swift */; };
+		286223B931FAADF703177AB6C9801C4C /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795CEA11596BAB04177AA866C1E27AD5 /* SwiftyJSON.swift */; };
+		2905E7179E0CABBE8913771D9505994A /* GBPing.h in Headers */ = {isa = PBXBuildFile; fileRef = 8B24871066B016D12832ECB02D3BA1F2 /* GBPing.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		32EFEEE778CBAE2D1A8E75A8D2EA2D71 /* Pods-metawallet-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = A7E2119913C554C0B2AC638DC1067D67 /* Pods-metawallet-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		3451C294F38B8758CDD97D7F2A5ABFF9 /* SwitchCameraButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A712FF807BCB985929288FA11B47168 /* SwitchCameraButton.swift */; };
-		355C18EEC82624A06A6CC93965258E33 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DA77A90C8C0549F5DE9BF7CAB841529 /* Request.swift */; };
+		3451C294F38B8758CDD97D7F2A5ABFF9 /* SwitchCameraButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F971E522C3BEE89BE05B4AB868300460 /* SwitchCameraButton.swift */; };
+		355C18EEC82624A06A6CC93965258E33 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6B0D5EC66220D9E3AC153EC40B14E2E /* Request.swift */; };
 		3BD1DAFE1F3E6C9E4EB0F2099B6D6FA2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC350AAE8CA3FEB3F37E6BB16B77F571 /* Foundation.framework */; };
-		3E0749AF6C51BCF0E4A41CF1D6A76FED /* DispatchQueue+Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB430F651A7866B16E3C8EFF0A361974 /* DispatchQueue+Alamofire.swift */; };
+		3E0749AF6C51BCF0E4A41CF1D6A76FED /* DispatchQueue+Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BE4ACC0D303358DAD45FF06D8BD34FA /* DispatchQueue+Alamofire.swift */; };
 		4ECBAB3EDECC576660C33E8991FCDD36 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC350AAE8CA3FEB3F37E6BB16B77F571 /* Foundation.framework */; };
-		53836F480BBB098E1DD7F96B330B726B /* Box.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7306C2E5ABCC4629FFACF5371424D06D /* Box.swift */; };
+		53836F480BBB098E1DD7F96B330B726B /* Box.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2F129BFDE382E15A110424B3AD147B6 /* Box.swift */; };
 		6094E3AD797CF7E1C686FA05C2AE4FB1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC350AAE8CA3FEB3F37E6BB16B77F571 /* Foundation.framework */; };
-		60B6C2A003864AAD3A426448152F67BE /* Timeline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EAC27D4FD461522642D926F9A7291E7 /* Timeline.swift */; };
-		69AB4D3DF904A34B7EDDC634D5DFD595 /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 532A28E683ABB364899C617E1D1E49F0 /* Stack.swift */; };
-		6C6A0733A7640237E56A69BD3F1505C4 /* SwiftyJSON-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 186F573EF291911098E4C626DBD6CBA0 /* SwiftyJSON-dummy.m */; };
+		60B6C2A003864AAD3A426448152F67BE /* Timeline.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF0BD876EBACABC573411FBBE3E21274 /* Timeline.swift */; };
+		69AB4D3DF904A34B7EDDC634D5DFD595 /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1741EF54943CD38032C45622F3F5430D /* Stack.swift */; };
+		6C6A0733A7640237E56A69BD3F1505C4 /* SwiftyJSON-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DD07EB25CBC73722544CB9E239AFE37 /* SwiftyJSON-dummy.m */; };
 		6DA22576D37A778A72FE653D82344E35 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC350AAE8CA3FEB3F37E6BB16B77F571 /* Foundation.framework */; };
-		6EFD003458AE7F689DEA720A2030C261 /* ResponseSerialization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040701B206CAB50B6C3542C8DBBF4E30 /* ResponseSerialization.swift */; };
-		700D3D95AF9520CB227846DFD943A2DA /* ParameterEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A992571738BB350B96A5EC017F94376 /* ParameterEncoding.swift */; };
-		73AB05789A4982944AF68DBD013E3EB7 /* NetworkReachabilityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C787785283AF218AE6F5E2827F55B0 /* NetworkReachabilityManager.swift */; };
-		76711CA6833C58F15EA3651077B4CD0E /* QRCodeReaderViewControllerBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AAE8D14A9CEC597BC05BCFB22ED7652 /* QRCodeReaderViewControllerBuilder.swift */; };
-		772911DA6E33D1CBBC30131B7C8BDBB3 /* Alamofire-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E82417C035AFE40C85EAAFB97BCFD140 /* Alamofire-dummy.m */; };
-		77E8F0EB9FFBE2E3EB0C77095C644606 /* TaskDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42556915CC241C649CAB48291D54C2C8 /* TaskDelegate.swift */; };
-		7D5118575FD9C096AC284D0D21DBEAB9 /* QRCodeReader.swift-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = A32FF58C664F83DE163C05A260CA68F3 /* QRCodeReader.swift-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		7E3538A6992A38276764936A9733493D /* AFError.swift in Sources */ = {isa = PBXBuildFile; fileRef = E206A45AC3B92FD5F15A0499F3075F49 /* AFError.swift */; };
-		8531C2F3629F012434D5EC23DA27EF52 /* SwiftyJSON-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 1F9866D216AAC2C9ECBA389FFFAA5640 /* SwiftyJSON-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		8D2A6A90A6DDAF75EA52D471258545CC /* ServerTrustPolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8595DA51BEF11D674BAB26CAB0AB8379 /* ServerTrustPolicy.swift */; };
-		8FF4589B3A1FE9C18043409FBF415CF0 /* OneStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F18E5F783C6B6EDE4C405521BDC9367 /* OneStore.swift */; };
-		90533E059F9F4BCEC120013DD7CB766A /* GBPingSummary.m in Sources */ = {isa = PBXBuildFile; fileRef = E4487977A7488B0513F1156107DADBCE /* GBPingSummary.m */; };
-		989F49C4A7A2A48B9B1F8CB8C58A93C9 /* GBPingSummary.h in Headers */ = {isa = PBXBuildFile; fileRef = 9CAE1A28A97926F533CC777BBA346845 /* GBPingSummary.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		9A5D86FC7689D4C4B856730FC9A51218 /* QRCodeReaderResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06D28FB53E49ED85BFD5C7E55B09962E /* QRCodeReaderResult.swift */; };
+		6EFD003458AE7F689DEA720A2030C261 /* ResponseSerialization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EDA0BBAE1D1F80B4155F5DE68E696C9 /* ResponseSerialization.swift */; };
+		700D3D95AF9520CB227846DFD943A2DA /* ParameterEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E1289DAF9F426F6F92DFB471C8E45A2 /* ParameterEncoding.swift */; };
+		73AB05789A4982944AF68DBD013E3EB7 /* NetworkReachabilityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06326F59E36BA3700BF00527E12ABB4A /* NetworkReachabilityManager.swift */; };
+		76711CA6833C58F15EA3651077B4CD0E /* QRCodeReaderViewControllerBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8AA24FD7C961B1C895E79953EEF223 /* QRCodeReaderViewControllerBuilder.swift */; };
+		772911DA6E33D1CBBC30131B7C8BDBB3 /* Alamofire-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A59670C8C8844AEA80619B0DDA35315 /* Alamofire-dummy.m */; };
+		77E8F0EB9FFBE2E3EB0C77095C644606 /* TaskDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27033D99EBBD73DA5A63ED4004AFB066 /* TaskDelegate.swift */; };
+		7D5118575FD9C096AC284D0D21DBEAB9 /* QRCodeReader.swift-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 1FC032F5FA1BFFF2BCBF4EE56721F487 /* QRCodeReader.swift-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7E3538A6992A38276764936A9733493D /* AFError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77417825F31FC96E64B19E7DA22EF6C7 /* AFError.swift */; };
+		8531C2F3629F012434D5EC23DA27EF52 /* SwiftyJSON-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = EF10781DA1A99616A8FBC6B50A8A307F /* SwiftyJSON-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8D2A6A90A6DDAF75EA52D471258545CC /* ServerTrustPolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466A104142D7BB11B7D8A299780D1587 /* ServerTrustPolicy.swift */; };
+		8FF4589B3A1FE9C18043409FBF415CF0 /* OneStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EEB3CE2CAC1506565947CF190341B5 /* OneStore.swift */; };
+		90533E059F9F4BCEC120013DD7CB766A /* GBPingSummary.m in Sources */ = {isa = PBXBuildFile; fileRef = EF724AC06D2028C16B621DD1728E1BC3 /* GBPingSummary.m */; };
+		989F49C4A7A2A48B9B1F8CB8C58A93C9 /* GBPingSummary.h in Headers */ = {isa = PBXBuildFile; fileRef = EE70B467B16B4CB4B98BE3AA8DADF3E8 /* GBPingSummary.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9A5D86FC7689D4C4B856730FC9A51218 /* QRCodeReaderResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BFB178D2A836A9D9035AAE33DB5B21A /* QRCodeReaderResult.swift */; };
 		9F73F2A94729F1477B07C0544F67C616 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC350AAE8CA3FEB3F37E6BB16B77F571 /* Foundation.framework */; };
-		A1EC41966B261DCE460BCDE5124A1DBE /* SessionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF383344825E4EAB932F1939ADBAE984 /* SessionDelegate.swift */; };
+		A1EC41966B261DCE460BCDE5124A1DBE /* SessionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6ED85ABB7D43D035E9A1E3D6B6F792 /* SessionDelegate.swift */; };
 		A3CC412A7927E23E6B65237FCE9B6793 /* Pods-metawallet-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E122633330369AFBDF5D7D96C6E656C7 /* Pods-metawallet-dummy.m */; };
-		AA56769D8733D3F3E7976742D5ABA998 /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4201BCDA9016E172CCBE5037C5062133 /* Validation.swift */; };
-		AEA829AB1A8AF2AD077A808AED6B178A /* MultipartFormData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D968828424ECE39972F8DBE8E542651D /* MultipartFormData.swift */; };
-		B3763348AB9266CBB02DDE305BCEA955 /* OneStore-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = B5F6F386B814B9DC8A3ABEB1565F9183 /* OneStore-dummy.m */; };
-		B3C02940E9F265532ABC651529378927 /* ICMPHeader.h in Headers */ = {isa = PBXBuildFile; fileRef = D0B3A6F683E9B4DF5EB469450623C6C2 /* ICMPHeader.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B6F6E4CC26451E91B59FAE0F6841DC1F /* Alamofire-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 0E111EA7A3F41E425FD8A9798D4DE13A /* Alamofire-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B7A986606D97D4F8EBBD75925BA074E4 /* QRCodeReaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44025524E82DDC0AFF06B37B9E85EF16 /* QRCodeReaderViewController.swift */; };
-		B803D480290E38C8431B0D68953EA2E5 /* QRCodeReaderViewContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7844D69D9A78F2DCC05D2F08E6F723D /* QRCodeReaderViewContainer.swift */; };
-		BD902506661A1A57C4418FDA0114124E /* QRCodeReaderViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F78D280DBEED885F19E49E7842DF1B /* QRCodeReaderViewControllerDelegate.swift */; };
-		BDAA49C074628055ED2BD4193F16B1FA /* QRCodeReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A1A2CFC57568E78DC0D3A632D2CCC41 /* QRCodeReader.swift */; };
-		C0F140BCBE8584FA23C46565E6575094 /* ReaderOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 674B8DA586521033A3743DB8245EA342 /* ReaderOverlayView.swift */; };
-		D3F626698B3DEB38CD93314AC31FB7F1 /* QRCodeReader.swift-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A24D0FBDC4D0B28754B61CEA884A4FB2 /* QRCodeReader.swift-dummy.m */; };
-		D3FA0AA634AAEA99AB3FABC36BB4958C /* SessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6CDBB8A92D7B0B981614F2FA89ECF9 /* SessionManager.swift */; };
-		D555FF98ED12CB9CDAD9A1DCE79164C1 /* OneStoreType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A6E42A0E14A81BFD3D72E69459D6572 /* OneStoreType.swift */; };
-		D639975FD129900F0D79AEA4C6292BA9 /* OneStore-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = B342C7362AFD0466D1A155BB0E65A1C2 /* OneStore-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		DA97553379A2F6EB4F09AA298F1635C8 /* NonOptionalOneStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = B19C4ECDD118B089805B1FEBDBA3C75B /* NonOptionalOneStore.swift */; };
-		E04834D4988A7525B7F230916F02803B /* GBPing-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 2613FE6FCBF3F5089A4A6DC25B72058A /* GBPing-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		E06BCD82E1AF166C27C19602AEA3529B /* QRCodeReaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73F0E327CA5E09D85BE9CC6D120CB557 /* QRCodeReaderView.swift */; };
-		E250D81BD88007B136489893537BD670 /* GBPing.m in Sources */ = {isa = PBXBuildFile; fileRef = C2900A533AFE93B4B02CF0B95AB615AF /* GBPing.m */; };
-		E8AAC3233DEA58C12CC9FB0DE7590617 /* GBPing-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A8B1C3D0C142A40F1BC204AD6D0DD6BE /* GBPing-dummy.m */; };
-		EB0DD8CEA1A69867A30267439C970440 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06C0F741BBCDF317A55D8B887CDBD514 /* Result.swift */; };
-		F0CB26DC46C15099B874FB28FD185B60 /* ToggleTorchButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE320449ED05E5647F7F8476E3209136 /* ToggleTorchButton.swift */; };
+		AA56769D8733D3F3E7976742D5ABA998 /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E44EA0D1E5D1A04A9799605CD10F6B2 /* Validation.swift */; };
+		AEA829AB1A8AF2AD077A808AED6B178A /* MultipartFormData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 762467BDD1FBE2D7098D660034AC60E1 /* MultipartFormData.swift */; };
+		B3763348AB9266CBB02DDE305BCEA955 /* OneStore-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = AFB44E14904C8C46A083C89603C811CA /* OneStore-dummy.m */; };
+		B3C02940E9F265532ABC651529378927 /* ICMPHeader.h in Headers */ = {isa = PBXBuildFile; fileRef = 10ECB0601018D71AC63076F228EA1F66 /* ICMPHeader.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B6F6E4CC26451E91B59FAE0F6841DC1F /* Alamofire-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = EADBF2B0BA0B69BD13557DB3298A1347 /* Alamofire-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B7A986606D97D4F8EBBD75925BA074E4 /* QRCodeReaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85BD09BF460A11CA25B1E8D935E9F13E /* QRCodeReaderViewController.swift */; };
+		B803D480290E38C8431B0D68953EA2E5 /* QRCodeReaderViewContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 852F282D58319FB756AF1D51200AFC8A /* QRCodeReaderViewContainer.swift */; };
+		BD902506661A1A57C4418FDA0114124E /* QRCodeReaderViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B262D17C6782AB698508260CC74611B /* QRCodeReaderViewControllerDelegate.swift */; };
+		BDAA49C074628055ED2BD4193F16B1FA /* QRCodeReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA9BA587E882EC112AC404FD58A4969 /* QRCodeReader.swift */; };
+		C0F140BCBE8584FA23C46565E6575094 /* ReaderOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2026146035CC16E004A60821A4E2CDC /* ReaderOverlayView.swift */; };
+		D3F626698B3DEB38CD93314AC31FB7F1 /* QRCodeReader.swift-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 934DEF279CCE5A8BA40C1878C8E7C4A4 /* QRCodeReader.swift-dummy.m */; };
+		D3FA0AA634AAEA99AB3FABC36BB4958C /* SessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFFF586B19B8F51585D7F7539849A105 /* SessionManager.swift */; };
+		D555FF98ED12CB9CDAD9A1DCE79164C1 /* OneStoreType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C340218BC1F05F8AE24BBBA60B88F1 /* OneStoreType.swift */; };
+		D639975FD129900F0D79AEA4C6292BA9 /* OneStore-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = B12F0934819E3E2823CC49584DD71E12 /* OneStore-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DA97553379A2F6EB4F09AA298F1635C8 /* NonOptionalOneStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B598379959878A1B73282914D94EA96 /* NonOptionalOneStore.swift */; };
+		E04834D4988A7525B7F230916F02803B /* GBPing-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = D7BB0222B4A960F936E33B21C0D5A183 /* GBPing-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E06BCD82E1AF166C27C19602AEA3529B /* QRCodeReaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9314076F90FE16E77C00E9EBDF2506E4 /* QRCodeReaderView.swift */; };
+		E250D81BD88007B136489893537BD670 /* GBPing.m in Sources */ = {isa = PBXBuildFile; fileRef = 502A3CA3DD1FFD7484644D37039664FC /* GBPing.m */; };
+		E8AAC3233DEA58C12CC9FB0DE7590617 /* GBPing-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EC4CAFAD2D76FF4B08790AB1A79023F /* GBPing-dummy.m */; };
+		EB0DD8CEA1A69867A30267439C970440 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1FE3C7E9823B3EFFDA7BED4B1CF4444 /* Result.swift */; };
+		F0CB26DC46C15099B874FB28FD185B60 /* ToggleTorchButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAFF3037EA1A19DF875C142F777518FD /* ToggleTorchButton.swift */; };
 		FBB785986653F2FD426E96260B362D26 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F8B077304B6FAD57228480E9C187D59 /* AVFoundation.framework */; };
 /* End PBXBuildFile section */
 
@@ -106,104 +106,181 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0007678B847D97FB7E75E8C0B485D69B /* pkcs12.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = pkcs12.h; path = "include-ios/openssl/pkcs12.h"; sourceTree = "<group>"; };
 		015034D9E0D8BDFD78CC01B96A8ADE58 /* SwiftyJSON.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SwiftyJSON.framework; path = SwiftyJSON.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		01FE7580610D6FBE51324CFA62B02008 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Crashlytics.framework; path = iOS/Crashlytics.framework; sourceTree = "<group>"; };
-		040701B206CAB50B6C3542C8DBBF4E30 /* ResponseSerialization.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ResponseSerialization.swift; path = Source/ResponseSerialization.swift; sourceTree = "<group>"; };
+		0377265DB37F3359A40826ADCF28D1FD /* dso.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = dso.h; path = "include-ios/openssl/dso.h"; sourceTree = "<group>"; };
 		04A0F8549A48F7531756C32B54B48179 /* Pods-metawallet.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-metawallet.debug.xcconfig"; sourceTree = "<group>"; };
-		06C0F741BBCDF317A55D8B887CDBD514 /* Result.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Result.swift; path = Source/Result.swift; sourceTree = "<group>"; };
-		06D28FB53E49ED85BFD5C7E55B09962E /* QRCodeReaderResult.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = QRCodeReaderResult.swift; path = Sources/QRCodeReaderResult.swift; sourceTree = "<group>"; };
+		05323917DB289A812F4E2F0B2DB74C50 /* rc4.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = rc4.h; path = "include-ios/openssl/rc4.h"; sourceTree = "<group>"; };
+		05C0AF7DC7AD89D0B76A24178DD16AC2 /* objects.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = objects.h; path = "include-ios/openssl/objects.h"; sourceTree = "<group>"; };
+		06326F59E36BA3700BF00527E12ABB4A /* NetworkReachabilityManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NetworkReachabilityManager.swift; path = Source/NetworkReachabilityManager.swift; sourceTree = "<group>"; };
+		07D8F587F4A655FAB6D62A0851AA9037 /* symhacks.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = symhacks.h; path = "include-ios/openssl/symhacks.h"; sourceTree = "<group>"; };
 		081E583F9875186646154F97D787B442 /* Pods-metawallet.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-metawallet.release.xcconfig"; sourceTree = "<group>"; };
-		0DF9785FFF909E044D2ABFC1354B1267 /* Crashlytics.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Crashlytics.h; path = iOS/Crashlytics.framework/Headers/Crashlytics.h; sourceTree = "<group>"; };
-		0E111EA7A3F41E425FD8A9798D4DE13A /* Alamofire-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Alamofire-umbrella.h"; sourceTree = "<group>"; };
-		125169059865424A963A47267FB3B735 /* GBPing.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = GBPing.xcconfig; sourceTree = "<group>"; };
-		1431A1315FB3BF4E361236F752DBEBC2 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		186F573EF291911098E4C626DBD6CBA0 /* SwiftyJSON-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SwiftyJSON-dummy.m"; sourceTree = "<group>"; };
-		1CDA48132C533FD4CD776A1D7BC663BF /* ANSCompatibility.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ANSCompatibility.h; path = iOS/Crashlytics.framework/Headers/ANSCompatibility.h; sourceTree = "<group>"; };
-		1F9866D216AAC2C9ECBA389FFFAA5640 /* SwiftyJSON-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftyJSON-umbrella.h"; sourceTree = "<group>"; };
+		0B2ABC404DF8D9DB60AD85AF76DE7CEB /* OneStore.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = OneStore.modulemap; sourceTree = "<group>"; };
+		0BB85450E3CC3C29BACE172D5161D8A7 /* lhash.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = lhash.h; path = "include-ios/openssl/lhash.h"; sourceTree = "<group>"; };
+		0C845048211472D9175C517E9D56AC7C /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Crashlytics.framework; path = iOS/Crashlytics.framework; sourceTree = "<group>"; };
+		0D83AF1AEC00241D7000EADA715999AB /* ebcdic.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ebcdic.h; path = "include-ios/openssl/ebcdic.h"; sourceTree = "<group>"; };
+		0DD07EB25CBC73722544CB9E239AFE37 /* SwiftyJSON-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SwiftyJSON-dummy.m"; sourceTree = "<group>"; };
+		0E3292CF5FAD62A76A4D96A23B36DDAF /* ripemd.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ripemd.h; path = "include-ios/openssl/ripemd.h"; sourceTree = "<group>"; };
+		0F578CC4DC42F870243100B9D4B1282F /* conf_api.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = conf_api.h; path = "include-ios/openssl/conf_api.h"; sourceTree = "<group>"; };
+		10ECB0601018D71AC63076F228EA1F66 /* ICMPHeader.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ICMPHeader.h; path = GBPing/ICMPHeader.h; sourceTree = "<group>"; };
+		142BCC51E245351E95200EB4F2C77502 /* bn.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = bn.h; path = "include-ios/openssl/bn.h"; sourceTree = "<group>"; };
+		1494D255E4970BFFE682C24E8AC85EF1 /* CLSAttributes.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CLSAttributes.h; path = iOS/Crashlytics.framework/Headers/CLSAttributes.h; sourceTree = "<group>"; };
+		15A6A5672BB68FA9FB628648E723722B /* Alamofire.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Alamofire.swift; path = Source/Alamofire.swift; sourceTree = "<group>"; };
+		15DA8B4D22F1CE0A7C68D83A709166AA /* asn1.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = asn1.h; path = "include-ios/openssl/asn1.h"; sourceTree = "<group>"; };
+		16C9E8039DD0895AA7409B0EDF9113EC /* ec.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ec.h; path = "include-ios/openssl/ec.h"; sourceTree = "<group>"; };
+		16F9FBA23F8956D364F0E83729994C57 /* dtls1.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = dtls1.h; path = "include-ios/openssl/dtls1.h"; sourceTree = "<group>"; };
+		16FFAA1AEF660BE9909C9E55E880B294 /* libssl.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; name = libssl.a; path = "lib-ios/libssl.a"; sourceTree = "<group>"; };
+		1741EF54943CD38032C45622F3F5430D /* Stack.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Stack.swift; path = OneStore/Stack.swift; sourceTree = "<group>"; };
+		17D55D1F15A1B06BE6F5C835A8400287 /* opensslconf.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = opensslconf.h; path = "include-ios/openssl/opensslconf.h"; sourceTree = "<group>"; };
+		17ED6C359D7A3694AA9B9A64CDA9A813 /* Response.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Response.swift; path = Source/Response.swift; sourceTree = "<group>"; };
+		18EEB3CE2CAC1506565947CF190341B5 /* OneStore.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = OneStore.swift; path = OneStore/OneStore.swift; sourceTree = "<group>"; };
+		1A8D56B7D88DB0CD461D29F38B255286 /* ReservedOneStore.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ReservedOneStore.swift; path = OneStore/ReservedOneStore.swift; sourceTree = "<group>"; };
+		1BFB178D2A836A9D9035AAE33DB5B21A /* QRCodeReaderResult.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = QRCodeReaderResult.swift; path = Sources/QRCodeReaderResult.swift; sourceTree = "<group>"; };
+		1E1289DAF9F426F6F92DFB471C8E45A2 /* ParameterEncoding.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ParameterEncoding.swift; path = Source/ParameterEncoding.swift; sourceTree = "<group>"; };
+		1EDA0BBAE1D1F80B4155F5DE68E696C9 /* ResponseSerialization.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ResponseSerialization.swift; path = Source/ResponseSerialization.swift; sourceTree = "<group>"; };
+		1F31CED5CDA010FA3B611AA4A9FD781F /* ssl3.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ssl3.h; path = "include-ios/openssl/ssl3.h"; sourceTree = "<group>"; };
+		1F3DFEC5C4E0AEDD033D9DE9725CEE32 /* ocsp.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ocsp.h; path = "include-ios/openssl/ocsp.h"; sourceTree = "<group>"; };
+		1FC032F5FA1BFFF2BCBF4EE56721F487 /* QRCodeReader.swift-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "QRCodeReader.swift-umbrella.h"; sourceTree = "<group>"; };
+		207CA180985908F1298CC623FF94C583 /* txt_db.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = txt_db.h; path = "include-ios/openssl/txt_db.h"; sourceTree = "<group>"; };
 		24390EFD555DD124430DFF9724065945 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		255F524DC5A6D2F8D9110C58E45DD615 /* GBPing.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GBPing.h; path = GBPing/GBPing.h; sourceTree = "<group>"; };
-		259353BCD518F2460E88FEFED8E76C20 /* QRCodeReader.swift.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = QRCodeReader.swift.xcconfig; sourceTree = "<group>"; };
-		2613FE6FCBF3F5089A4A6DC25B72058A /* GBPing-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "GBPing-umbrella.h"; sourceTree = "<group>"; };
-		2A712FF807BCB985929288FA11B47168 /* SwitchCameraButton.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwitchCameraButton.swift; path = Sources/SwitchCameraButton.swift; sourceTree = "<group>"; };
-		2C76EE0A1EA118C16572254E91F2571A /* CLSStackFrame.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CLSStackFrame.h; path = iOS/Crashlytics.framework/Headers/CLSStackFrame.h; sourceTree = "<group>"; };
-		2EAC27D4FD461522642D926F9A7291E7 /* Timeline.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Timeline.swift; path = Source/Timeline.swift; sourceTree = "<group>"; };
+		27033D99EBBD73DA5A63ED4004AFB066 /* TaskDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TaskDelegate.swift; path = Source/TaskDelegate.swift; sourceTree = "<group>"; };
+		29794A1B7D03A3D393B4808446577278 /* des_old.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = des_old.h; path = "include-ios/openssl/des_old.h"; sourceTree = "<group>"; };
+		2A064179AEA4A51FF802AC6080224A92 /* rsa.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = rsa.h; path = "include-ios/openssl/rsa.h"; sourceTree = "<group>"; };
+		2A59670C8C8844AEA80619B0DDA35315 /* Alamofire-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Alamofire-dummy.m"; sourceTree = "<group>"; };
+		2AD6FBF0248AC8CADD344F16D4866DD5 /* ossl_typ.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ossl_typ.h; path = "include-ios/openssl/ossl_typ.h"; sourceTree = "<group>"; };
+		2C156047172059C9C3DD7644D90EF10D /* evp.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = evp.h; path = "include-ios/openssl/evp.h"; sourceTree = "<group>"; };
+		2D2ECD6E9A6E895AC3A5607BC5FAE494 /* conf.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = conf.h; path = "include-ios/openssl/conf.h"; sourceTree = "<group>"; };
+		2EA8AE6086F242840B931DF340E27C5E /* comp.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = comp.h; path = "include-ios/openssl/comp.h"; sourceTree = "<group>"; };
+		30C20D7ADB971B4D8ED729E5DEA886E4 /* Crashlytics.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Crashlytics.h; path = iOS/Crashlytics.framework/Headers/Crashlytics.h; sourceTree = "<group>"; };
+		30C340218BC1F05F8AE24BBBA60B88F1 /* OneStoreType.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = OneStoreType.swift; path = OneStore/OneStoreType.swift; sourceTree = "<group>"; };
 		312FD9C4B1FADFB9BD22EC342D64C084 /* Pods-metawallet-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-metawallet-acknowledgements.plist"; sourceTree = "<group>"; };
-		36E303E5667CCAF29A767EF49381DBC2 /* ReservedOneStore.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ReservedOneStore.swift; path = OneStore/ReservedOneStore.swift; sourceTree = "<group>"; };
-		3CB8FE84DCD0C61B3D63C3ECBD052CC4 /* Fabric.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Fabric.h; path = iOS/Fabric.framework/Headers/Fabric.h; sourceTree = "<group>"; };
-		3F18E5F783C6B6EDE4C405521BDC9367 /* OneStore.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = OneStore.swift; path = OneStore/OneStore.swift; sourceTree = "<group>"; };
-		3F6CDBB8A92D7B0B981614F2FA89ECF9 /* SessionManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SessionManager.swift; path = Source/SessionManager.swift; sourceTree = "<group>"; };
-		4201BCDA9016E172CCBE5037C5062133 /* Validation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Validation.swift; path = Source/Validation.swift; sourceTree = "<group>"; };
-		42556915CC241C649CAB48291D54C2C8 /* TaskDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TaskDelegate.swift; path = Source/TaskDelegate.swift; sourceTree = "<group>"; };
+		316D83726282F41887221812C373BDA8 /* rand.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = rand.h; path = "include-ios/openssl/rand.h"; sourceTree = "<group>"; };
+		321DB855D134D7F3AA86CC809188555F /* mdc2.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = mdc2.h; path = "include-ios/openssl/mdc2.h"; sourceTree = "<group>"; };
+		33165379A51B70A49005AFBA59CA15FC /* ecdh.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ecdh.h; path = "include-ios/openssl/ecdh.h"; sourceTree = "<group>"; };
+		34F805C0E9699FED1B2E49D1358CB00B /* cms.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = cms.h; path = "include-ios/openssl/cms.h"; sourceTree = "<group>"; };
+		36402303C10CD720957866AA4BD86309 /* GBPing-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "GBPing-prefix.pch"; sourceTree = "<group>"; };
+		373B109DBDD58CE9D06FF6CAEAC7B555 /* ssl2.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ssl2.h; path = "include-ios/openssl/ssl2.h"; sourceTree = "<group>"; };
+		3916D10749A7F823CC05DC2B48038085 /* idea.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = idea.h; path = "include-ios/openssl/idea.h"; sourceTree = "<group>"; };
+		3BE4ACC0D303358DAD45FF06D8BD34FA /* DispatchQueue+Alamofire.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "DispatchQueue+Alamofire.swift"; path = "Source/DispatchQueue+Alamofire.swift"; sourceTree = "<group>"; };
 		42BF9E34C52AFF5A329D5546D63246D2 /* Pods-metawallet-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-metawallet-resources.sh"; sourceTree = "<group>"; };
-		44025524E82DDC0AFF06B37B9E85EF16 /* QRCodeReaderViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = QRCodeReaderViewController.swift; path = Sources/QRCodeReaderViewController.swift; sourceTree = "<group>"; };
-		4BA51BC30ED807F4F9D57E1F2FAC4DED /* QRCodeReader.swift.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = QRCodeReader.swift.modulemap; sourceTree = "<group>"; };
-		532A28E683ABB364899C617E1D1E49F0 /* Stack.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Stack.swift; path = OneStore/Stack.swift; sourceTree = "<group>"; };
+		4607B44F2846DA52D16DB0201DFBB6DC /* Answers.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Answers.h; path = iOS/Crashlytics.framework/Headers/Answers.h; sourceTree = "<group>"; };
+		466A104142D7BB11B7D8A299780D1587 /* ServerTrustPolicy.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ServerTrustPolicy.swift; path = Source/ServerTrustPolicy.swift; sourceTree = "<group>"; };
+		483B8270C7B85FBE4D60972D40114C51 /* stack.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = stack.h; path = "include-ios/openssl/stack.h"; sourceTree = "<group>"; };
+		4B5C1B30BCC7401AB6E640AA8F41D56F /* ecdsa.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ecdsa.h; path = "include-ios/openssl/ecdsa.h"; sourceTree = "<group>"; };
+		4BDB8A1625020EDD1E88985BED07EE07 /* x509.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = x509.h; path = "include-ios/openssl/x509.h"; sourceTree = "<group>"; };
+		4DCEE077F5F952983BC302770E192326 /* tls1.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = tls1.h; path = "include-ios/openssl/tls1.h"; sourceTree = "<group>"; };
+		4EC4CAFAD2D76FF4B08790AB1A79023F /* GBPing-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "GBPing-dummy.m"; sourceTree = "<group>"; };
+		502A3CA3DD1FFD7484644D37039664FC /* GBPing.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GBPing.m; path = GBPing/GBPing.m; sourceTree = "<group>"; };
+		522573521AB784A85EDB196611D02FE8 /* pkcs7.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = pkcs7.h; path = "include-ios/openssl/pkcs7.h"; sourceTree = "<group>"; };
+		528B64133E98DE19C7CFD99C69EF3458 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		54021FC8410712DA5FD6E981F610B559 /* Notifications.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Notifications.swift; path = Source/Notifications.swift; sourceTree = "<group>"; };
 		54D52A471E555B9BEA23686196960D99 /* OneStore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = OneStore.framework; path = OneStore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		55F7B3B0A3BE8711ED4B70DB1E191D38 /* seed.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = seed.h; path = "include-ios/openssl/seed.h"; sourceTree = "<group>"; };
+		56F4F71C17958B2648181641924DCDE0 /* Alamofire-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Alamofire-prefix.pch"; sourceTree = "<group>"; };
 		585709A4695FB667A449DC6F0331C596 /* Pods-metawallet-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-metawallet-acknowledgements.markdown"; sourceTree = "<group>"; };
-		5D5756293FEB7CB12D2D029AAF784ABF /* Alamofire.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Alamofire.swift; path = Source/Alamofire.swift; sourceTree = "<group>"; };
-		5DA77A90C8C0549F5DE9BF7CAB841529 /* Request.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Request.swift; path = Source/Request.swift; sourceTree = "<group>"; };
-		653AB0457772A6996AA7AC221C0E5439 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		674B8DA586521033A3743DB8245EA342 /* ReaderOverlayView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ReaderOverlayView.swift; path = Sources/ReaderOverlayView.swift; sourceTree = "<group>"; };
-		6CE6AD8B243AD25077E226757A93D440 /* FABAttributes.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FABAttributes.h; path = iOS/Fabric.framework/Headers/FABAttributes.h; sourceTree = "<group>"; };
-		71F78D280DBEED885F19E49E7842DF1B /* QRCodeReaderViewControllerDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = QRCodeReaderViewControllerDelegate.swift; path = Sources/QRCodeReaderViewControllerDelegate.swift; sourceTree = "<group>"; };
-		722B91903F4E5C683F9D69F7F076187A /* Notifications.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Notifications.swift; path = Source/Notifications.swift; sourceTree = "<group>"; };
-		7306C2E5ABCC4629FFACF5371424D06D /* Box.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Box.swift; path = OneStore/Box.swift; sourceTree = "<group>"; };
-		73F0E327CA5E09D85BE9CC6D120CB557 /* QRCodeReaderView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = QRCodeReaderView.swift; path = Sources/QRCodeReaderView.swift; sourceTree = "<group>"; };
-		74B681DF05CDEDBDC5E6960A96AD644D /* SwiftyJSON.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwiftyJSON.swift; path = Source/SwiftyJSON.swift; sourceTree = "<group>"; };
-		7A1A2CFC57568E78DC0D3A632D2CCC41 /* QRCodeReader.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = QRCodeReader.swift; path = Sources/QRCodeReader.swift; sourceTree = "<group>"; };
-		7D91A60455D950F471DFBB09BB47B6CB /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Fabric.framework; path = iOS/Fabric.framework; sourceTree = "<group>"; };
+		595C7AB00F79B9724BDD11CE0981E4C3 /* pqueue.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = pqueue.h; path = "include-ios/openssl/pqueue.h"; sourceTree = "<group>"; };
+		59C85E1E417C44E77125A6A42F226D38 /* asn1t.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = asn1t.h; path = "include-ios/openssl/asn1t.h"; sourceTree = "<group>"; };
+		5D6552ECE1C3382766654ED1767547E5 /* bio.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = bio.h; path = "include-ios/openssl/bio.h"; sourceTree = "<group>"; };
+		5F0590BB16A6BA5371A9AEC486C40C9E /* ANSCompatibility.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ANSCompatibility.h; path = iOS/Crashlytics.framework/Headers/ANSCompatibility.h; sourceTree = "<group>"; };
+		6189B91318D054957BF77C164C114D91 /* sha.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = sha.h; path = "include-ios/openssl/sha.h"; sourceTree = "<group>"; };
+		63428CC3D0833B70C1B4090FB3933248 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6346CD175C170011BB36DF835772110C /* x509v3.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = x509v3.h; path = "include-ios/openssl/x509v3.h"; sourceTree = "<group>"; };
+		635346867B52C9536942DD05B2F51AD6 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Fabric.framework; path = iOS/Fabric.framework; sourceTree = "<group>"; };
+		647C23D02C9DAAC68A1F327B41CDC8BC /* OneStore-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "OneStore-prefix.pch"; sourceTree = "<group>"; };
+		6629E4D3C90FC40036B384ED3332CEA6 /* err.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = err.h; path = "include-ios/openssl/err.h"; sourceTree = "<group>"; };
+		67D8C802629FAB57C5334E1B0B250135 /* md5.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = md5.h; path = "include-ios/openssl/md5.h"; sourceTree = "<group>"; };
+		6A22ED8989FC5639D9D66BD2E8B3CEAC /* Fabric.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Fabric.h; path = iOS/Fabric.framework/Headers/Fabric.h; sourceTree = "<group>"; };
+		6A33A01D3C5383321FDE4D19E45CD5B5 /* FABAttributes.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FABAttributes.h; path = iOS/Fabric.framework/Headers/FABAttributes.h; sourceTree = "<group>"; };
+		6CE25DEB4D29439CD818E7B9D69F69A1 /* SwiftyJSON.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = SwiftyJSON.modulemap; sourceTree = "<group>"; };
+		72CB39298EB016A0A0F9B90AAA2A2577 /* Alamofire.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = Alamofire.modulemap; sourceTree = "<group>"; };
+		762467BDD1FBE2D7098D660034AC60E1 /* MultipartFormData.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MultipartFormData.swift; path = Source/MultipartFormData.swift; sourceTree = "<group>"; };
+		77417825F31FC96E64B19E7DA22EF6C7 /* AFError.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AFError.swift; path = Source/AFError.swift; sourceTree = "<group>"; };
+		78F090ECE05A2F1D199239CE0925CA90 /* engine.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = engine.h; path = "include-ios/openssl/engine.h"; sourceTree = "<group>"; };
+		794C0C5BA6B0C80335F9C6F03230F067 /* ts.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ts.h; path = "include-ios/openssl/ts.h"; sourceTree = "<group>"; };
+		795CEA11596BAB04177AA866C1E27AD5 /* SwiftyJSON.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwiftyJSON.swift; path = Source/SwiftyJSON.swift; sourceTree = "<group>"; };
+		7AED3F7080EBB22E30F2F27775C19D73 /* srtp.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = srtp.h; path = "include-ios/openssl/srtp.h"; sourceTree = "<group>"; };
+		7B262D17C6782AB698508260CC74611B /* QRCodeReaderViewControllerDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = QRCodeReaderViewControllerDelegate.swift; path = Sources/QRCodeReaderViewControllerDelegate.swift; sourceTree = "<group>"; };
+		7DA9BA587E882EC112AC404FD58A4969 /* QRCodeReader.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = QRCodeReader.swift; path = Sources/QRCodeReader.swift; sourceTree = "<group>"; };
+		7DCB854478DCCAB793023E682DECF66B /* safestack.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = safestack.h; path = "include-ios/openssl/safestack.h"; sourceTree = "<group>"; };
+		7E44EA0D1E5D1A04A9799605CD10F6B2 /* Validation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Validation.swift; path = Source/Validation.swift; sourceTree = "<group>"; };
+		7F344BE8D4C21280A23D8238090D0970 /* ui_compat.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ui_compat.h; path = "include-ios/openssl/ui_compat.h"; sourceTree = "<group>"; };
 		7F62085659FA463CD50026A66E301AAF /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Alamofire.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		8595DA51BEF11D674BAB26CAB0AB8379 /* ServerTrustPolicy.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ServerTrustPolicy.swift; path = Source/ServerTrustPolicy.swift; sourceTree = "<group>"; };
-		88A253D130F25A287A4F27A0B5F21399 /* OneStore.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = OneStore.xcconfig; sourceTree = "<group>"; };
-		8AAE8D14A9CEC597BC05BCFB22ED7652 /* QRCodeReaderViewControllerBuilder.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = QRCodeReaderViewControllerBuilder.swift; path = Sources/QRCodeReaderViewControllerBuilder.swift; sourceTree = "<group>"; };
-		8D3686F72AB925090AB3BEE03AEBB522 /* GBPing-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "GBPing-prefix.pch"; sourceTree = "<group>"; };
+		82C8BE0892E9C06021CCF40DDDF96B4E /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		84ECBF1E08A2C0457DFA268B12E99F45 /* ui.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ui.h; path = "include-ios/openssl/ui.h"; sourceTree = "<group>"; };
+		852F282D58319FB756AF1D51200AFC8A /* QRCodeReaderViewContainer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = QRCodeReaderViewContainer.swift; path = Sources/QRCodeReaderViewContainer.swift; sourceTree = "<group>"; };
+		85BD09BF460A11CA25B1E8D935E9F13E /* QRCodeReaderViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = QRCodeReaderViewController.swift; path = Sources/QRCodeReaderViewController.swift; sourceTree = "<group>"; };
+		85D0DBE43235A98BC20300B31A5C62B7 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8A555685B098E6C2AFA5DDA44F27289C /* krb5_asn.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = krb5_asn.h; path = "include-ios/openssl/krb5_asn.h"; sourceTree = "<group>"; };
+		8B24871066B016D12832ECB02D3BA1F2 /* GBPing.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GBPing.h; path = GBPing/GBPing.h; sourceTree = "<group>"; };
+		8BEC61CA8BA837984B44E82FA901375D /* e_os2.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = e_os2.h; path = "include-ios/openssl/e_os2.h"; sourceTree = "<group>"; };
+		8C2EF56181B40B3A1027DD9109382F7F /* cmac.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = cmac.h; path = "include-ios/openssl/cmac.h"; sourceTree = "<group>"; };
 		8F8B077304B6FAD57228480E9C187D59 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.0.sdk/System/Library/Frameworks/AVFoundation.framework; sourceTree = DEVELOPER_DIR; };
-		99E51D9055172B150B4731960126A025 /* Alamofire.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Alamofire.xcconfig; sourceTree = "<group>"; };
-		9A6E42A0E14A81BFD3D72E69459D6572 /* OneStoreType.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = OneStoreType.swift; path = OneStore/OneStoreType.swift; sourceTree = "<group>"; };
-		9A992571738BB350B96A5EC017F94376 /* ParameterEncoding.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ParameterEncoding.swift; path = Source/ParameterEncoding.swift; sourceTree = "<group>"; };
-		9CAE1A28A97926F533CC777BBA346845 /* GBPingSummary.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GBPingSummary.h; path = GBPing/GBPingSummary.h; sourceTree = "<group>"; };
-		A24D0FBDC4D0B28754B61CEA884A4FB2 /* QRCodeReader.swift-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "QRCodeReader.swift-dummy.m"; sourceTree = "<group>"; };
-		A32FF58C664F83DE163C05A260CA68F3 /* QRCodeReader.swift-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "QRCodeReader.swift-umbrella.h"; sourceTree = "<group>"; };
-		A50465BB108BB9CAB418A6FD46DCA863 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A7844D69D9A78F2DCC05D2F08E6F723D /* QRCodeReaderViewContainer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = QRCodeReaderViewContainer.swift; path = Sources/QRCodeReaderViewContainer.swift; sourceTree = "<group>"; };
+		8FD5FB53D726D25F6180128138CFC079 /* modes.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = modes.h; path = "include-ios/openssl/modes.h"; sourceTree = "<group>"; };
+		903DA9CD4ECF730452E1506452889389 /* aes.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = aes.h; path = "include-ios/openssl/aes.h"; sourceTree = "<group>"; };
+		9137CDE98E7C3C8E6363896002435363 /* whrlpool.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = whrlpool.h; path = "include-ios/openssl/whrlpool.h"; sourceTree = "<group>"; };
+		9314076F90FE16E77C00E9EBDF2506E4 /* QRCodeReaderView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = QRCodeReaderView.swift; path = Sources/QRCodeReaderView.swift; sourceTree = "<group>"; };
+		934DEF279CCE5A8BA40C1878C8E7C4A4 /* QRCodeReader.swift-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "QRCodeReader.swift-dummy.m"; sourceTree = "<group>"; };
+		94578CA10B38B8487EE6AFF3ADC6AC17 /* pem.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = pem.h; path = "include-ios/openssl/pem.h"; sourceTree = "<group>"; };
+		964202B6AFEDCEB36AC9BE08EA4A94C0 /* asn1_mac.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = asn1_mac.h; path = "include-ios/openssl/asn1_mac.h"; sourceTree = "<group>"; };
+		9B598379959878A1B73282914D94EA96 /* NonOptionalOneStore.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NonOptionalOneStore.swift; path = OneStore/NonOptionalOneStore.swift; sourceTree = "<group>"; };
+		9EE735100B80C38B66A912391CC68708 /* CLSReport.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CLSReport.h; path = iOS/Crashlytics.framework/Headers/CLSReport.h; sourceTree = "<group>"; };
+		9FE952C315F258A24E1534C575B9A632 /* QRCodeReader.swift-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "QRCodeReader.swift-prefix.pch"; sourceTree = "<group>"; };
+		A1BE95BA0BD046DFF18DED9C1BDE12EE /* GBPing.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = GBPing.modulemap; sourceTree = "<group>"; };
+		A1FE3C7E9823B3EFFDA7BED4B1CF4444 /* Result.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Result.swift; path = Source/Result.swift; sourceTree = "<group>"; };
+		A2F129BFDE382E15A110424B3AD147B6 /* Box.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Box.swift; path = OneStore/Box.swift; sourceTree = "<group>"; };
+		A32E042547C083EF8AB22CAD17C3B050 /* ssl23.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ssl23.h; path = "include-ios/openssl/ssl23.h"; sourceTree = "<group>"; };
+		A4B87ACE3C7C84F93D70034E345C418C /* ssl.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ssl.h; path = "include-ios/openssl/ssl.h"; sourceTree = "<group>"; };
 		A7E2119913C554C0B2AC638DC1067D67 /* Pods-metawallet-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-metawallet-umbrella.h"; sourceTree = "<group>"; };
-		A8B1C3D0C142A40F1BC204AD6D0DD6BE /* GBPing-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "GBPing-dummy.m"; sourceTree = "<group>"; };
-		AA8D8096B0FF6412F5EF150414293B4B /* Answers.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Answers.h; path = iOS/Crashlytics.framework/Headers/Answers.h; sourceTree = "<group>"; };
 		AC350AAE8CA3FEB3F37E6BB16B77F571 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		AEC0DF2720EB4A4C4AC830A714F71C5A /* hmac.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = hmac.h; path = "include-ios/openssl/hmac.h"; sourceTree = "<group>"; };
+		AEDD67FDC9DAE357EE05CACC1CCFCD10 /* SwiftyJSON-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftyJSON-prefix.pch"; sourceTree = "<group>"; };
+		AFB44E14904C8C46A083C89603C811CA /* OneStore-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "OneStore-dummy.m"; sourceTree = "<group>"; };
 		B04794F8E19EA30F933AC0385DFA58E1 /* Pods-metawallet-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-metawallet-frameworks.sh"; sourceTree = "<group>"; };
-		B19C4ECDD118B089805B1FEBDBA3C75B /* NonOptionalOneStore.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NonOptionalOneStore.swift; path = OneStore/NonOptionalOneStore.swift; sourceTree = "<group>"; };
-		B342C7362AFD0466D1A155BB0E65A1C2 /* OneStore-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "OneStore-umbrella.h"; sourceTree = "<group>"; };
-		B417E79D51BF32602DDB3ADBD6647344 /* OneStore.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = OneStore.modulemap; sourceTree = "<group>"; };
-		B419D42A1C4F7192CB61D929B897B811 /* CLSAttributes.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CLSAttributes.h; path = iOS/Crashlytics.framework/Headers/CLSAttributes.h; sourceTree = "<group>"; };
-		B5F6F386B814B9DC8A3ABEB1565F9183 /* OneStore-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "OneStore-dummy.m"; sourceTree = "<group>"; };
+		B12F0934819E3E2823CC49584DD71E12 /* OneStore-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "OneStore-umbrella.h"; sourceTree = "<group>"; };
+		B3526516E06A06EDF13C7EE5D35C5AE4 /* QRCodeReader.swift.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = QRCodeReader.swift.xcconfig; sourceTree = "<group>"; };
+		B3B4800D5C90BAF69BC9A861FD9737A8 /* blowfish.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = blowfish.h; path = "include-ios/openssl/blowfish.h"; sourceTree = "<group>"; };
 		B62444128DA1D74546E3060F42F2A739 /* QRCodeReader.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = QRCodeReader.framework; path = QRCodeReader.swift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		B80FDC2CDF842A0098B6A17729A5A3D4 /* GBPing.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = GBPing.modulemap; sourceTree = "<group>"; };
-		BCD244DC1E7481A780E8D48CDA7B7F8B /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		BCE02C653AF7598C2E0DB46D1BDEE3B5 /* Alamofire.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = Alamofire.modulemap; sourceTree = "<group>"; };
-		C01EA3FD013B45DE4F802FEF4FEE41A1 /* OneStore-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "OneStore-prefix.pch"; sourceTree = "<group>"; };
-		C11E01F3F19A1FC607BC38C00BCC4BD6 /* QRCodeReader.swift-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "QRCodeReader.swift-prefix.pch"; sourceTree = "<group>"; };
-		C2900A533AFE93B4B02CF0B95AB615AF /* GBPing.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GBPing.m; path = GBPing/GBPing.m; sourceTree = "<group>"; };
-		C3EDD2DF2CFE0D3FD67DDA9D10611212 /* CLSReport.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CLSReport.h; path = iOS/Crashlytics.framework/Headers/CLSReport.h; sourceTree = "<group>"; };
-		C5E9AB82E8104421546E4581DBBEFCAA /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BAFF3037EA1A19DF875C142F777518FD /* ToggleTorchButton.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ToggleTorchButton.swift; path = Sources/ToggleTorchButton.swift; sourceTree = "<group>"; };
+		BC0CECF25CAD53C04DEBE57D194D5938 /* libcrypto.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; name = libcrypto.a; path = "lib-ios/libcrypto.a"; sourceTree = "<group>"; };
+		BE6ED85ABB7D43D035E9A1E3D6B6F792 /* SessionDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SessionDelegate.swift; path = Source/SessionDelegate.swift; sourceTree = "<group>"; };
+		BFFF586B19B8F51585D7F7539849A105 /* SessionManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SessionManager.swift; path = Source/SessionManager.swift; sourceTree = "<group>"; };
 		C63E7FC859E774BE75119DAC22185638 /* Pods_metawallet.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_metawallet.framework; path = "Pods-metawallet.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C66A20753BAD9B0F6D7D4C78A8E1F6FF /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C69695E4B4904CF388A3CE6DD1B9764B /* rc2.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = rc2.h; path = "include-ios/openssl/rc2.h"; sourceTree = "<group>"; };
+		CBBEF84D4368F02CD6B6EA527C491B92 /* QRCodeReader.swift.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = QRCodeReader.swift.modulemap; sourceTree = "<group>"; };
+		CDF41FF24F0254209F0112DFEB76CCD3 /* opensslv.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = opensslv.h; path = "include-ios/openssl/opensslv.h"; sourceTree = "<group>"; };
 		D0ABA62946CCF67117A0C57926DD019D /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D0B3A6F683E9B4DF5EB469450623C6C2 /* ICMPHeader.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ICMPHeader.h; path = GBPing/ICMPHeader.h; sourceTree = "<group>"; };
-		D2EF4C4BC95643B45199E589BD5F7FEF /* Alamofire-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Alamofire-prefix.pch"; sourceTree = "<group>"; };
-		D3C787785283AF218AE6F5E2827F55B0 /* NetworkReachabilityManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NetworkReachabilityManager.swift; path = Source/NetworkReachabilityManager.swift; sourceTree = "<group>"; };
-		D968828424ECE39972F8DBE8E542651D /* MultipartFormData.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MultipartFormData.swift; path = Source/MultipartFormData.swift; sourceTree = "<group>"; };
-		DB430F651A7866B16E3C8EFF0A361974 /* DispatchQueue+Alamofire.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "DispatchQueue+Alamofire.swift"; path = "Source/DispatchQueue+Alamofire.swift"; sourceTree = "<group>"; };
-		DE320449ED05E5647F7F8476E3209136 /* ToggleTorchButton.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ToggleTorchButton.swift; path = Sources/ToggleTorchButton.swift; sourceTree = "<group>"; };
-		DF383344825E4EAB932F1939ADBAE984 /* SessionDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SessionDelegate.swift; path = Source/SessionDelegate.swift; sourceTree = "<group>"; };
+		D2B25E430E0B2FB6104D5D6C9EE82BAA /* CLSStackFrame.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CLSStackFrame.h; path = iOS/Crashlytics.framework/Headers/CLSStackFrame.h; sourceTree = "<group>"; };
+		D37957253B9BBAD7C78030D06C9B1FCE /* srp.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = srp.h; path = "include-ios/openssl/srp.h"; sourceTree = "<group>"; };
+		D7BB0222B4A960F936E33B21C0D5A183 /* GBPing-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "GBPing-umbrella.h"; sourceTree = "<group>"; };
+		D8C0AE72106BF272D8E54CA0811B3EC0 /* SwiftyJSON.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftyJSON.xcconfig; sourceTree = "<group>"; };
+		D99E85FD490801708BDCBAC112498856 /* OneStore.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = OneStore.xcconfig; sourceTree = "<group>"; };
+		DA8AA24FD7C961B1C895E79953EEF223 /* QRCodeReaderViewControllerBuilder.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = QRCodeReaderViewControllerBuilder.swift; path = Sources/QRCodeReaderViewControllerBuilder.swift; sourceTree = "<group>"; };
+		DBD7310DB2EE5791D69BA7755F16CE98 /* pem2.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = pem2.h; path = "include-ios/openssl/pem2.h"; sourceTree = "<group>"; };
+		DF0BD876EBACABC573411FBBE3E21274 /* Timeline.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Timeline.swift; path = Source/Timeline.swift; sourceTree = "<group>"; };
+		E0DF586FFC830F3F34DAA253B9EEA3C3 /* des.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = des.h; path = "include-ios/openssl/des.h"; sourceTree = "<group>"; };
 		E122633330369AFBDF5D7D96C6E656C7 /* Pods-metawallet-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-metawallet-dummy.m"; sourceTree = "<group>"; };
-		E206A45AC3B92FD5F15A0499F3075F49 /* AFError.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AFError.swift; path = Source/AFError.swift; sourceTree = "<group>"; };
-		E4487977A7488B0513F1156107DADBCE /* GBPingSummary.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GBPingSummary.m; path = GBPing/GBPingSummary.m; sourceTree = "<group>"; };
-		E82417C035AFE40C85EAAFB97BCFD140 /* Alamofire-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Alamofire-dummy.m"; sourceTree = "<group>"; };
-		EB43AF141DFB69024200987F80867FA8 /* SwiftyJSON.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftyJSON.xcconfig; sourceTree = "<group>"; };
-		EEC8704E3F4AFC3064CF55BD6BD701BB /* SwiftyJSON.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = SwiftyJSON.modulemap; sourceTree = "<group>"; };
-		F27393652E01BAE94541253E421D8F70 /* SwiftyJSON-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftyJSON-prefix.pch"; sourceTree = "<group>"; };
-		FA5615BDD0D54083CFB2309BB8F2A9E1 /* Response.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Response.swift; path = Source/Response.swift; sourceTree = "<group>"; };
+		E1CD942F91A97A5AF8461610C27D2004 /* Alamofire.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Alamofire.xcconfig; sourceTree = "<group>"; };
+		E1E8A6F741DA914B492230CC401CA210 /* obj_mac.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = obj_mac.h; path = "include-ios/openssl/obj_mac.h"; sourceTree = "<group>"; };
+		E37A195D0C30A61CDC5F7BDE5B6DC0E1 /* camellia.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = camellia.h; path = "include-ios/openssl/camellia.h"; sourceTree = "<group>"; };
+		E7ED2EB81AB8C023A65D0F64A13F7DF6 /* dh.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = dh.h; path = "include-ios/openssl/dh.h"; sourceTree = "<group>"; };
+		E95FF6C0B6E28D25BCFFE4D8839E8BDF /* x509_vfy.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = x509_vfy.h; path = "include-ios/openssl/x509_vfy.h"; sourceTree = "<group>"; };
+		EADBF2B0BA0B69BD13557DB3298A1347 /* Alamofire-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Alamofire-umbrella.h"; sourceTree = "<group>"; };
+		EC6DF5A1455FEAD953DD24171825E61B /* kssl.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = kssl.h; path = "include-ios/openssl/kssl.h"; sourceTree = "<group>"; };
+		ED49230D0E372C3350F39F0EA4DBF0B2 /* md4.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = md4.h; path = "include-ios/openssl/md4.h"; sourceTree = "<group>"; };
+		EE70B467B16B4CB4B98BE3AA8DADF3E8 /* GBPingSummary.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GBPingSummary.h; path = GBPing/GBPingSummary.h; sourceTree = "<group>"; };
+		EF10781DA1A99616A8FBC6B50A8A307F /* SwiftyJSON-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftyJSON-umbrella.h"; sourceTree = "<group>"; };
+		EF724AC06D2028C16B621DD1728E1BC3 /* GBPingSummary.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GBPingSummary.m; path = GBPing/GBPingSummary.m; sourceTree = "<group>"; };
+		F0A111BF72FD32DCD658BF25B556555C /* GBPing.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = GBPing.xcconfig; sourceTree = "<group>"; };
+		F187AC6EF3F82273ACEC08BDBC2B0355 /* CLSLogging.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CLSLogging.h; path = iOS/Crashlytics.framework/Headers/CLSLogging.h; sourceTree = "<group>"; };
+		F2026146035CC16E004A60821A4E2CDC /* ReaderOverlayView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ReaderOverlayView.swift; path = Sources/ReaderOverlayView.swift; sourceTree = "<group>"; };
+		F6B0D5EC66220D9E3AC153EC40B14E2E /* Request.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Request.swift; path = Source/Request.swift; sourceTree = "<group>"; };
+		F768F870D4F4880787685A4675AD40D2 /* crypto.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = crypto.h; path = "include-ios/openssl/crypto.h"; sourceTree = "<group>"; };
+		F971E522C3BEE89BE05B4AB868300460 /* SwitchCameraButton.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwitchCameraButton.swift; path = Sources/SwitchCameraButton.swift; sourceTree = "<group>"; };
+		F976476D0D68C1A5BEF40849F271F614 /* buffer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = buffer.h; path = "include-ios/openssl/buffer.h"; sourceTree = "<group>"; };
+		FA74C319A037DA74DB57CFCB5D03F72B /* dsa.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = dsa.h; path = "include-ios/openssl/dsa.h"; sourceTree = "<group>"; };
 		FB3DF6D982404C3DFD87E5B25C8F7458 /* Pods-metawallet.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-metawallet.modulemap"; sourceTree = "<group>"; };
-		FBA87882A5BF7ED5AF66C3FAB089C897 /* CLSLogging.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CLSLogging.h; path = iOS/Crashlytics.framework/Headers/CLSLogging.h; sourceTree = "<group>"; };
+		FC728518FE065ED83C02DD55A493ACE7 /* cast.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = cast.h; path = "include-ios/openssl/cast.h"; sourceTree = "<group>"; };
 		FEE7A15C0BB3D8012371E56D12663942 /* GBPing.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = GBPing.framework; path = GBPing.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -260,18 +337,73 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		1469DBE8927620F566ABD4CB3874F8D0 /* Support Files */ = {
+		0286A3385085B32D48DE849B6C11A02B /* Alamofire */ = {
 			isa = PBXGroup;
 			children = (
-				653AB0457772A6996AA7AC221C0E5439 /* Info.plist */,
-				4BA51BC30ED807F4F9D57E1F2FAC4DED /* QRCodeReader.swift.modulemap */,
-				259353BCD518F2460E88FEFED8E76C20 /* QRCodeReader.swift.xcconfig */,
-				A24D0FBDC4D0B28754B61CEA884A4FB2 /* QRCodeReader.swift-dummy.m */,
-				C11E01F3F19A1FC607BC38C00BCC4BD6 /* QRCodeReader.swift-prefix.pch */,
-				A32FF58C664F83DE163C05A260CA68F3 /* QRCodeReader.swift-umbrella.h */,
+				77417825F31FC96E64B19E7DA22EF6C7 /* AFError.swift */,
+				15A6A5672BB68FA9FB628648E723722B /* Alamofire.swift */,
+				3BE4ACC0D303358DAD45FF06D8BD34FA /* DispatchQueue+Alamofire.swift */,
+				762467BDD1FBE2D7098D660034AC60E1 /* MultipartFormData.swift */,
+				06326F59E36BA3700BF00527E12ABB4A /* NetworkReachabilityManager.swift */,
+				54021FC8410712DA5FD6E981F610B559 /* Notifications.swift */,
+				1E1289DAF9F426F6F92DFB471C8E45A2 /* ParameterEncoding.swift */,
+				F6B0D5EC66220D9E3AC153EC40B14E2E /* Request.swift */,
+				17ED6C359D7A3694AA9B9A64CDA9A813 /* Response.swift */,
+				1EDA0BBAE1D1F80B4155F5DE68E696C9 /* ResponseSerialization.swift */,
+				A1FE3C7E9823B3EFFDA7BED4B1CF4444 /* Result.swift */,
+				466A104142D7BB11B7D8A299780D1587 /* ServerTrustPolicy.swift */,
+				BE6ED85ABB7D43D035E9A1E3D6B6F792 /* SessionDelegate.swift */,
+				BFFF586B19B8F51585D7F7539849A105 /* SessionManager.swift */,
+				27033D99EBBD73DA5A63ED4004AFB066 /* TaskDelegate.swift */,
+				DF0BD876EBACABC573411FBBE3E21274 /* Timeline.swift */,
+				7E44EA0D1E5D1A04A9799605CD10F6B2 /* Validation.swift */,
+				F83DD8A8B3A1079A88D2C1D02E25968B /* Support Files */,
+			);
+			name = Alamofire;
+			path = Alamofire;
+			sourceTree = "<group>";
+		};
+		05CED197913E9124A67B223EF4A25743 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				A1BE95BA0BD046DFF18DED9C1BDE12EE /* GBPing.modulemap */,
+				F0A111BF72FD32DCD658BF25B556555C /* GBPing.xcconfig */,
+				4EC4CAFAD2D76FF4B08790AB1A79023F /* GBPing-dummy.m */,
+				36402303C10CD720957866AA4BD86309 /* GBPing-prefix.pch */,
+				D7BB0222B4A960F936E33B21C0D5A183 /* GBPing-umbrella.h */,
+				82C8BE0892E9C06021CCF40DDDF96B4E /* Info.plist */,
 			);
 			name = "Support Files";
-			path = "../Target Support Files/QRCodeReader.swift";
+			path = "../Target Support Files/GBPing";
+			sourceTree = "<group>";
+		};
+		07550FB0071E5E87606B70188F6B1742 /* OneStore */ = {
+			isa = PBXGroup;
+			children = (
+				A2F129BFDE382E15A110424B3AD147B6 /* Box.swift */,
+				9B598379959878A1B73282914D94EA96 /* NonOptionalOneStore.swift */,
+				18EEB3CE2CAC1506565947CF190341B5 /* OneStore.swift */,
+				30C340218BC1F05F8AE24BBBA60B88F1 /* OneStoreType.swift */,
+				1A8D56B7D88DB0CD461D29F38B255286 /* ReservedOneStore.swift */,
+				1741EF54943CD38032C45622F3F5430D /* Stack.swift */,
+				A7712A6C3B15D38E5E63179E9D51AA94 /* Support Files */,
+			);
+			name = OneStore;
+			path = OneStore;
+			sourceTree = "<group>";
+		};
+		0B24087CB16E9735159D99A0018B2A48 /* GBPing */ = {
+			isa = PBXGroup;
+			children = (
+				8B24871066B016D12832ECB02D3BA1F2 /* GBPing.h */,
+				502A3CA3DD1FFD7484644D37039664FC /* GBPing.m */,
+				EE70B467B16B4CB4B98BE3AA8DADF3E8 /* GBPingSummary.h */,
+				EF724AC06D2028C16B621DD1728E1BC3 /* GBPingSummary.m */,
+				10ECB0601018D71AC63076F228EA1F66 /* ICMPHeader.h */,
+				05CED197913E9124A67B223EF4A25743 /* Support Files */,
+			);
+			name = GBPing;
+			path = GBPing;
 			sourceTree = "<group>";
 		};
 		1628BF05B4CAFDCC3549A101F5A10A17 /* Frameworks */ = {
@@ -282,37 +414,96 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		26366800C20450EBC99438B2595CEB50 /* Fabric */ = {
+		1FAA8BD5C8E7B3D8381F33F87EE0DBDE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				6CE6AD8B243AD25077E226757A93D440 /* FABAttributes.h */,
-				3CB8FE84DCD0C61B3D63C3ECBD052CC4 /* Fabric.h */,
-				31DDFF2F3ADC6D833CA3D5F3CE545CCE /* Frameworks */,
-			);
-			name = Fabric;
-			path = Fabric;
-			sourceTree = "<group>";
-		};
-		2E1EEFC184E8B2B9C2F3E2C559F45DCE /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				97729F7389ACAF097E9D739F83D4991E /* Alamofire */,
-				9F5F054FD7D511B8A5F18256553D0016 /* Crashlytics */,
-				26366800C20450EBC99438B2595CEB50 /* Fabric */,
-				DC50B7B19ACEFDA8198C581ACD921E63 /* GBPing */,
-				8BCD84CE802590057E7C2D229AD1E934 /* OneStore */,
-				EAA6D7701898E780A14B30E23CBF3F2D /* QRCodeReader.swift */,
-				5717BF4E7F50E395C36A1340C65CB3A3 /* SwiftyJSON */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
-		31DDFF2F3ADC6D833CA3D5F3CE545CCE /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				7D91A60455D950F471DFBB09BB47B6CB /* Fabric.framework */,
+				0C845048211472D9175C517E9D56AC7C /* Crashlytics.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		245CCEE2B65B5C766F7620FCAFFDBBFD /* OpenSSL-Universal */ = {
+			isa = PBXGroup;
+			children = (
+				903DA9CD4ECF730452E1506452889389 /* aes.h */,
+				15DA8B4D22F1CE0A7C68D83A709166AA /* asn1.h */,
+				964202B6AFEDCEB36AC9BE08EA4A94C0 /* asn1_mac.h */,
+				59C85E1E417C44E77125A6A42F226D38 /* asn1t.h */,
+				5D6552ECE1C3382766654ED1767547E5 /* bio.h */,
+				B3B4800D5C90BAF69BC9A861FD9737A8 /* blowfish.h */,
+				142BCC51E245351E95200EB4F2C77502 /* bn.h */,
+				F976476D0D68C1A5BEF40849F271F614 /* buffer.h */,
+				E37A195D0C30A61CDC5F7BDE5B6DC0E1 /* camellia.h */,
+				FC728518FE065ED83C02DD55A493ACE7 /* cast.h */,
+				8C2EF56181B40B3A1027DD9109382F7F /* cmac.h */,
+				34F805C0E9699FED1B2E49D1358CB00B /* cms.h */,
+				2EA8AE6086F242840B931DF340E27C5E /* comp.h */,
+				2D2ECD6E9A6E895AC3A5607BC5FAE494 /* conf.h */,
+				0F578CC4DC42F870243100B9D4B1282F /* conf_api.h */,
+				F768F870D4F4880787685A4675AD40D2 /* crypto.h */,
+				E0DF586FFC830F3F34DAA253B9EEA3C3 /* des.h */,
+				29794A1B7D03A3D393B4808446577278 /* des_old.h */,
+				E7ED2EB81AB8C023A65D0F64A13F7DF6 /* dh.h */,
+				FA74C319A037DA74DB57CFCB5D03F72B /* dsa.h */,
+				0377265DB37F3359A40826ADCF28D1FD /* dso.h */,
+				16F9FBA23F8956D364F0E83729994C57 /* dtls1.h */,
+				8BEC61CA8BA837984B44E82FA901375D /* e_os2.h */,
+				0D83AF1AEC00241D7000EADA715999AB /* ebcdic.h */,
+				16C9E8039DD0895AA7409B0EDF9113EC /* ec.h */,
+				33165379A51B70A49005AFBA59CA15FC /* ecdh.h */,
+				4B5C1B30BCC7401AB6E640AA8F41D56F /* ecdsa.h */,
+				78F090ECE05A2F1D199239CE0925CA90 /* engine.h */,
+				6629E4D3C90FC40036B384ED3332CEA6 /* err.h */,
+				2C156047172059C9C3DD7644D90EF10D /* evp.h */,
+				AEC0DF2720EB4A4C4AC830A714F71C5A /* hmac.h */,
+				3916D10749A7F823CC05DC2B48038085 /* idea.h */,
+				8A555685B098E6C2AFA5DDA44F27289C /* krb5_asn.h */,
+				EC6DF5A1455FEAD953DD24171825E61B /* kssl.h */,
+				0BB85450E3CC3C29BACE172D5161D8A7 /* lhash.h */,
+				ED49230D0E372C3350F39F0EA4DBF0B2 /* md4.h */,
+				67D8C802629FAB57C5334E1B0B250135 /* md5.h */,
+				321DB855D134D7F3AA86CC809188555F /* mdc2.h */,
+				8FD5FB53D726D25F6180128138CFC079 /* modes.h */,
+				E1E8A6F741DA914B492230CC401CA210 /* obj_mac.h */,
+				05C0AF7DC7AD89D0B76A24178DD16AC2 /* objects.h */,
+				1F3DFEC5C4E0AEDD033D9DE9725CEE32 /* ocsp.h */,
+				17D55D1F15A1B06BE6F5C835A8400287 /* opensslconf.h */,
+				CDF41FF24F0254209F0112DFEB76CCD3 /* opensslv.h */,
+				2AD6FBF0248AC8CADD344F16D4866DD5 /* ossl_typ.h */,
+				94578CA10B38B8487EE6AFF3ADC6AC17 /* pem.h */,
+				DBD7310DB2EE5791D69BA7755F16CE98 /* pem2.h */,
+				0007678B847D97FB7E75E8C0B485D69B /* pkcs12.h */,
+				522573521AB784A85EDB196611D02FE8 /* pkcs7.h */,
+				595C7AB00F79B9724BDD11CE0981E4C3 /* pqueue.h */,
+				316D83726282F41887221812C373BDA8 /* rand.h */,
+				C69695E4B4904CF388A3CE6DD1B9764B /* rc2.h */,
+				05323917DB289A812F4E2F0B2DB74C50 /* rc4.h */,
+				0E3292CF5FAD62A76A4D96A23B36DDAF /* ripemd.h */,
+				2A064179AEA4A51FF802AC6080224A92 /* rsa.h */,
+				7DCB854478DCCAB793023E682DECF66B /* safestack.h */,
+				55F7B3B0A3BE8711ED4B70DB1E191D38 /* seed.h */,
+				6189B91318D054957BF77C164C114D91 /* sha.h */,
+				D37957253B9BBAD7C78030D06C9B1FCE /* srp.h */,
+				7AED3F7080EBB22E30F2F27775C19D73 /* srtp.h */,
+				A4B87ACE3C7C84F93D70034E345C418C /* ssl.h */,
+				373B109DBDD58CE9D06FF6CAEAC7B555 /* ssl2.h */,
+				A32E042547C083EF8AB22CAD17C3B050 /* ssl23.h */,
+				1F31CED5CDA010FA3B611AA4A9FD781F /* ssl3.h */,
+				483B8270C7B85FBE4D60972D40114C51 /* stack.h */,
+				07D8F587F4A655FAB6D62A0851AA9037 /* symhacks.h */,
+				4DCEE077F5F952983BC302770E192326 /* tls1.h */,
+				794C0C5BA6B0C80335F9C6F03230F067 /* ts.h */,
+				207CA180985908F1298CC623FF94C583 /* txt_db.h */,
+				84ECBF1E08A2C0457DFA268B12E99F45 /* ui.h */,
+				7F344BE8D4C21280A23D8238090D0970 /* ui_compat.h */,
+				9137CDE98E7C3C8E6363896002435363 /* whrlpool.h */,
+				4BDB8A1625020EDD1E88985BED07EE07 /* x509.h */,
+				E95FF6C0B6E28D25BCFFE4D8839E8BDF /* x509_vfy.h */,
+				6346CD175C170011BB36DF835772110C /* x509v3.h */,
+				FDDCE9EF7BF5E4E1605435DEDAB509C1 /* Frameworks */,
+			);
+			name = "OpenSSL-Universal";
+			path = "OpenSSL-Universal";
 			sourceTree = "<group>";
 		};
 		3322B53CE7DE9A5AEAB1AC9F4E747083 /* Pods-metawallet */ = {
@@ -333,28 +524,32 @@
 			path = "Target Support Files/Pods-metawallet";
 			sourceTree = "<group>";
 		};
-		35E0F109FE2C906DA3983F91779BFE77 /* Support Files */ = {
+		3A4C7CDBC65064095FC1ACE3788BADE5 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				BCD244DC1E7481A780E8D48CDA7B7F8B /* Info.plist */,
-				B417E79D51BF32602DDB3ADBD6647344 /* OneStore.modulemap */,
-				88A253D130F25A287A4F27A0B5F21399 /* OneStore.xcconfig */,
-				B5F6F386B814B9DC8A3ABEB1565F9183 /* OneStore-dummy.m */,
-				C01EA3FD013B45DE4F802FEF4FEE41A1 /* OneStore-prefix.pch */,
-				B342C7362AFD0466D1A155BB0E65A1C2 /* OneStore-umbrella.h */,
+				528B64133E98DE19C7CFD99C69EF3458 /* Info.plist */,
+				6CE25DEB4D29439CD818E7B9D69F69A1 /* SwiftyJSON.modulemap */,
+				D8C0AE72106BF272D8E54CA0811B3EC0 /* SwiftyJSON.xcconfig */,
+				0DD07EB25CBC73722544CB9E239AFE37 /* SwiftyJSON-dummy.m */,
+				AEDD67FDC9DAE357EE05CACC1CCFCD10 /* SwiftyJSON-prefix.pch */,
+				EF10781DA1A99616A8FBC6B50A8A307F /* SwiftyJSON-umbrella.h */,
 			);
 			name = "Support Files";
-			path = "../Target Support Files/OneStore";
+			path = "../Target Support Files/SwiftyJSON";
 			sourceTree = "<group>";
 		};
-		5717BF4E7F50E395C36A1340C65CB3A3 /* SwiftyJSON */ = {
+		6DA893BF852B54BC837EDBC35FB8DF1B /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				74B681DF05CDEDBDC5E6960A96AD644D /* SwiftyJSON.swift */,
-				85C74777A649BC67B5D7F9E4AC2CDC93 /* Support Files */,
+				63428CC3D0833B70C1B4090FB3933248 /* Info.plist */,
+				CBBEF84D4368F02CD6B6EA527C491B92 /* QRCodeReader.swift.modulemap */,
+				B3526516E06A06EDF13C7EE5D35C5AE4 /* QRCodeReader.swift.xcconfig */,
+				934DEF279CCE5A8BA40C1878C8E7C4A4 /* QRCodeReader.swift-dummy.m */,
+				9FE952C315F258A24E1534C575B9A632 /* QRCodeReader.swift-prefix.pch */,
+				1FC032F5FA1BFFF2BCBF4EE56721F487 /* QRCodeReader.swift-umbrella.h */,
 			);
-			name = SwiftyJSON;
-			path = SwiftyJSON;
+			name = "Support Files";
+			path = "../Target Support Files/QRCodeReader.swift";
 			sourceTree = "<group>";
 		};
 		801BA12527527C26B3ADF263AEA465BE /* Products */ = {
@@ -370,75 +565,29 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		85C74777A649BC67B5D7F9E4AC2CDC93 /* Support Files */ = {
+		96E6E0E8066198F09CC42E8ECA5EC771 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				A50465BB108BB9CAB418A6FD46DCA863 /* Info.plist */,
-				EEC8704E3F4AFC3064CF55BD6BD701BB /* SwiftyJSON.modulemap */,
-				EB43AF141DFB69024200987F80867FA8 /* SwiftyJSON.xcconfig */,
-				186F573EF291911098E4C626DBD6CBA0 /* SwiftyJSON-dummy.m */,
-				F27393652E01BAE94541253E421D8F70 /* SwiftyJSON-prefix.pch */,
-				1F9866D216AAC2C9ECBA389FFFAA5640 /* SwiftyJSON-umbrella.h */,
+				0286A3385085B32D48DE849B6C11A02B /* Alamofire */,
+				B11AEBA2E2D54E4AE6E0E717A4DEFCB1 /* Crashlytics */,
+				DDA04160E600C5432B14695BC1A46E80 /* Fabric */,
+				0B24087CB16E9735159D99A0018B2A48 /* GBPing */,
+				07550FB0071E5E87606B70188F6B1742 /* OneStore */,
+				245CCEE2B65B5C766F7620FCAFFDBBFD /* OpenSSL-Universal */,
+				F2FC97CC9665EC4BA88EA0D07176636A /* QRCodeReader.swift */,
+				9C00A501EC5766E01E2D39D571AC60FD /* SwiftyJSON */,
 			);
-			name = "Support Files";
-			path = "../Target Support Files/SwiftyJSON";
+			name = Pods;
 			sourceTree = "<group>";
 		};
-		8BCD84CE802590057E7C2D229AD1E934 /* OneStore */ = {
+		9C00A501EC5766E01E2D39D571AC60FD /* SwiftyJSON */ = {
 			isa = PBXGroup;
 			children = (
-				7306C2E5ABCC4629FFACF5371424D06D /* Box.swift */,
-				B19C4ECDD118B089805B1FEBDBA3C75B /* NonOptionalOneStore.swift */,
-				3F18E5F783C6B6EDE4C405521BDC9367 /* OneStore.swift */,
-				9A6E42A0E14A81BFD3D72E69459D6572 /* OneStoreType.swift */,
-				36E303E5667CCAF29A767EF49381DBC2 /* ReservedOneStore.swift */,
-				532A28E683ABB364899C617E1D1E49F0 /* Stack.swift */,
-				35E0F109FE2C906DA3983F91779BFE77 /* Support Files */,
+				795CEA11596BAB04177AA866C1E27AD5 /* SwiftyJSON.swift */,
+				3A4C7CDBC65064095FC1ACE3788BADE5 /* Support Files */,
 			);
-			name = OneStore;
-			path = OneStore;
-			sourceTree = "<group>";
-		};
-		97729F7389ACAF097E9D739F83D4991E /* Alamofire */ = {
-			isa = PBXGroup;
-			children = (
-				E206A45AC3B92FD5F15A0499F3075F49 /* AFError.swift */,
-				5D5756293FEB7CB12D2D029AAF784ABF /* Alamofire.swift */,
-				DB430F651A7866B16E3C8EFF0A361974 /* DispatchQueue+Alamofire.swift */,
-				D968828424ECE39972F8DBE8E542651D /* MultipartFormData.swift */,
-				D3C787785283AF218AE6F5E2827F55B0 /* NetworkReachabilityManager.swift */,
-				722B91903F4E5C683F9D69F7F076187A /* Notifications.swift */,
-				9A992571738BB350B96A5EC017F94376 /* ParameterEncoding.swift */,
-				5DA77A90C8C0549F5DE9BF7CAB841529 /* Request.swift */,
-				FA5615BDD0D54083CFB2309BB8F2A9E1 /* Response.swift */,
-				040701B206CAB50B6C3542C8DBBF4E30 /* ResponseSerialization.swift */,
-				06C0F741BBCDF317A55D8B887CDBD514 /* Result.swift */,
-				8595DA51BEF11D674BAB26CAB0AB8379 /* ServerTrustPolicy.swift */,
-				DF383344825E4EAB932F1939ADBAE984 /* SessionDelegate.swift */,
-				3F6CDBB8A92D7B0B981614F2FA89ECF9 /* SessionManager.swift */,
-				42556915CC241C649CAB48291D54C2C8 /* TaskDelegate.swift */,
-				2EAC27D4FD461522642D926F9A7291E7 /* Timeline.swift */,
-				4201BCDA9016E172CCBE5037C5062133 /* Validation.swift */,
-				D82FA5A23D951B256D1B2B260E08DFD8 /* Support Files */,
-			);
-			name = Alamofire;
-			path = Alamofire;
-			sourceTree = "<group>";
-		};
-		9F5F054FD7D511B8A5F18256553D0016 /* Crashlytics */ = {
-			isa = PBXGroup;
-			children = (
-				1CDA48132C533FD4CD776A1D7BC663BF /* ANSCompatibility.h */,
-				AA8D8096B0FF6412F5EF150414293B4B /* Answers.h */,
-				B419D42A1C4F7192CB61D929B897B811 /* CLSAttributes.h */,
-				FBA87882A5BF7ED5AF66C3FAB089C897 /* CLSLogging.h */,
-				C3EDD2DF2CFE0D3FD67DDA9D10611212 /* CLSReport.h */,
-				2C76EE0A1EA118C16572254E91F2571A /* CLSStackFrame.h */,
-				0DF9785FFF909E044D2ABFC1354B1267 /* Crashlytics.h */,
-				B6488ED2038B7A9ABA41EE587AC5172C /* Frameworks */,
-			);
-			name = Crashlytics;
-			path = Crashlytics;
+			name = SwiftyJSON;
+			path = SwiftyJSON;
 			sourceTree = "<group>";
 		};
 		A3612693858821262AFF547F90C3B524 /* Targets Support Files */ = {
@@ -449,12 +598,34 @@
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
-		B6488ED2038B7A9ABA41EE587AC5172C /* Frameworks */ = {
+		A7712A6C3B15D38E5E63179E9D51AA94 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				01FE7580610D6FBE51324CFA62B02008 /* Crashlytics.framework */,
+				C66A20753BAD9B0F6D7D4C78A8E1F6FF /* Info.plist */,
+				0B2ABC404DF8D9DB60AD85AF76DE7CEB /* OneStore.modulemap */,
+				D99E85FD490801708BDCBAC112498856 /* OneStore.xcconfig */,
+				AFB44E14904C8C46A083C89603C811CA /* OneStore-dummy.m */,
+				647C23D02C9DAAC68A1F327B41CDC8BC /* OneStore-prefix.pch */,
+				B12F0934819E3E2823CC49584DD71E12 /* OneStore-umbrella.h */,
 			);
-			name = Frameworks;
+			name = "Support Files";
+			path = "../Target Support Files/OneStore";
+			sourceTree = "<group>";
+		};
+		B11AEBA2E2D54E4AE6E0E717A4DEFCB1 /* Crashlytics */ = {
+			isa = PBXGroup;
+			children = (
+				5F0590BB16A6BA5371A9AEC486C40C9E /* ANSCompatibility.h */,
+				4607B44F2846DA52D16DB0201DFBB6DC /* Answers.h */,
+				1494D255E4970BFFE682C24E8AC85EF1 /* CLSAttributes.h */,
+				F187AC6EF3F82273ACEC08BDBC2B0355 /* CLSLogging.h */,
+				9EE735100B80C38B66A912391CC68708 /* CLSReport.h */,
+				D2B25E430E0B2FB6104D5D6C9EE82BAA /* CLSStackFrame.h */,
+				30C20D7ADB971B4D8ED729E5DEA886E4 /* Crashlytics.h */,
+				1FAA8BD5C8E7B3D8381F33F87EE0DBDE /* Frameworks */,
+			);
+			name = Crashlytics;
+			path = Crashlytics;
 			sourceTree = "<group>";
 		};
 		CF1408CF629C7361332E53B88F7BD30C = {
@@ -462,52 +633,29 @@
 			children = (
 				24390EFD555DD124430DFF9724065945 /* Podfile */,
 				1628BF05B4CAFDCC3549A101F5A10A17 /* Frameworks */,
-				2E1EEFC184E8B2B9C2F3E2C559F45DCE /* Pods */,
+				96E6E0E8066198F09CC42E8ECA5EC771 /* Pods */,
 				801BA12527527C26B3ADF263AEA465BE /* Products */,
 				A3612693858821262AFF547F90C3B524 /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
 		};
-		D82FA5A23D951B256D1B2B260E08DFD8 /* Support Files */ = {
+		D97E85B9A2C36C100E3F4093207AD9EA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				BCE02C653AF7598C2E0DB46D1BDEE3B5 /* Alamofire.modulemap */,
-				99E51D9055172B150B4731960126A025 /* Alamofire.xcconfig */,
-				E82417C035AFE40C85EAAFB97BCFD140 /* Alamofire-dummy.m */,
-				D2EF4C4BC95643B45199E589BD5F7FEF /* Alamofire-prefix.pch */,
-				0E111EA7A3F41E425FD8A9798D4DE13A /* Alamofire-umbrella.h */,
-				C5E9AB82E8104421546E4581DBBEFCAA /* Info.plist */,
+				635346867B52C9536942DD05B2F51AD6 /* Fabric.framework */,
 			);
-			name = "Support Files";
-			path = "../Target Support Files/Alamofire";
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		DC50B7B19ACEFDA8198C581ACD921E63 /* GBPing */ = {
+		DDA04160E600C5432B14695BC1A46E80 /* Fabric */ = {
 			isa = PBXGroup;
 			children = (
-				255F524DC5A6D2F8D9110C58E45DD615 /* GBPing.h */,
-				C2900A533AFE93B4B02CF0B95AB615AF /* GBPing.m */,
-				9CAE1A28A97926F533CC777BBA346845 /* GBPingSummary.h */,
-				E4487977A7488B0513F1156107DADBCE /* GBPingSummary.m */,
-				D0B3A6F683E9B4DF5EB469450623C6C2 /* ICMPHeader.h */,
-				E232BEB5958A64A5A3795BB7013D51D2 /* Support Files */,
+				6A33A01D3C5383321FDE4D19E45CD5B5 /* FABAttributes.h */,
+				6A22ED8989FC5639D9D66BD2E8B3CEAC /* Fabric.h */,
+				D97E85B9A2C36C100E3F4093207AD9EA /* Frameworks */,
 			);
-			name = GBPing;
-			path = GBPing;
-			sourceTree = "<group>";
-		};
-		E232BEB5958A64A5A3795BB7013D51D2 /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				B80FDC2CDF842A0098B6A17729A5A3D4 /* GBPing.modulemap */,
-				125169059865424A963A47267FB3B735 /* GBPing.xcconfig */,
-				A8B1C3D0C142A40F1BC204AD6D0DD6BE /* GBPing-dummy.m */,
-				8D3686F72AB925090AB3BEE03AEBB522 /* GBPing-prefix.pch */,
-				2613FE6FCBF3F5089A4A6DC25B72058A /* GBPing-umbrella.h */,
-				1431A1315FB3BF4E361236F752DBEBC2 /* Info.plist */,
-			);
-			name = "Support Files";
-			path = "../Target Support Files/GBPing";
+			name = Fabric;
+			path = Fabric;
 			sourceTree = "<group>";
 		};
 		E2FA75308FAE7D777CB172FB0AE44E3A /* iOS */ = {
@@ -519,23 +667,46 @@
 			name = iOS;
 			sourceTree = "<group>";
 		};
-		EAA6D7701898E780A14B30E23CBF3F2D /* QRCodeReader.swift */ = {
+		F2FC97CC9665EC4BA88EA0D07176636A /* QRCodeReader.swift */ = {
 			isa = PBXGroup;
 			children = (
-				7A1A2CFC57568E78DC0D3A632D2CCC41 /* QRCodeReader.swift */,
-				06D28FB53E49ED85BFD5C7E55B09962E /* QRCodeReaderResult.swift */,
-				73F0E327CA5E09D85BE9CC6D120CB557 /* QRCodeReaderView.swift */,
-				A7844D69D9A78F2DCC05D2F08E6F723D /* QRCodeReaderViewContainer.swift */,
-				44025524E82DDC0AFF06B37B9E85EF16 /* QRCodeReaderViewController.swift */,
-				8AAE8D14A9CEC597BC05BCFB22ED7652 /* QRCodeReaderViewControllerBuilder.swift */,
-				71F78D280DBEED885F19E49E7842DF1B /* QRCodeReaderViewControllerDelegate.swift */,
-				674B8DA586521033A3743DB8245EA342 /* ReaderOverlayView.swift */,
-				2A712FF807BCB985929288FA11B47168 /* SwitchCameraButton.swift */,
-				DE320449ED05E5647F7F8476E3209136 /* ToggleTorchButton.swift */,
-				1469DBE8927620F566ABD4CB3874F8D0 /* Support Files */,
+				7DA9BA587E882EC112AC404FD58A4969 /* QRCodeReader.swift */,
+				1BFB178D2A836A9D9035AAE33DB5B21A /* QRCodeReaderResult.swift */,
+				9314076F90FE16E77C00E9EBDF2506E4 /* QRCodeReaderView.swift */,
+				852F282D58319FB756AF1D51200AFC8A /* QRCodeReaderViewContainer.swift */,
+				85BD09BF460A11CA25B1E8D935E9F13E /* QRCodeReaderViewController.swift */,
+				DA8AA24FD7C961B1C895E79953EEF223 /* QRCodeReaderViewControllerBuilder.swift */,
+				7B262D17C6782AB698508260CC74611B /* QRCodeReaderViewControllerDelegate.swift */,
+				F2026146035CC16E004A60821A4E2CDC /* ReaderOverlayView.swift */,
+				F971E522C3BEE89BE05B4AB868300460 /* SwitchCameraButton.swift */,
+				BAFF3037EA1A19DF875C142F777518FD /* ToggleTorchButton.swift */,
+				6DA893BF852B54BC837EDBC35FB8DF1B /* Support Files */,
 			);
 			name = QRCodeReader.swift;
 			path = QRCodeReader.swift;
+			sourceTree = "<group>";
+		};
+		F83DD8A8B3A1079A88D2C1D02E25968B /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				72CB39298EB016A0A0F9B90AAA2A2577 /* Alamofire.modulemap */,
+				E1CD942F91A97A5AF8461610C27D2004 /* Alamofire.xcconfig */,
+				2A59670C8C8844AEA80619B0DDA35315 /* Alamofire-dummy.m */,
+				56F4F71C17958B2648181641924DCDE0 /* Alamofire-prefix.pch */,
+				EADBF2B0BA0B69BD13557DB3298A1347 /* Alamofire-umbrella.h */,
+				85D0DBE43235A98BC20300B31A5C62B7 /* Info.plist */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/Alamofire";
+			sourceTree = "<group>";
+		};
+		FDDCE9EF7BF5E4E1605435DEDAB509C1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BC0CECF25CAD53C04DEBE57D194D5938 /* libcrypto.a */,
+				16FFAA1AEF660BE9909C9E55E880B294 /* libssl.a */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -907,7 +1078,7 @@
 /* Begin XCBuildConfiguration section */
 		063978DF5CE4210C22328F50430A20DD /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 125169059865424A963A47267FB3B735 /* GBPing.xcconfig */;
+			baseConfigurationReference = F0A111BF72FD32DCD658BF25B556555C /* GBPing.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -943,7 +1114,7 @@
 		};
 		066EFBBDCA798C73114555828A4FE115 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 99E51D9055172B150B4731960126A025 /* Alamofire.xcconfig */;
+			baseConfigurationReference = E1CD942F91A97A5AF8461610C27D2004 /* Alamofire.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -979,7 +1150,7 @@
 		};
 		1F88350B13CA3D484CE50442041FB08E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 259353BCD518F2460E88FEFED8E76C20 /* QRCodeReader.swift.xcconfig */;
+			baseConfigurationReference = B3526516E06A06EDF13C7EE5D35C5AE4 /* QRCodeReader.swift.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -1016,7 +1187,7 @@
 		};
 		2553714FDBA71491A7BB43AFE5BD15EA /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = EB43AF141DFB69024200987F80867FA8 /* SwiftyJSON.xcconfig */;
+			baseConfigurationReference = D8C0AE72106BF272D8E54CA0811B3EC0 /* SwiftyJSON.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -1093,7 +1264,7 @@
 		};
 		38A62D3E987CA902BA726BD82FFC3BBB /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = EB43AF141DFB69024200987F80867FA8 /* SwiftyJSON.xcconfig */;
+			baseConfigurationReference = D8C0AE72106BF272D8E54CA0811B3EC0 /* SwiftyJSON.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -1129,7 +1300,7 @@
 		};
 		4ED759966E71F62F546FB1C27D37509C /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 259353BCD518F2460E88FEFED8E76C20 /* QRCodeReader.swift.xcconfig */;
+			baseConfigurationReference = B3526516E06A06EDF13C7EE5D35C5AE4 /* QRCodeReader.swift.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -1165,7 +1336,7 @@
 		};
 		60812F595D204DFC4CEF407FA287F5F6 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 88A253D130F25A287A4F27A0B5F21399 /* OneStore.xcconfig */;
+			baseConfigurationReference = D99E85FD490801708BDCBAC112498856 /* OneStore.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -1201,7 +1372,7 @@
 		};
 		6BABF0E97408F495F6E27BAEFBF6CCEE /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 125169059865424A963A47267FB3B735 /* GBPing.xcconfig */;
+			baseConfigurationReference = F0A111BF72FD32DCD658BF25B556555C /* GBPing.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -1304,7 +1475,7 @@
 		};
 		8A0F5CEDCD0897E69DEC94DEE1905FE6 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 99E51D9055172B150B4731960126A025 /* Alamofire.xcconfig */;
+			baseConfigurationReference = E1CD942F91A97A5AF8461610C27D2004 /* Alamofire.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -1341,7 +1512,7 @@
 		};
 		B9CE4891D568D3B9C40395AD7193FB2C /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 88A253D130F25A287A4F27A0B5F21399 /* OneStore.xcconfig */;
+			baseConfigurationReference = D99E85FD490801708BDCBAC112498856 /* OneStore.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
