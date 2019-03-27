@@ -34,8 +34,9 @@ class MainViewController: UIViewController, WKNavigationDelegate {
         
         let source = "var meta = document.createElement('meta');meta.name = 'viewport';meta.content = 'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no';var head = document.getElementsByTagName('head')[0];head.appendChild(meta);";
         
-        let userScript = WKUserScript(source: source, injectionTime: .atDocumentEnd, forMainFrameOnly: true)
+        let userScript = WKUserScript(source: source, injectionTime: .atDocumentEnd, forMainFrameOnly: false)
         let config = WKWebViewConfiguration.init()
+        config.suppressesIncrementalRendering = true
         config.userContentController.addUserScript(userScript)
         if #available(iOS 10, *) {
             config.ignoresViewportScaleLimits = false;
@@ -220,23 +221,25 @@ class MainViewController: UIViewController, WKNavigationDelegate {
     
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
         if (hostProvider.mainTorrentBaseURL == nil || hostProvider.mainProxyBaseURL == nil) {
-            hostProvider.configureIpAddresses(completion: { (success) in
-                if Storage.shared.token != nil {
-                    APIClient.shared.checkToken(completion: { (error, _) in
-                        if error == nil {
-                            self.webView.evaluateJavaScript("onConnectionReady(true)", completionHandler: nil)
-                        } else {
-                            self.webView.evaluateJavaScript("onConnectionReady(false)", completionHandler: nil)
-                        }
+            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + .seconds(2)) {
+                self.hostProvider.configureIpAddresses(completion: { (success) in
+                    if Storage.shared.token != nil {
+                        APIClient.shared.checkToken(completion: { (error, _) in
+                            if error == nil {
+                                self.webView.evaluateJavaScript("onConnectionReady(true)", completionHandler: nil)
+                            } else {
+                                self.webView.evaluateJavaScript("onConnectionReady(false)", completionHandler: nil)
+                            }
+                        })
+                    } else {
+                        self.webView.evaluateJavaScript("onConnectionReady(false)", completionHandler: nil)
+                    }
+                }) { (progressDict) in
+                    let jsonData = try! JSONSerialization.data(withJSONObject: progressDict, options: JSONSerialization.WritingOptions.sortedKeys)
+                    let jsonString = String.init(data: jsonData, encoding: .utf8)!
+                    self.webView.evaluateJavaScript("updateConnectingStatus('\(jsonString)')", completionHandler: { (_, _) in
                     })
-                } else {
-                    self.webView.evaluateJavaScript("onConnectionReady(false)", completionHandler: nil)
                 }
-            }) { (progressDict) in
-                let jsonData = try! JSONSerialization.data(withJSONObject: progressDict, options: JSONSerialization.WritingOptions.sortedKeys)
-                let jsonString = String.init(data: jsonData, encoding: .utf8)!
-                self.webView.evaluateJavaScript("updateConnectingStatus('\(jsonString)')", completionHandler: { (_, _) in
-                })
             }
         }
     }

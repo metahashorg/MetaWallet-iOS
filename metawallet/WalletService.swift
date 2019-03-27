@@ -24,14 +24,14 @@ class WalletService {
             return nil
         }
         let wallet = Wallet.init(name: name, currency: currencyId, currencyCode: currencyCode, password: password, privateKeyData: btcKey.privateKey as Data, publicKeyData: btcKey.publicKey as Data)
-        var wallets = Storage.shared.wallets
+        var wallets = Storage.shared.getWallets(for: currencyId)
         wallets.append(wallet)
-        Storage.shared.wallets = wallets
+        Storage.shared.setWallets(wallets, for: currencyId)
         return wallet
     }
     
     static func createTransaction(address: String, password: String, to: String, amount: String, fee: String, data: String, currency: String, update: @escaping (String) -> Void, completion: (String?, String?) -> Void) {
-        guard let wallet = Storage.shared.wallets.first(where: { (wallet) -> Bool in
+        guard let wallet = Storage.shared.getWallets(for: currency).first(where: { (wallet) -> Bool in
             return wallet.address == address && wallet.privateKeyData != nil && wallet.currency == currency
         }) else {
             completion("NO_PRIVATE_KEY_FOUND", nil)
@@ -88,19 +88,19 @@ class WalletService {
             return "Error"
         }
         let address = addressHexString(from: key.publicKey as Data)
-        var wallets = Storage.shared.wallets
+        var wallets = Storage.shared.getWallets(for: currencyId)
         if let loadedWalletIndex = wallets.firstIndex(where: { (wallet) -> Bool in
             return wallet.address == address
         }) {
             wallets[loadedWalletIndex].privateKeyData = key.privateKey! as Data
             wallets[loadedWalletIndex].publicKeyData = key.publicKey! as Data
-            Storage.shared.wallets = wallets
+            Storage.shared.setWallets(wallets, for: currencyId)
             return address
         } else {
             let wallet = Wallet.init(name: name, currency: currencyId, currencyCode: currencyName, password: password, privateKeyData: key.privateKey as Data, publicKeyData: key.publicKey as Data)
-            var wallets = Storage.shared.wallets
+            var wallets = Storage.shared.getWallets(for: currencyId)
             wallets.append(wallet)
-            Storage.shared.wallets = wallets
+            Storage.shared.setWallets(wallets, for: currencyId)
             APIClient.shared.syncWallet(wallet: wallet, completion: { (_, _) in
             })
             return address

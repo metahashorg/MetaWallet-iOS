@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import OneStore
+import SwiftKeychainWrapper
 
 class Storage {
     static let shared = Storage()
@@ -15,47 +15,66 @@ class Storage {
         
     }
     
-    private let stack = Stack(userDefaults: UserDefaults.standard, domain: "org.metahash.metawallet")
-    
     var token: String? {
         get {
-            let token = OneStore<String>(stack: stack, key: "token")
-            return token.value
+            let wrapper = KeychainWrapper.standard
+            return wrapper.string(forKey: "token")
         } set {
-            let token = OneStore<String>(stack: stack, key: "token")
-            token.value = newValue
+            let wrapper = KeychainWrapper.standard
+            if newValue == nil {
+                wrapper.removeObject(forKey: "token")
+                return
+            }
+            wrapper.set(newValue!, forKey: "token")
         }
     }
     
     var refreshToken: String? {
         get {
-            let token = OneStore<String>(stack: stack, key: "refresh_token")
-            return token.value
+            let wrapper = KeychainWrapper.standard
+            return wrapper.string(forKey: "refresh_token")
         } set {
-            let token = OneStore<String>(stack: stack, key: "refresh_token")
-            token.value = newValue
+            let wrapper = KeychainWrapper.standard
+            if newValue == nil {
+                wrapper.removeObject(forKey: "refresh_token")
+                return
+            }
+            wrapper.set(newValue!, forKey: "refresh_token")
         }
     }
     
-    var wallets: [Wallet] {
+    var login: String {
         get {
-            let defaults = UserDefaults.standard
-            if let savedWallets = defaults.object(forKey: "wallets") as? Data {
-                let decoder = JSONDecoder()
-                if let wallets = try? decoder.decode([Wallet].self, from: savedWallets) {
-                    return wallets
-                } else {
-                    return []
-                }
+            let wrapper = KeychainWrapper.standard
+            return wrapper.string(forKey: "login") ?? "default"
+        } set {
+            let wrapper = KeychainWrapper.standard
+            wrapper.set(newValue, forKey: "login")
+        }
+    }
+    
+    func getWallets(for currency: String) -> [Wallet] {
+        let wrapper = KeychainWrapper.standard
+        if let savedWallets = wrapper.data(forKey: "wallets_\(login)_\(currency)") {
+            let decoder = JSONDecoder()
+            if let wallets = try? decoder.decode([Wallet].self, from: savedWallets) {
+                return wallets
             } else {
                 return []
             }
-        } set {
-            let encoder = JSONEncoder()
-            if let encoded = try? encoder.encode(newValue) {
-                let defaults = UserDefaults.standard
-                defaults.set(encoded, forKey: "wallets")
-            }
+        } else {
+            return []
+        }
+    }
+    
+    func setWallets(_ wallets: [Wallet], for currency: String) {
+        if wallets.isEmpty {
+            return
+        }
+        let encoder = JSONEncoder()
+        if let encoded = try? encoder.encode(wallets) {
+            let wrapper = KeychainWrapper.standard
+            wrapper.set(encoded, forKey: "wallets_\(login)_\(currency)")
         }
     }
     

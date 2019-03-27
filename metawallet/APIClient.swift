@@ -73,7 +73,7 @@ class APIClient {
                 let refreshToken = json["data"]["refresh_token"].string
                 Storage.shared.token = token
                 Storage.shared.refreshToken = refreshToken
-
+                Storage.shared.login = login
             }
             completion(response.error, response.error != nil ? response.getStatusCode() : nil)
         }
@@ -124,7 +124,7 @@ class APIClient {
             if response.error == nil, let value = response.value {
                 let json = JSON(value)
                 var wallets = [Wallet]()
-                let savedWallets = Storage.shared.wallets
+                let savedWallets = Storage.shared.getWallets(for: currency)
                 for wallet in json["data"].arrayValue {
                     var wallet = Wallet(name:wallet["name"].stringValue, currency: wallet["currency"].stringValue, publicKey: wallet["public_key"].stringValue, currencyCode: wallet["currency_code"].stringValue, address: wallet["address"].stringValue, password: wallet["password"].stringValue)
                     if let savedWallet = savedWallets.first(where: { (savedWallet) -> Bool in
@@ -137,13 +137,21 @@ class APIClient {
                     wallets.append(wallet)
                 }
                 var walletsCount = 0
+                print("wallets count = \(wallets.count)")
+                var descriptions = [[String : Any]]()
+                if wallets.count == 0 {
+                    let jsonString = try! String(data: JSONSerialization.data(withJSONObject: descriptions, options: .sortedKeys), encoding: .utf8)
+                    completion(nil, nil, jsonString)
+                    return
+                }
                 for i in 0..<wallets.count {
+                    print("loading i = \(i)")
                     wallets[i].updateBalance(completion: { (newBalance, _) in
+                        print("loaded i = \(i)")
                         wallets[i].balance = newBalance
                         walletsCount += 1
                         if walletsCount == wallets.count {
-                            Storage.shared.wallets = wallets
-                            var descriptions = [[String : Any]]()
+                            Storage.shared.setWallets(wallets, for: currency)
                             for wallet in wallets {
                                 descriptions.append(wallet.getDescription())
                             }
@@ -157,7 +165,7 @@ class APIClient {
     }
     
     func getWalletsHistory(for currency: String, completion: @escaping (Error?, Int?, String?) -> Void) {
-        let wallets = Storage.shared.wallets
+        let wallets = Storage.shared.getWallets(for: currency)
         
         var transactions = [[String : Any]]()
         
@@ -216,6 +224,8 @@ class APIClient {
                 let received = json["result"]["received"].doubleValue
                 let spent = json["result"]["spent"].doubleValue
                 completion(received - spent, spent)
+            } else {
+                completion(0, 0)
             }
         }
     }

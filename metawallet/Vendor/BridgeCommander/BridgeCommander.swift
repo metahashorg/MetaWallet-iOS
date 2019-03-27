@@ -24,7 +24,7 @@ public class BridgeCommander : NSObject, WKScriptMessageHandler {
         if let filepath = Bundle(for: type(of: self)).path(forResource: "BridgeCommander", ofType: "js") {
             do {
                 let contents = try String(contentsOfFile: filepath)
-                self.webView.configuration.userContentController.addUserScript(WKUserScript(source: contents, injectionTime: .atDocumentStart, forMainFrameOnly: false))
+                self.webView.configuration.userContentController.addUserScript(WKUserScript(source: contents, injectionTime: .atDocumentEnd, forMainFrameOnly: false))
             self.webView.configuration.userContentController.add(self, name: messageHandlerName)
         } catch {
             print("Error occured")
