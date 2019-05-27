@@ -1,0 +1,13 @@
+{
+  "applinks": {
+    "apps": [],
+    "details": [
+      {
+        "appID": "PFFDVPVH43.org.metahash.metawallet",
+        "paths": [
+          "*"
+        ]
+      }
+    ]
+  }
+}

@@ -25,9 +25,12 @@ class MainViewController: UIViewController, WKNavigationDelegate {
         return .lightContent
     }
     
-    var webView: WKWebView!
+    @IBOutlet weak var loadingView: UIView!
+    var webView: FullScreenWKWebView!
     
     let hostProvider = HostProvider.shared
+
+    var webKitLoaded = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,11 +45,11 @@ class MainViewController: UIViewController, WKNavigationDelegate {
             config.ignoresViewportScaleLimits = false;
         }
         
-        webView = WKWebView(frame: CGRect.zero, configuration: config)
+        webView = FullScreenWKWebView(frame: CGRect.zero, configuration: config)
         webView.translatesAutoresizingMaskIntoConstraints = false
         webView.navigationDelegate = self
         
-        view.addSubview(webView)
+        view.insertSubview(webView, belowSubview: loadingView)
         let constraints = [webView.topAnchor.constraint(equalTo: view.topAnchor),
                            webView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
                            webView.leftAnchor.constraint(equalTo: view.leftAnchor),
@@ -55,8 +58,20 @@ class MainViewController: UIViewController, WKNavigationDelegate {
         
         webView.load(URLRequest(url: URL(string: HostProvider.Constants.webURL)!))
         addBridgeCommands()
-        
-        
+
+        NotificationCenter.default.addObserver(self, selector: #selector(didBecomeActive), name: UIApplication.didBecomeActiveNotification, object: nil)
+    }
+
+    @objc func didBecomeActive() {
+        guard let address = QRCodeHelper.shared.addressToOpen,
+              let value = QRCodeHelper.shared.value else {
+            return
+        }
+        if webKitLoaded {
+            webView.load(URLRequest(url: URL(string: "\(HostProvider.Constants.webURL)#/create-transfer?to=\(address)&value=\(value)")!))
+            QRCodeHelper.shared.addressToOpen = nil
+            QRCodeHelper.shared.value = nil
+        }
     }
     
     func addBridgeCommands() {
@@ -82,6 +97,54 @@ class MainViewController: UIViewController, WKNavigationDelegate {
         
         addImportWalletRequest(to: commander)
         
+        addQRExportRequest(to: commander)
+        
+        addOnlyLocalAddressesRequest(to: commander)
+        
+        addLogOutRequest(to: commander)
+        
+        addGetOnlyLocalAddressesRequest(to: commander)
+        
+        addGetAuthDataRequest(to: commander)
+    }
+    
+    func addGetAuthDataRequest(to commander: BridgeCommander) {
+        commander.add("getAuthData") { (command) in
+            command.send(args: Storage.shared.login)
+        }
+    }
+    
+    func addLogOutRequest(to commander: BridgeCommander) {
+        commander.add("logOut") { (command) in
+            Storage.shared.token = nil
+            Storage.shared.refreshToken = nil
+            Storage.shared.onlyLocalAddresses = false
+        }
+    }
+    
+    func addGetOnlyLocalAddressesRequest(to commander: BridgeCommander) {
+        commander.add("getOnlyLocalAddresses") { (command) in
+            let onlyLocal = Storage.shared.onlyLocalAddresses
+            command.send(args: "\(onlyLocal ? "true" : "false")")
+        }
+    }
+    
+    func addOnlyLocalAddressesRequest(to commander: BridgeCommander) {
+        commander.add("setOnlyLocalAddresses") { (command) in
+            var args = command.args
+            if args.isEmpty {
+                args = "0"
+            }
+            let onlyLocal = Bool(exactly: Int(args)! as NSNumber)!
+            Storage.shared.onlyLocalAddresses = onlyLocal
+        }
+    }
+    
+    func addQRExportRequest(to commander: BridgeCommander) {
+        commander.add("getPrivateKey") { (command) in
+            let args = command.args.split(separator: ",")
+            command.send(args: WalletService.getPrivateKeyString(address: String(args[0]), password: String(args[1])))
+        }
     }
     
     func addQRImportRequest(to commander: BridgeCommander) {
@@ -112,6 +175,7 @@ class MainViewController: UIViewController, WKNavigationDelegate {
     
     func addSignUpRequest(to commander: BridgeCommander) {
         commander.add("signUp") { (command) in
+            Storage.shared.onlyLocalAddresses = false
             let substrings = command.args.split(separator: ",")
             guard substrings.count == 2 else {
                 self.webView.evaluateJavaScript("signUpResult('400','Bad request')", completionHandler: nil)
@@ -128,6 +192,7 @@ class MainViewController: UIViewController, WKNavigationDelegate {
     
     func addSignInRequest(to commander: BridgeCommander) {
         commander.add("getAuthRequest") { (command) in
+            Storage.shared.onlyLocalAddresses = false
             let substrings = command.args.split(separator: ",")
             guard substrings.count == 2 else {
                 self.webView.evaluateJavaScript("getAuthRequestResult('400','Bad request')", completionHandler: nil)
@@ -146,8 +211,10 @@ class MainViewController: UIViewController, WKNavigationDelegate {
         commander.add("getWalletsData") { (command) in
             APIClient.shared.getWallets(for: command.args, completion: { (error, errorCode, value) in
                 if let value = value {
-                    self.webView.evaluateJavaScript("getWalletsDataResult('\(value)')", completionHandler: nil)
+                    command.send(args: value)
                 }
+            }, update: { _ in
+                self.webView.evaluateJavaScript("window.onDataRefreshed();", completionHandler: nil)
             })
         }
     }
@@ -156,7 +223,7 @@ class MainViewController: UIViewController, WKNavigationDelegate {
         commander.add("getWalletsHistory") { (command) in
             APIClient.shared.getWalletsHistory(for: command.args, completion: { (error, errorCode, value) in
                 if let value = value {
-                    self.webView.evaluateJavaScript("getWalletsHistoryResult('\(value)')", completionHandler: nil)
+                    command.send(args: value)
                 }
             })
         }
@@ -189,15 +256,21 @@ class MainViewController: UIViewController, WKNavigationDelegate {
             let password = String(args[1])
             let toAddress = String(args[2])
             let amount = String(args[3])
-            let currency = String(args[4])
+            let currency = String(args.last!)
             let fee = "0"
             let data = ""
-            WalletService.createTransaction(address: fromAddress, password: password, to: toAddress, amount: amount, fee: fee, data: data, currency: currency, update: { (updateResult) in
+            WalletService.createTransaction(address: fromAddress, password: password, to: toAddress, amount: amount, fee: fee, data: data, currency: currency, initialized: { (updateResult) in
+//                command.send(args: updateResult)
                 command.send(args: updateResult)
+            }, check: { (updateResult) in
+                print("onTxChecked('\(updateResult)')")
                 self.webView.evaluateJavaScript("onTxChecked('\(updateResult)')", completionHandler: nil)
-            }, completion: { (errorString, resultString) in
-                command.send(args: errorString ?? "")
-                self.webView.evaluateJavaScript("sendTxResult('\(errorString ?? "")')", completionHandler: nil)
+            }, completion: { _ in
+                APIClient.shared.getWallets(for: currency, completion: { (error, errorCode, value) in
+                    self.webView.evaluateJavaScript("window.onDataRefreshed();", completionHandler: nil)
+                }, update: { _ in })
+            }, error: { errorString in
+                command.error(args: errorString)
             })
         }
     }
@@ -213,20 +286,25 @@ class MainViewController: UIViewController, WKNavigationDelegate {
             let password = String(args[3])
             let currencyId = String(args[4])
             let currencyName = String(args[5])
-            let address = WalletService.importWallet(with: privayeKey, name: name, password: password, currencyId: currencyId, currencyName: currencyName)
-            command.send(args: address)
+            WalletService.importWallet(with: privayeKey, name: name, password: password, currencyId: currencyId, currencyName: currencyName, completion: { address in
+                command.send(args: address)
+            })
             
         }
     }
     
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+        print("Finished")
+        loadingView.isHidden = true
         if (hostProvider.mainTorrentBaseURL == nil || hostProvider.mainProxyBaseURL == nil) {
             DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + .seconds(2)) {
+                self.webKitLoaded = true
                 self.hostProvider.configureIpAddresses(completion: { (success) in
                     if Storage.shared.token != nil {
                         APIClient.shared.checkToken(completion: { (error, _) in
                             if error == nil {
                                 self.webView.evaluateJavaScript("onConnectionReady(true)", completionHandler: nil)
+                                self.didBecomeActive()
                             } else {
                                 self.webView.evaluateJavaScript("onConnectionReady(false)", completionHandler: nil)
                             }
@@ -249,10 +327,20 @@ class MainViewController: UIViewController, WKNavigationDelegate {
 extension MainViewController: QRCodeReaderViewControllerDelegate {
     func reader(_ reader: QRCodeReaderViewController, didScanResult result: QRCodeReaderResult) {
         let privateKeyString = result.value
-        let address = WalletService.importPrivateKeyWalletFromString(key: privateKeyString)
+        
         reader.stopScanning()
         dismiss(animated: true, completion: nil)
-        self.webView.evaluateJavaScript("saveImportedWallet('\(privateKeyString)', '\(address)')", completionHandler: nil)
+        
+        if privateKeyString.starts(with: "307702") {
+            self.webView.evaluateJavaScript("saveImportedWallet('', '', 'QR_UNSUPPORTED')", completionHandler: nil)
+            return
+        }
+        let address = WalletService.importPrivateKeyWalletFromString(key: privateKeyString)
+        if address == "Error" {
+            self.webView.evaluateJavaScript("saveImportedWallet('', '', 'QR_INVALID')", completionHandler: nil)
+            return
+        }
+        self.webView.evaluateJavaScript("saveImportedWallet('\(privateKeyString)', '\(address)', '')", completionHandler: nil)
     }
     
     //This is an optional delegate method, that allows you to be notified when the user switches the cameraName

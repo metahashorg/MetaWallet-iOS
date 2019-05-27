@@ -49,6 +49,25 @@ class HostProvider {
     static let shared = HostProvider()
 
     func configureIpAddresses(completion: @escaping (Bool) -> Void, progress: @escaping (([String : Any]) -> Void)) {
+        if let cachedDevTorrentBaseURLStrings = Storage.shared.devTorrentBaseURLStrings,
+            cachedDevTorrentBaseURLStrings.count > 0,
+            let cachedDevProxyBaseURLStrings = Storage.shared.devProxyBaseURLStrings,
+            cachedDevProxyBaseURLStrings.count > 0,
+            let cachedMainTorrentBaseURLStrings = Storage.shared.mainTorrentBaseURLStrings,
+            cachedMainTorrentBaseURLStrings.count > 0,
+            let cachedMainProxyBaseURLStrings = Storage.shared.mainProxyBaseURLStrings,
+            cachedMainProxyBaseURLStrings.count > 0 {
+            devTorrentBaseURL = URL(string: "http://".appending(cachedDevTorrentBaseURLStrings.first!).appending(":").appending(HostProvider.Constants.torrentPort))
+            devProxyBaseURL = URL(string: "http://".appending(cachedDevProxyBaseURLStrings.first!).appending(":").appending(HostProvider.Constants.proxyPort))
+            mainTorrentBaseURL = URL(string: "http://".appending(cachedMainTorrentBaseURLStrings.first!).appending(":").appending(HostProvider.Constants.torrentPort))
+            mainProxyBaseURL = URL(string: "http://".appending(cachedMainProxyBaseURLStrings.first!).appending(":").appending(HostProvider.Constants.proxyPort))
+            devTorrentIPs = cachedDevTorrentBaseURLStrings
+            devProxyIPs = cachedDevProxyBaseURLStrings
+            mainTorrentIPs = cachedMainTorrentBaseURLStrings
+            mainProxyIPs = cachedMainProxyBaseURLStrings
+            completion(true)
+            return
+        }
         getIpAddresses(for: Constants.urlTorrentDevURL) { (torrentIps) in
             if (torrentIps.count > 0) {
                 progress(["type":"dev", "data" : ["proxy" :
@@ -65,6 +84,7 @@ class HostProvider {
                             ]
                     ]]])
                 self.devTorrentIPs = torrentIps
+                Storage.shared.devTorrentBaseURLStrings = torrentIps
                 self.devTorrentBaseURL = URL(string: "http://".appending(torrentIps.first!).appending(":").appending(HostProvider.Constants.torrentPort))
                 self.getIpAddresses(for: Constants.urlProxyDevURL, completion: { (proxyIps) in
                     if (proxyIps.count > 0) {
@@ -82,6 +102,7 @@ class HostProvider {
                                     ]
                             ]]])
                         self.devProxyIPs = proxyIps
+                        Storage.shared.devProxyBaseURLStrings = proxyIps
                         self.devProxyBaseURL = URL(string: "http://".appending(proxyIps.first!).appending(":").appending(HostProvider.Constants.proxyPort))
                         self.getIpAddresses(for: Constants.urlTorrentURL) { (torrentIps) in
                             if (torrentIps.count > 0) {
@@ -99,6 +120,7 @@ class HostProvider {
                                                                     ]
                                     ]]])
                                 self.mainTorrentIPs = torrentIps
+                                Storage.shared.mainTorrentBaseURLStrings = torrentIps
                                 self.mainTorrentBaseURL = URL(string: "http://".appending(torrentIps.first!).appending(":").appending(HostProvider.Constants.torrentPort))
                                 self.getIpAddresses(for: Constants.urlProxyURL, completion: { (proxyIps) in
                                     if (proxyIps.count > 0) {
@@ -116,6 +138,7 @@ class HostProvider {
                                                                             ]
                                             ]]])
                                         self.mainProxyIPs = proxyIps
+                                        Storage.shared.mainProxyBaseURLStrings = proxyIps
                                         self.mainProxyBaseURL = URL(string: "http://".appending(proxyIps.first!).appending(":").appending(HostProvider.Constants.proxyPort))
                                         completion(true)
                                     } else {

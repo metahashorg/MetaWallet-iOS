@@ -18,6 +18,14 @@ class WalletService {
                   "stage":1,
                   "torrent":["wait","wait","wait"]
         ] as [String : Any]
+    
+    func resetTxInfo() {
+        txInfo = ["id":"",
+                  "proxy":["wait","wait","wait"],
+                  "stage":1,
+                  "torrent":["wait","wait","wait"]
+            ] as [String : Any]
+    }
 
     static func generateNewWallet(currencyId: String, currencyCode: String, password: String, name: String) -> Wallet? {
         guard let btcKey = BTCKey.init() else {
@@ -30,15 +38,37 @@ class WalletService {
         return wallet
     }
     
-    static func createTransaction(address: String, password: String, to: String, amount: String, fee: String, data: String, currency: String, update: @escaping (String) -> Void, completion: (String?, String?) -> Void) {
+    static func getPrivateKeyString(address: String, password: String) -> String {
+        guard let wallet = Storage.shared.getWallets().first(where: { (wallet) -> Bool in
+            return wallet.address == address && wallet.privateKeyData != nil
+        }) else {
+            return "NO_PRIVATE_KEY_FOUND"
+        }
+        if wallet.password != password && wallet.password != "" {
+            return "WRONG_PASSWORD"
+        }
+        let key = BTCKey(privateKey: wallet.privateKeyData)!
+        var dataString = ""
+        if password != "" {
+            guard let encryptedPEMData = KeyFormatter.encrypt(key, password: wallet.password) else {
+                return "NO_PRIVATE_KEY_FOUND"
+            }
+            dataString = BTCHexFromData(encryptedPEMData)
+        } else {
+            dataString = BTCHexFromData(KeyFormatter.derPrivateKey(key))
+        }
+        return dataString
+    }
+    
+    static func createTransaction(address: String, password: String, to: String, amount: String, fee: String, data: String, currency: String, initialized: @escaping (String) -> Void, check: @escaping (String) -> Void, completion: @escaping (String?) -> Void, error: @escaping (String) -> Void) {
         guard let wallet = Storage.shared.getWallets(for: currency).first(where: { (wallet) -> Bool in
             return wallet.address == address && wallet.privateKeyData != nil && wallet.currency == currency
         }) else {
-            completion("NO_PRIVATE_KEY_FOUND", nil)
+            error("NO_PRIVATE_KEY_FOUND")
             return
         }
         if wallet.password != password && wallet.password != "" {
-            completion("WRONG_PASSWORD", nil)
+            error("WRONG_PASSWORD")
             return
         }
         shared.txInfo = ["id":"",
@@ -47,7 +77,7 @@ class WalletService {
                   "torrent":["wait","wait","wait"]
         ]
         wallet.updateBalance { (balance, spent) in
-            let nonce = Int(spent + 1)
+            let nonce = spent + 1
             let dataHexString = BTCHexFromData(data.data(using: .utf8)!)!
             let signatureMessage = generateSignatureMessage(to: to, value: amount, nonce: String(nonce), fee: fee, data: data).lowercased()
             let messageData = signatureMessage.dataWithHexString()
@@ -58,34 +88,41 @@ class WalletService {
             let transaction = Transaction.init(to: to, value: amount, fee: fee, nonce: String(nonce), data: dataHexString, pubKey: publicKeyHex, sign: signatureString, currency: currency)
             
             let initUpdate = try! String.init(data: JSONSerialization.data(withJSONObject: shared.txInfo, options: .sortedKeys), encoding: .utf8)!
-            update(initUpdate)
+            initialized(initUpdate)
             
             APIClient.shared.sendTransaction(transaction: transaction, updateStatus: {
                 let updateString = try! String.init(data: JSONSerialization.data(withJSONObject: shared.txInfo, options: .sortedKeys), encoding: .utf8)!
-                update(updateString)
+                check(updateString)
             }, completion: {
                 APIClient.shared.checkTransaction(transactionHash: shared.txInfo["id"] as! String, currency: transaction.currency, updateStatus: {
                     let updateString = try! String.init(data: JSONSerialization.data(withJSONObject: shared.txInfo, options: .sortedKeys), encoding: .utf8)!
-                    update(updateString)
+                    check(updateString)
                 }, completion: {
-                    
+                    completion(nil)
                 })
             })
         }
     }
     
     static func importPrivateKeyWalletFromString(key: String) -> String {
-        guard let key = KeyFormatter.createKey(fromDERString: key) else {
+        var keyObject: BTCKey?
+        if key.contains("-----BEGIN EC PRIVATE KEY-----") {
+            keyObject = KeyFormatter.decryptKeyData(key.data(using: .utf8)!, withPassword: "123456")
+        } else {
+            keyObject = KeyFormatter.createKey(fromDERString: key)
+        }
+        guard let gottenKey = keyObject else {
             return "Error"
         }
-        let address = addressHexString(from: key.publicKey as Data)
+        let address = addressHexString(from: gottenKey.publicKey as Data)
         return address
     }
     
     
-    static func importWallet(with privateKey: String, name: String, password: String, currencyId: String, currencyName: String) -> String {
+    static func importWallet(with privateKey: String, name: String, password: String, currencyId: String, currencyName: String, completion: @escaping (String) -> Void) {
         guard let key = KeyFormatter.createKey(fromDERString: privateKey) else {
-            return "Error"
+            completion("Error")
+            return
         }
         let address = addressHexString(from: key.publicKey as Data)
         var wallets = Storage.shared.getWallets(for: currencyId)
@@ -93,17 +130,19 @@ class WalletService {
             return wallet.address == address
         }) {
             wallets[loadedWalletIndex].privateKeyData = key.privateKey! as Data
+            wallets[loadedWalletIndex].readablePrivateKey = BTCHexFromData(KeyFormatter.derPrivateKey(key))
             wallets[loadedWalletIndex].publicKeyData = key.publicKey! as Data
+            wallets[loadedWalletIndex].name = name
             Storage.shared.setWallets(wallets, for: currencyId)
-            return address
+            completion(address)
         } else {
             let wallet = Wallet.init(name: name, currency: currencyId, currencyCode: currencyName, password: password, privateKeyData: key.privateKey as Data, publicKeyData: key.publicKey as Data)
             var wallets = Storage.shared.getWallets(for: currencyId)
             wallets.append(wallet)
             Storage.shared.setWallets(wallets, for: currencyId)
             APIClient.shared.syncWallet(wallet: wallet, completion: { (_, _) in
+                completion(address)
             })
-            return address
         }
     }
     

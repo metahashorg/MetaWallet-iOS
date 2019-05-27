@@ -11,9 +11,14 @@
 
 @interface KeyFormatter : NSObject
 
-+ (NSData *)derPrivateKey:(BTCKey *)key;
-+ (NSData *)derPublicKey:(BTCKey *)key;
-+ (NSData *)encrypt:(BTCKey *)key password:(NSString *)password;
+NS_ASSUME_NONNULL_BEGIN
+
++ (NSData *)derPrivateKey:(nullable BTCKey *)key;
++ (NSData *)derPublicKey:(nullable BTCKey *)key;
++ (nullable NSData *)encrypt:(BTCKey *)key password:(NSString *)password;
 + (nullable BTCKey *)createKeyFromDERString:(NSString *)string;
++ (nullable BTCKey *)decryptKeyData:(NSData *)data withPassword:(NSString *)password;
+
+NS_ASSUME_NONNULL_END
 
 @end

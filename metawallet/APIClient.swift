@@ -34,8 +34,15 @@ class RequestsRetrier: RequestRetrier {
 class APIClient {
     static let shared = APIClient()
     
+    var refreshTimer: Timer?
+    
     init(){
         sessionManager.retrier = RequestsRetrier()
+        
+        refreshTimer = Timer.scheduledTimer(withTimeInterval: 10, repeats: true, block: { (_) in
+            self.getWallets(for: "1", completion: { (_, _, _) in }, update: { (_) in })
+            self.getWallets(for: "4", completion: { (_, _, _) in }, update: { (_) in })
+        })
     }
     
     let sessionManager = SessionManager()
@@ -113,7 +120,21 @@ class APIClient {
         }
     }
     
-    func getWallets(for currency: String, completion: @escaping (Error?, Int?, String?) -> Void) {
+    func getWallets(for currency: String, completion: @escaping (Error?, Int?, String?) -> Void, update: @escaping (String) -> Void) {
+        var descriptions = [[String : Any]]()
+        let onlyLocal = Storage.shared.onlyLocalAddresses
+        let savedWallets = Storage.shared.getWallets(for: currency)
+        if savedWallets.count > 0 {
+            for wallet in savedWallets {
+                if onlyLocal && !wallet.hasPrivateKey {
+                    continue
+                }
+                descriptions.append(wallet.getDescription())
+            }
+            let jsonString = try! String(data: JSONSerialization.data(withJSONObject: descriptions, options: .sortedKeys), encoding: .utf8)
+            completion(nil, nil, jsonString)
+        }
+
         let params = ["id" : deviceIdentifier,
                       "version": "1.0.0",
                       "method" : "address.list",
@@ -124,21 +145,13 @@ class APIClient {
             if response.error == nil, let value = response.value {
                 let json = JSON(value)
                 var wallets = [Wallet]()
-                let savedWallets = Storage.shared.getWallets(for: currency)
                 for wallet in json["data"].arrayValue {
-                    var wallet = Wallet(name:wallet["name"].stringValue, currency: wallet["currency"].stringValue, publicKey: wallet["public_key"].stringValue, currencyCode: wallet["currency_code"].stringValue, address: wallet["address"].stringValue, password: wallet["password"].stringValue)
-                    if let savedWallet = savedWallets.first(where: { (savedWallet) -> Bool in
-                        return savedWallet.address == wallet.address
-                    }) {
-                        wallet.publicKeyData = savedWallet.publicKeyData
-                        wallet.privateKeyData = savedWallet.privateKeyData
-                        wallet.password = savedWallet.password
-                    }
+                    let wallet = Wallet(name:wallet["name"].stringValue, currency: wallet["currency"].stringValue, publicKey: wallet["public_key"].stringValue, currencyCode: wallet["currency_code"].stringValue, address: wallet["address"].stringValue, password: wallet["password"].stringValue)
                     wallets.append(wallet)
                 }
+                mergeWallets(remoteWallets: &wallets, localWallets: savedWallets)
                 var walletsCount = 0
                 print("wallets count = \(wallets.count)")
-                var descriptions = [[String : Any]]()
                 if wallets.count == 0 {
                     let jsonString = try! String(data: JSONSerialization.data(withJSONObject: descriptions, options: .sortedKeys), encoding: .utf8)
                     completion(nil, nil, jsonString)
@@ -153,10 +166,13 @@ class APIClient {
                         if walletsCount == wallets.count {
                             Storage.shared.setWallets(wallets, for: currency)
                             for wallet in wallets {
+                                if onlyLocal && !wallet.hasPrivateKey {
+                                    continue
+                                }
                                 descriptions.append(wallet.getDescription())
                             }
                             let jsonString = try! String(data: JSONSerialization.data(withJSONObject: descriptions, options: .sortedKeys), encoding: .utf8)
-                            completion(nil, nil, jsonString)
+                            update(jsonString!)
                         }
                     })
                 }
@@ -171,21 +187,22 @@ class APIClient {
         
         var walletsCount = 0
         
+        var torrentURL = HostProvider.shared.devTorrentBaseURL
+        if currency == "4" {
+            torrentURL = HostProvider.shared.mainTorrentBaseURL
+        }
+        
+        guard let url = torrentURL else {
+            return
+        }
+        
         for i in 0..<wallets.count {
-            if wallets[i].currency != currency {
-                walletsCount += 1
-                continue
-            }
             let params = ["id" : deviceIdentifier,
                           "version": "1.0.0",
                           "method" : "fetch-history",
                           "token" : "",
                           "params" : ["address" : wallets[i].address]
                 ] as [String : Any]
-            var url = HostProvider.shared.devTorrentBaseURL!
-            if currency == "4" {
-                url = HostProvider.shared.mainTorrentBaseURL!
-            }
             Alamofire.request(url, method: .post, parameters: params, encoding: JSONEncoding.default, headers: nil).validate().responseJSON { (response) in
                 walletsCount += 1
                 if response.error == nil, let value = response.value {
@@ -195,7 +212,9 @@ class APIClient {
                                     "timestamp" : transaction["timestamp"].intValue,
                                     "value" : transaction["value"].intValue,
                                     "to" : transaction["to"].stringValue,
-                                    "currency" : currency] as [String : Any]
+                                    "currency" : currency,
+                                    "transaction" : transaction["transaction"].stringValue
+                                    ] as [String : Any]
                         transactions.append(dict)
                     }
                 }
@@ -207,23 +226,30 @@ class APIClient {
         }
     }
     
-    func getWalletBalance(for address: String, currency: String, completion: @escaping (Double, Double) -> Void) {
+    func getWalletBalance(for address: String, currency: String, completion: @escaping (Double, Int) -> Void) {
         let params = ["id" : deviceIdentifier,
                       "version": "1.0.0",
                       "method" : "fetch-balance",
                       "token" : "",
                       "params" : ["address" : address]
             ] as [String : Any]
-        var url = HostProvider.shared.devTorrentBaseURL!
+        
+        var torrentURL = HostProvider.shared.devTorrentBaseURL
         if currency == "4" {
-            url = HostProvider.shared.mainTorrentBaseURL!
+            torrentURL = HostProvider.shared.mainTorrentBaseURL
         }
+        
+        guard let url = torrentURL else {
+            return
+        }
+        
         Alamofire.request(url, method: .post, parameters: params, encoding: JSONEncoding.default, headers: nil).validate().responseJSON { (response) in
             if response.error == nil, let value = response.value {
                 let json = JSON(value)
                 let received = json["result"]["received"].doubleValue
                 let spent = json["result"]["spent"].doubleValue
-                completion(received - spent, spent)
+                let countSpent = json["result"]["count_spent"].intValue
+                completion(received - spent, countSpent)
             } else {
                 completion(0, 0)
             }
@@ -339,6 +365,7 @@ class APIClient {
             completedRequests += 1
             if completedRequests == 3 {
                 completion()
+                WalletService.shared.resetTxInfo()
             }
         }
         sessionManager.request(secondTorrent, method: .post, parameters: params, encoding: JSONEncoding.default, headers: nil).validate().responseJSON { (response) in
@@ -354,6 +381,7 @@ class APIClient {
             completedRequests += 1
             if completedRequests == 3 {
                 completion()
+                WalletService.shared.resetTxInfo()
             }
         }
         sessionManager.request(thirdTorrent, method: .post, parameters: params, encoding: JSONEncoding.default, headers: nil).validate().responseJSON { (response) in
@@ -369,6 +397,7 @@ class APIClient {
             completedRequests += 1
             if completedRequests == 3 {
                 completion()
+                WalletService.shared.resetTxInfo()
             }
         }
     }

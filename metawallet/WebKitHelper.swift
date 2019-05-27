@@ -8,6 +8,13 @@
 
 import WebKit
 
+final class QRCodeHelper {
+    static let shared = QRCodeHelper()
+
+    var addressToOpen: String?
+    var value: String?
+}
+
 final class WebCacheCleaner {
     class func clean() {
         HTTPCookieStorage.shared.removeCookies(since: Date.distantPast)

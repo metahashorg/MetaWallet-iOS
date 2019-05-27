@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		2ADBD8090DF9A600CBDFC441 /* Pods_metawallet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E42A71E7E8861CA64DFC23D0 /* Pods_metawallet.framework */; };
 		811D99CD21EF2D9C002C15F7 /* WebKitHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 811D99CC21EF2D9B002C15F7 /* WebKitHelper.swift */; };
+		812B8211225CDCD30025EE2C /* FullScreenWKWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 812B8210225CDCD30025EE2C /* FullScreenWKWebView.swift */; };
 		8140EF2021C90DAD00D8B149 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8140EF1F21C90DAD00D8B149 /* APIClient.swift */; };
 		815CD0BF21DD73E200D6EB39 /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 815CD0BE21DD73E200D6EB39 /* Storage.swift */; };
 		815FEF6021C214A10044AB5F /* BridgeCommander.js in Resources */ = {isa = PBXBuildFile; fileRef = 815FEF5E21C214A10044AB5F /* BridgeCommander.js */; };
@@ -114,6 +115,7 @@
 /* Begin PBXFileReference section */
 		3681D5265CC0CB428CA5C2C3 /* Pods-metawallet.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-metawallet.debug.xcconfig"; path = "Pods/Target Support Files/Pods-metawallet/Pods-metawallet.debug.xcconfig"; sourceTree = "<group>"; };
 		811D99CC21EF2D9B002C15F7 /* WebKitHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebKitHelper.swift; sourceTree = "<group>"; };
+		812B8210225CDCD30025EE2C /* FullScreenWKWebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullScreenWKWebView.swift; sourceTree = "<group>"; };
 		8140EF1F21C90DAD00D8B149 /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 		815CD0BE21DD73E200D6EB39 /* Storage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
 		815FEF5E21C214A10044AB5F /* BridgeCommander.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = BridgeCommander.js; sourceTree = "<group>"; };
@@ -269,6 +271,7 @@
 		8181EF9C21624D9F00B660A6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8181EF9F21624D9F00B660A6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8181EFA121624D9F00B660A6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		819740D52254C0F100E42DA6 /* metawallet.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = metawallet.entitlements; sourceTree = "<group>"; };
 		81A5E99321ECE36C001A221D /* CoreBitcoinIOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBitcoinIOS.framework; path = /Users/mmd/Desktop/Work/GIT/metawallet/metawallet/Vendor/CoreBitcoin/CoreBitcoinIOS.framework; sourceTree = "<absolute>"; };
 		81B1651721E8D4C900A89984 /* metawallet-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "metawallet-Bridging-Header.h"; sourceTree = "<group>"; };
 		81B1651821E8D4CA00A89984 /* Hashing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Hashing.m; sourceTree = "<group>"; };
@@ -349,6 +352,7 @@
 		8181EF9421624D9D00B660A6 /* metawallet */ = {
 			isa = PBXGroup;
 			children = (
+				819740D52254C0F100E42DA6 /* metawallet.entitlements */,
 				81C3594221C002AC004F27A7 /* Vendor */,
 				8181EF9521624D9D00B660A6 /* AppDelegate.swift */,
 				8181EF9721624D9D00B660A6 /* MainViewController.swift */,
@@ -368,6 +372,7 @@
 				81B1651C21E8D4CA00A89984 /* WalletService.swift */,
 				811D99CC21EF2D9B002C15F7 /* WebKitHelper.swift */,
 				81B1651721E8D4C900A89984 /* metawallet-Bridging-Header.h */,
+				812B8210225CDCD30025EE2C /* FullScreenWKWebView.swift */,
 			);
 			path = metawallet;
 			sourceTree = "<group>";
@@ -581,6 +586,11 @@
 					8181EF9121624D9D00B660A6 = {
 						CreatedOnToolsVersion = 10.0;
 						LastSwiftMigration = 1010;
+						SystemCapabilities = {
+							com.apple.SafariKeychain = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -774,6 +784,7 @@
 				816937BA2206E17E008B81EC /* BTCScript+Tests.m in Sources */,
 				81B1651D21E8D4CA00A89984 /* Hashing.m in Sources */,
 				816937D52206E17E008B81EC /* BTCKey+Tests.m in Sources */,
+				812B8211225CDCD30025EE2C /* FullScreenWKWebView.swift in Sources */,
 				816937C82206E17E008B81EC /* BTCTransactionInput.m in Sources */,
 				816937A62206E17E008B81EC /* BTCBitcoinURL.m in Sources */,
 				8181EF9621624D9D00B660A6 /* AppDelegate.swift in Sources */,
@@ -942,8 +953,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = metawallet/metawallet.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = PFFDVPVH43;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -964,7 +976,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = org.metahash.metawallet;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "MetaWallet Dev";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "metawallet/metawallet-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.2;
@@ -978,8 +990,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = metawallet/metawallet.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = PFFDVPVH43;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1000,7 +1013,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = org.metahash.metawallet;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "MetaWallet Dev";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "metawallet/metawallet-Bridging-Header.h";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 1;

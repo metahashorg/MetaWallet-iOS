@@ -19,7 +19,7 @@ struct Transaction {
     var currency: String
 }
 
-struct Wallet: Codable {
+class Wallet: Codable {
     let currency: String
     let currencyCode: String
     
@@ -29,6 +29,7 @@ struct Wallet: Codable {
     var name: String = ""
     
     var privateKeyData: Data? = nil
+    var readablePrivateKey: String? = nil
     var publicKeyData: Data? = nil
     
     var balance: Double = 0
@@ -44,6 +45,9 @@ struct Wallet: Codable {
         }
         self.currencyCode = currencyCode
         self.privateKeyData = privateKeyData
+        if privateKeyData != nil {
+            readablePrivateKey = BTCHexFromData(KeyFormatter.derPrivateKey(BTCKey(privateKey: privateKeyData!)))
+        }
         self.publicKeyData = publicKeyData
         if let address = address {
             self.address = address
@@ -63,13 +67,34 @@ struct Wallet: Codable {
         }
     }
     
-    func updateBalance(completion: @escaping (Double, Double) -> Void) {
+    func updateBalance(completion: @escaping (Double, Int) -> Void) {
         APIClient.shared.getWalletBalance(for: address, currency: currency, completion: completion)
     }
     
     func getDescription() -> [String : Any] {
-        let descriptionDict = ["address" : address, "balance" : String(balance), "hasPrivateKey" : hasPrivateKey, "name" : ""] as [String : Any]
+        let descriptionDict = ["address" : address, "balance" : String(balance), "hasPrivateKey" : hasPrivateKey, "name" : name] as [String : Any]
         return descriptionDict
     }
     
+}
+
+func mergeWallets(remoteWallets: inout [Wallet], localWallets: [Wallet]) {
+    var localWallets = localWallets
+    for i in 0..<remoteWallets.count {
+        let wallet = remoteWallets[i]
+        if let savedWalletIndex = localWallets.index(where: { (savedWallet) -> Bool in
+            return savedWallet.address == wallet.address
+        }) {
+            let savedWallet = localWallets[savedWalletIndex]
+            wallet.publicKeyData = savedWallet.publicKeyData
+            wallet.privateKeyData = savedWallet.privateKeyData
+            if savedWallet.privateKeyData != nil {
+                wallet.readablePrivateKey = BTCHexFromData(KeyFormatter.derPrivateKey(BTCKey(privateKey: savedWallet.privateKeyData!)))
+            }
+            wallet.password = savedWallet.password
+            wallet.name = savedWallet.name
+            localWallets.remove(at: savedWalletIndex)
+        }
+    }
+    remoteWallets.append(contentsOf: localWallets)
 }
