@@ -73,6 +73,10 @@ class MainViewController: UIViewController, WKNavigationDelegate {
             QRCodeHelper.shared.value = nil
         }
     }
+    @IBAction func clean(_ sender: Any) {
+        WebCacheCleaner.clean()
+        self.webView.load(URLRequest(url: URL(string: HostProvider.Constants.webURL)!))
+    }
     
     func addBridgeCommands() {
         let commander = BridgeCommander(webView)
@@ -213,8 +217,6 @@ class MainViewController: UIViewController, WKNavigationDelegate {
                 if let value = value {
                     command.send(args: value)
                 }
-            }, update: { _ in
-                self.webView.evaluateJavaScript("window.onDataRefreshed();", completionHandler: nil)
             })
         }
     }
@@ -266,9 +268,9 @@ class MainViewController: UIViewController, WKNavigationDelegate {
                 print("onTxChecked('\(updateResult)')")
                 self.webView.evaluateJavaScript("onTxChecked('\(updateResult)')", completionHandler: nil)
             }, completion: { _ in
-                APIClient.shared.getWallets(for: currency, completion: { (error, errorCode, value) in
+                APIClient.shared.updateWallets(for: currency, completion: { (error, errorCode, value) in
                     self.webView.evaluateJavaScript("window.onDataRefreshed();", completionHandler: nil)
-                }, update: { _ in })
+                })
             }, error: { errorString in
                 command.error(args: errorString)
             })
@@ -333,6 +335,10 @@ extension MainViewController: QRCodeReaderViewControllerDelegate {
         
         if privateKeyString.starts(with: "307702") {
             self.webView.evaluateJavaScript("saveImportedWallet('', '', 'QR_UNSUPPORTED')", completionHandler: nil)
+            return
+        }
+        if privateKeyString.contains("BEGIN EC PRIVATE KEY") {
+            self.webView.evaluateJavaScript("saveImportedWallet('', '', 'QR_ENCRYPTED')", completionHandler: nil)
             return
         }
         let address = WalletService.importPrivateKeyWalletFromString(key: privateKeyString)

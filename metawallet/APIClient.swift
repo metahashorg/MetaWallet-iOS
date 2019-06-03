@@ -39,9 +39,9 @@ class APIClient {
     init(){
         sessionManager.retrier = RequestsRetrier()
         
-        refreshTimer = Timer.scheduledTimer(withTimeInterval: 10, repeats: true, block: { (_) in
-            self.getWallets(for: "1", completion: { (_, _, _) in }, update: { (_) in })
-            self.getWallets(for: "4", completion: { (_, _, _) in }, update: { (_) in })
+        refreshTimer = Timer.scheduledTimer(withTimeInterval: 8, repeats: true, block: { (_) in
+            self.updateWallets(for: "1", completion: { (_, _, _) in })
+            self.updateWallets(for: "4", completion: { (_, _, _) in })
         })
     }
     
@@ -120,20 +120,10 @@ class APIClient {
         }
     }
     
-    func getWallets(for currency: String, completion: @escaping (Error?, Int?, String?) -> Void, update: @escaping (String) -> Void) {
-        var descriptions = [[String : Any]]()
+    func updateWallets(for currency: String, completion: @escaping (Error?, Int?, String?) -> Void) {
         let onlyLocal = Storage.shared.onlyLocalAddresses
         let savedWallets = Storage.shared.getWallets(for: currency)
-        if savedWallets.count > 0 {
-            for wallet in savedWallets {
-                if onlyLocal && !wallet.hasPrivateKey {
-                    continue
-                }
-                descriptions.append(wallet.getDescription())
-            }
-            let jsonString = try! String(data: JSONSerialization.data(withJSONObject: descriptions, options: .sortedKeys), encoding: .utf8)
-            completion(nil, nil, jsonString)
-        }
+        var descriptions = [[String : Any]]()
 
         let params = ["id" : deviceIdentifier,
                       "version": "1.0.0",
@@ -172,11 +162,29 @@ class APIClient {
                                 descriptions.append(wallet.getDescription())
                             }
                             let jsonString = try! String(data: JSONSerialization.data(withJSONObject: descriptions, options: .sortedKeys), encoding: .utf8)
-                            update(jsonString!)
+                            completion(nil, nil, jsonString)
                         }
                     })
                 }
             }
+        }
+    }
+    
+    func getWallets(for currency: String, completion: @escaping (Error?, Int?, String?) -> Void) {
+        var descriptions = [[String : Any]]()
+        let onlyLocal = Storage.shared.onlyLocalAddresses
+        let savedWallets = Storage.shared.getWallets(for: currency)
+        if savedWallets.count > 0 {
+            for wallet in savedWallets {
+                if onlyLocal && !wallet.hasPrivateKey {
+                    continue
+                }
+                descriptions.append(wallet.getDescription())
+            }
+            let jsonString = try! String(data: JSONSerialization.data(withJSONObject: descriptions, options: .sortedKeys), encoding: .utf8)
+            completion(nil, nil, jsonString)
+        } else {
+            updateWallets(for: currency, completion: completion)
         }
     }
     
