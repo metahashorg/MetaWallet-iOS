@@ -141,16 +141,13 @@ class APIClient {
                 }
                 mergeWallets(remoteWallets: &wallets, localWallets: savedWallets)
                 var walletsCount = 0
-                print("wallets count = \(wallets.count)")
                 if wallets.count == 0 {
                     let jsonString = try! String(data: JSONSerialization.data(withJSONObject: descriptions, options: .sortedKeys), encoding: .utf8)
                     completion(nil, nil, jsonString)
                     return
                 }
                 for i in 0..<wallets.count {
-                    print("loading i = \(i)")
                     wallets[i].updateBalance(completion: { (newBalance, _) in
-                        print("loaded i = \(i)")
                         wallets[i].balance = newBalance
                         walletsCount += 1
                         if walletsCount == wallets.count {

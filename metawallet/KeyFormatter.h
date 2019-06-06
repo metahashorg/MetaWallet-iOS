@@ -17,7 +17,7 @@ NS_ASSUME_NONNULL_BEGIN
 + (NSData *)derPublicKey:(nullable BTCKey *)key;
 + (nullable NSData *)encrypt:(BTCKey *)key password:(NSString *)password;
 + (nullable BTCKey *)createKeyFromDERString:(NSString *)string;
-+ (nullable BTCKey *)decryptKeyData:(NSData *)data withPassword:(NSString *)password;
++ (nullable BTCKey *)decryptKey:(NSString *)key withPassword:(NSString *)password;
 
 NS_ASSUME_NONNULL_END
 

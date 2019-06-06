@@ -73,27 +73,22 @@
     return data;
 }
 
-+ (nullable BTCKey *)decryptKeyData:(NSData *)data withPassword:(NSString *)password {
-    char buffer[256];
-    strcpy(buffer, getenv("HOME"));
-    strcat(buffer, "/Documents/priv_dec.pem");
++ (nullable BTCKey *)decryptKey:(NSString *)key withPassword:(NSString *)password {
+    BIO *bio = BIO_new(BIO_s_mem());
+    int len = BIO_write(bio, [key UTF8String], key.length);
     
-    NSString *filePath = [[NSString alloc] initWithUTF8String:buffer];
+    EC_KEY *ec_key = NULL;
     
-    BOOL result = [data writeToFile:filePath atomically:YES];
-    if (!result) {
-        return nil;
-    }
+    OpenSSL_add_all_algorithms();
+    OpenSSL_add_all_ciphers();
+    OpenSSL_add_all_digests();
     
-    FILE *f = fopen(buffer, "r");
+    PEM_read_bio_ECPrivateKey(bio, &ec_key, NULL, [password UTF8String]);
     
-    EC_KEY *key = PEM_read_ECPrivateKey(f, NULL, NULL, [password UTF8String]);
+    EC_KEY_set_asn1_flag(ec_key, OPENSSL_EC_NAMED_CURVE);
     
-    fclose(f);
-    EC_KEY_set_asn1_flag(key, OPENSSL_EC_NAMED_CURVE);
+    BTCKey *returnKey = [[BTCKey alloc] initWithDERPrivateKey:[self derPrivateKeyFromECKey:ec_key]];
     
-    BTCKey *returnKey = [[BTCKey alloc] initWithDERPrivateKey:[self derPrivateKeyFromECKey:key]];
-
     return returnKey;
 }
 

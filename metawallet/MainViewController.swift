@@ -32,6 +32,8 @@ class MainViewController: UIViewController, WKNavigationDelegate {
 
     var webKitLoaded = false
     
+    var encryptedKeyString = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -110,6 +112,8 @@ class MainViewController: UIViewController, WKNavigationDelegate {
         addGetOnlyLocalAddressesRequest(to: commander)
         
         addGetAuthDataRequest(to: commander)
+        
+        addEncryptedWalletRequest(to: commander)
     }
     
     func addGetAuthDataRequest(to commander: BridgeCommander) {
@@ -295,6 +299,26 @@ class MainViewController: UIViewController, WKNavigationDelegate {
         }
     }
     
+    func addEncryptedWalletRequest(to commander: BridgeCommander) {
+        commander.add("importPrivateWallet") { (command) in
+            let args = command.args.split(separator: ",")
+            guard args.count == 4 else {
+                return
+            }
+            let password = String(args[0])
+            let currencyId = String(args[1])
+            let currencyName = String(args[2])
+            let name = String(args[3])
+            WalletService.importWallet(with: self.encryptedKeyString, name: name, password: password, currencyId: currencyId, currencyName: currencyName, completion: { (address) in
+                if !address.contains("Error") {
+                    command.send(args: "'OK', '\(address)'")
+                } else {
+                    command.send(args: "'INCORRECT_PASSWORD', '\(address)'")
+                }
+            })
+        }
+    }
+    
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
         print("Finished")
         loadingView.isHidden = true
@@ -338,6 +362,7 @@ extension MainViewController: QRCodeReaderViewControllerDelegate {
             return
         }
         if privateKeyString.contains("BEGIN EC PRIVATE KEY") {
+            encryptedKeyString = privateKeyString
             self.webView.evaluateJavaScript("saveImportedWallet('', '', 'QR_ENCRYPTED')", completionHandler: nil)
             return
         }

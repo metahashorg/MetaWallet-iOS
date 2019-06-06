@@ -53,7 +53,7 @@ class WalletService {
             guard let encryptedPEMData = KeyFormatter.encrypt(key, password: wallet.password) else {
                 return "NO_PRIVATE_KEY_FOUND"
             }
-            dataString = BTCHexFromData(encryptedPEMData)
+            dataString = String(data: encryptedPEMData, encoding: .utf8) ?? "NO_PRIVATE_KEY_FOUND"
         } else {
             dataString = BTCHexFromData(KeyFormatter.derPrivateKey(key))
         }
@@ -106,11 +106,7 @@ class WalletService {
     
     static func importPrivateKeyWalletFromString(key: String) -> String {
         var keyObject: BTCKey?
-        if key.contains("-----BEGIN EC PRIVATE KEY-----") {
-            keyObject = KeyFormatter.decryptKeyData(key.data(using: .utf8)!, withPassword: "123456")
-        } else {
-            keyObject = KeyFormatter.createKey(fromDERString: key)
-        }
+        keyObject = KeyFormatter.createKey(fromDERString: key)
         guard let gottenKey = keyObject else {
             return "Error"
         }
@@ -120,7 +116,15 @@ class WalletService {
     
     
     static func importWallet(with privateKey: String, name: String, password: String, currencyId: String, currencyName: String, completion: @escaping (String) -> Void) {
-        guard let key = KeyFormatter.createKey(fromDERString: privateKey) else {
+        var keyObject: BTCKey?
+        //"yuy,4,MHC,Qqq"
+        if privateKey.contains("-----BEGIN EC PRIVATE KEY-----") {
+            keyObject = KeyFormatter.decryptKey(privateKey, withPassword: password)
+        } else {
+            keyObject = KeyFormatter.createKey(fromDERString: privateKey)
+        }
+        
+        guard let key = keyObject else {
             completion("Error")
             return
         }
