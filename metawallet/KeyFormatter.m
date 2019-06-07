@@ -85,6 +85,10 @@
     
     PEM_read_bio_ECPrivateKey(bio, &ec_key, NULL, [password UTF8String]);
     
+    if (ec_key == NULL) {
+        return nil;
+    }
+    
     EC_KEY_set_asn1_flag(ec_key, OPENSSL_EC_NAMED_CURVE);
     
     BTCKey *returnKey = [[BTCKey alloc] initWithDERPrivateKey:[self derPrivateKeyFromECKey:ec_key]];

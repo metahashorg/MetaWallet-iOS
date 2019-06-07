@@ -307,14 +307,22 @@ class MainViewController: UIViewController, WKNavigationDelegate {
             }
             let password = String(args[0])
             let currencyId = String(args[1])
+            if currencyId != "1" && currencyId != "4" {
+                command.send(args: "{\"status\" : \"INCORRECT_CURRENCY\", \"address\" : \"\"}")
+                return
+            }
             let currencyName = String(args[2])
             let name = String(args[3])
             WalletService.importWallet(with: self.encryptedKeyString, name: name, password: password, currencyId: currencyId, currencyName: currencyName, completion: { (address) in
-                if !address.contains("Error") {
-                    command.send(args: "'OK', '\(address)'")
-                } else {
-                    command.send(args: "'INCORRECT_PASSWORD', '\(address)'")
+                if address.contains("INCORRECT_KEY") {
+                    command.send(args: "{\"status\" : \"INCORRECT_KEY\", \"address\" : \"\"}")
+                    return
                 }
+                if address.contains("Error") {
+                    command.send(args: "{\"status\" : \"INCORRECT_PASSWORD\", \"address\" : \"\"}")
+                    return
+                }
+                command.send(args: "{\"status\" : \"OK\", \"address\" : \"\(address)\"}")
             })
         }
     }

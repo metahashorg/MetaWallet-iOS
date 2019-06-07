@@ -128,6 +128,12 @@ class WalletService {
             completion("Error")
             return
         }
+        
+        let privateKeyDERString = BTCHexFromData(KeyFormatter.derPrivateKey(key))
+        if privateKeyDERString?.starts(with: "307702") ?? false {
+            completion("INCORRECT_KEY")
+            return
+        }
         let address = addressHexString(from: key.publicKey as Data)
         var wallets = Storage.shared.getWallets(for: currencyId)
         if let loadedWalletIndex = wallets.firstIndex(where: { (wallet) -> Bool in
