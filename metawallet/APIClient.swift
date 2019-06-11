@@ -135,8 +135,12 @@ class APIClient {
             if response.error == nil, let value = response.value {
                 let json = JSON(value)
                 var wallets = [Wallet]()
-                for wallet in json["data"].arrayValue {
-                    let wallet = Wallet(name:wallet["name"].stringValue, currency: wallet["currency"].stringValue, publicKey: wallet["public_key"].stringValue, currencyCode: wallet["currency_code"].stringValue, address: wallet["address"].stringValue, password: wallet["password"].stringValue)
+                for walletJson in json["data"].arrayValue {
+                    let wallet = Wallet(name:walletJson["name"].stringValue, currency: walletJson["currency"].stringValue, publicKey: walletJson["public_key"].stringValue, currencyCode: walletJson["currency_code"].stringValue, address: walletJson["address"].stringValue, password: walletJson["password"].stringValue)
+                    if let decodedData = Data(base64Encoded: walletJson["name"].stringValue),
+                        let decodedString = String(data: decodedData, encoding: .utf8) {
+                        wallet.name = decodedString
+                    }
                     wallets.append(wallet)
                 }
                 mergeWallets(remoteWallets: &wallets, localWallets: savedWallets)
