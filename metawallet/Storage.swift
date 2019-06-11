@@ -115,13 +115,17 @@ class Storage {
         }
     }
     
-    var login: String {
+    var login: String? {
         get {
             let wrapper = KeychainWrapper.standard
-            return wrapper.string(forKey: "login") ?? "default"
+            return wrapper.string(forKey: "login")
         } set {
             let wrapper = KeychainWrapper.standard
-            wrapper.set(newValue, forKey: "login")
+            if newValue == nil {
+                wrapper.removeObject(forKey: "login")
+                return
+            }
+            wrapper.set(newValue!, forKey: "login")
         }
     }
     
@@ -137,7 +141,7 @@ class Storage {
     
     func getWallets(for currency: String) -> [Wallet] {
         let wrapper = KeychainWrapper.standard
-        if let savedWallets = wrapper.data(forKey: "wallets_\(login.lowercased())_\(currency)") {
+        if let savedWallets = wrapper.data(forKey: "wallets_\(login?.lowercased() ?? "default")_\(currency)") {
             let decoder = JSONDecoder()
             if let wallets = try? decoder.decode([Wallet].self, from: savedWallets) {
                 return wallets
@@ -164,7 +168,7 @@ class Storage {
         let encoder = JSONEncoder()
         if let encoded = try? encoder.encode(wallets) {
             let wrapper = KeychainWrapper.standard
-            wrapper.set(encoded, forKey: "wallets_\(login.lowercased())_\(currency)")
+            wrapper.set(encoded, forKey: "wallets_\(login?.lowercased() ?? "default")_\(currency)")
         }
     }
     
