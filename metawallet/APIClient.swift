@@ -109,11 +109,12 @@ class APIClient {
     }
     
     func syncWallet(wallet: Wallet, completion: @escaping (Error?, Int?) -> Void) {
+        let nameBase64 = wallet.name.data(using: .utf8)?.base64EncodedString()
         let params = ["id" : deviceIdentifier,
                       "version": "1.0.0",
                       "method" : "address.create",
                       "token" : Storage.shared.token ?? "",
-                      "params" : [["currency" : Int(wallet.currency)!, "address" : wallet.address, "pubkey" : wallet.publicKey, "password" : wallet.password]]
+                      "params" : [["currency" : Int(wallet.currency)!, "address" : wallet.address, "pubkey" : wallet.publicKey, "password" : wallet.password, "name" : nameBase64 ?? ""]]
             ] as [String : Any]
         Alamofire.request(HostProvider.Constants.baseURLWallet, method: .post, parameters: params, encoding: JSONEncoding.default, headers: nil).validate().responseJSON { (response) in
             completion(response.error, response.error != nil ? response.getStatusCode() : nil)
