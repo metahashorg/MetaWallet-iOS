@@ -63,7 +63,7 @@ class Wallet: Codable {
     
     var hasPrivateKey: Bool {
         get {
-            return publicKeyData != nil
+            return privateKeyData != nil && privateKeyData?.count ?? 0 > 0
         }
     }
     
