@@ -118,7 +118,7 @@ class MainViewController: UIViewController, WKNavigationDelegate {
     
     func addGetAuthDataRequest(to commander: BridgeCommander) {
         commander.add("getAuthData") { (command) in
-            command.send(args: Storage.shared.login!)
+            command.send(args: Storage.shared.login ?? "")
         }
     }
     
