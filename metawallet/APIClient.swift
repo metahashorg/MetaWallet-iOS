@@ -152,8 +152,9 @@ class APIClient {
                     return
                 }
                 for i in 0..<wallets.count {
-                    wallets[i].updateBalance(completion: { (newBalance, _) in
+                    wallets[i].updateBalance(completion: { (newBalance, _, currentDelegate) in
                         wallets[i].balance = newBalance
+                        wallets[i].currentDelegate = currentDelegate
                         walletsCount += 1
                         if walletsCount == wallets.count {
                             Storage.shared.setWallets(wallets, for: currency)
@@ -236,7 +237,7 @@ class APIClient {
         }
     }
     
-    func getWalletBalance(for address: String, currency: String, completion: @escaping (Double, Int) -> Void) {
+    func getWalletBalance(for address: String, currency: String, completion: @escaping (Double, Int, Double) -> Void) {
         let params = ["id" : deviceIdentifier,
                       "version": "1.0.0",
                       "method" : "fetch-balance",
@@ -258,10 +259,12 @@ class APIClient {
                 let json = JSON(value)
                 let received = json["result"]["received"].doubleValue
                 let spent = json["result"]["spent"].doubleValue
+                let delegate = json["result"]["delegate"].doubleValue
+                let undelegate = json["result"]["undelegate"].doubleValue
                 let countSpent = json["result"]["count_spent"].intValue
-                completion(received - spent, countSpent)
+                completion(received - spent, countSpent, (delegate - undelegate) / 1000000)
             } else {
-                completion(0, 0)
+                completion(0, 0, 0)
             }
         }
     }

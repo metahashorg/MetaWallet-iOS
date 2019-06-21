@@ -114,6 +114,8 @@ class MainViewController: UIViewController, WKNavigationDelegate {
         addGetAuthDataRequest(to: commander)
         
         addEncryptedWalletRequest(to: commander)
+        
+        addQRDecryptedExportRequest(to: commander)
     }
     
     func addGetAuthDataRequest(to commander: BridgeCommander) {
@@ -153,6 +155,20 @@ class MainViewController: UIViewController, WKNavigationDelegate {
         commander.add("getPrivateKey") { (command) in
             let args = command.args.split(separator: ",")
             command.send(args: WalletService.getPrivateKeyString(address: String(args[0]), password: String(args[1])))
+        }
+    }
+    
+    func addQRDecryptedExportRequest(to commander: BridgeCommander) {
+        commander.add("getPrivateKeyDecrypted") { (command) in
+            let args = command.args.split(separator: ",")
+            var status = "OK"
+            let key = WalletService.getDecryptedPrivateKeyString(address: String(args[0]), password: String(args[2]))
+            if key == "NO_PRIVATE_KEY_FOUND" || key == "WRONG_PASSWORD" {
+                status = key
+            }
+            let data = ["key" : key,
+                        "status" : status]
+            try? command.send(args: String(data: JSONSerialization.data(withJSONObject: data, options: .sortedKeys), encoding: .utf8) ?? "")
         }
     }
     

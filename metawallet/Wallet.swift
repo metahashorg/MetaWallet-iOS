@@ -33,6 +33,7 @@ class Wallet: Codable {
     var publicKeyData: Data? = nil
     
     var balance: Double = 0
+    var currentDelegate: Double?
 
     
     init(name: String, currency: String, publicKey: String? = nil, currencyCode: String, address: String? = nil, password: String = "", privateKeyData: Data? = nil, publicKeyData: Data? = nil) {
@@ -67,12 +68,13 @@ class Wallet: Codable {
         }
     }
     
-    func updateBalance(completion: @escaping (Double, Int) -> Void) {
+    func updateBalance(completion: @escaping (Double, Int, Double) -> Void) {
         APIClient.shared.getWalletBalance(for: address, currency: currency, completion: completion)
     }
     
     func getDescription() -> [String : Any] {
-        let descriptionDict = ["address" : address, "balance" : String(balance), "hasPrivateKey" : hasPrivateKey, "name" : name] as [String : Any]
+        let delegate = currentDelegate != nil ? String(format: "%.6", currentDelegate!) : String(format: "%.6", 0.0)
+        let descriptionDict = ["address" : address, "balance" : String(balance), "hasPrivateKey" : hasPrivateKey, "name" : name, "currentDelegate" : delegate] as [String : Any]
         return descriptionDict
     }
     

@@ -60,6 +60,21 @@ class WalletService {
         return dataString
     }
     
+    static func getDecryptedPrivateKeyString(address: String, password: String) -> String {
+        guard let wallet = Storage.shared.getWallets().first(where: { (wallet) -> Bool in
+            return wallet.address == address && wallet.privateKeyData != nil
+        }) else {
+            return "NO_PRIVATE_KEY_FOUND"
+        }
+        if wallet.password != password && wallet.password != "" {
+            return "WRONG_PASSWORD"
+        }
+        let key = BTCKey(privateKey: wallet.privateKeyData)!
+        var dataString = ""
+        dataString = BTCHexFromData(KeyFormatter.derPrivateKey(key))
+        return dataString
+    }
+    
     static func createTransaction(address: String, password: String, to: String, amount: String, fee: String, data: String, currency: String, initialized: @escaping (String) -> Void, check: @escaping (String) -> Void, completion: @escaping (String?) -> Void, error: @escaping (String) -> Void) {
         guard let wallet = Storage.shared.getWallets(for: currency).first(where: { (wallet) -> Bool in
             return wallet.address == address && wallet.privateKeyData != nil && wallet.currency == currency
@@ -76,7 +91,7 @@ class WalletService {
                   "stage":1,
                   "torrent":["wait","wait","wait"]
         ]
-        wallet.updateBalance { (balance, spent) in
+        wallet.updateBalance { (balance, spent, _) in
             let nonce = spent + 1
             let dataHexString = BTCHexFromData(data.data(using: .utf8)!)!
             let signatureMessage = generateSignatureMessage(to: to, value: amount, nonce: String(nonce), fee: fee, data: data).lowercased()
