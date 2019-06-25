@@ -73,7 +73,7 @@ class Wallet: Codable {
     }
     
     func getDescription() -> [String : Any] {
-        let delegate = currentDelegate != nil ? String(format: "%.6", currentDelegate!) : String(format: "%.6", 0.0)
+        let delegate = currentDelegate != nil ? String(format: "%.6f", currentDelegate!) : String(format: "%.6f", 0.0)
         let descriptionDict = ["address" : address, "balance" : String(balance), "hasPrivateKey" : hasPrivateKey, "name" : name, "currentDelegate" : delegate] as [String : Any]
         return descriptionDict
     }
