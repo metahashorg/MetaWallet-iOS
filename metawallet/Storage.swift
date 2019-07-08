@@ -150,8 +150,11 @@ class Storage {
     }
     
     func getWallets(for currency: String) -> [Wallet] {
+        guard let login = login else {
+            return []
+        }
         let wrapper = KeychainWrapper.standard
-        if let savedWallets = wrapper.data(forKey: "wallets_\(login!.lowercased())_\(currency)") {
+        if let savedWallets = wrapper.data(forKey: "wallets_\(login.lowercased())_\(currency)") {
             let decoder = JSONDecoder()
             if let wallets = try? decoder.decode([Wallet].self, from: savedWallets) {
                 return wallets
@@ -175,10 +178,13 @@ class Storage {
         if wallets.isEmpty {
             return
         }
+        guard let login = login else {
+            return
+        }
         let encoder = JSONEncoder()
         if let encoded = try? encoder.encode(wallets) {
             let wrapper = KeychainWrapper.standard
-            wrapper.set(encoded, forKey: "wallets_\(login!.lowercased())_\(currency)")
+            wrapper.set(encoded, forKey: "wallets_\(login.lowercased())_\(currency)")
         }
     }
     
