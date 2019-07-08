@@ -87,6 +87,16 @@ class Storage {
         }
     }
     
+    var lan: String {
+        get {
+            let wrapper = KeychainWrapper.standard
+            return wrapper.string(forKey: #function) ?? ""
+        } set {
+            let wrapper = KeychainWrapper.standard
+            wrapper.set(newValue, forKey: #function)
+        }
+    }
+    
     var token: String? {
         get {
             let wrapper = KeychainWrapper.standard
@@ -141,7 +151,7 @@ class Storage {
     
     func getWallets(for currency: String) -> [Wallet] {
         let wrapper = KeychainWrapper.standard
-        if let savedWallets = wrapper.data(forKey: "wallets_\(login?.lowercased() ?? "default")_\(currency)") {
+        if let savedWallets = wrapper.data(forKey: "wallets_\(login!.lowercased())_\(currency)") {
             let decoder = JSONDecoder()
             if let wallets = try? decoder.decode([Wallet].self, from: savedWallets) {
                 return wallets
@@ -168,7 +178,7 @@ class Storage {
         let encoder = JSONEncoder()
         if let encoded = try? encoder.encode(wallets) {
             let wrapper = KeychainWrapper.standard
-            wrapper.set(encoded, forKey: "wallets_\(login?.lowercased() ?? "default")_\(currency)")
+            wrapper.set(encoded, forKey: "wallets_\(login!.lowercased())_\(currency)")
         }
     }
     

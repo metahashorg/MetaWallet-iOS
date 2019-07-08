@@ -116,6 +116,60 @@ class MainViewController: UIViewController, WKNavigationDelegate {
         addEncryptedWalletRequest(to: commander)
         
         addQRDecryptedExportRequest(to: commander)
+        
+        addRenameWalletRequest(to: commander)
+        
+        addDeleteWalletRequest(to: commander)
+        
+        addSetLanRequest(to: commander)
+        
+        addGetLanRequest(to: commander)
+    }
+    
+    func addSetLanRequest(to commander: BridgeCommander) {
+        commander.add("setLan") { (command) in
+            let arg = command.args
+            Storage.shared.lan = arg
+        }
+    }
+    
+    func addGetLanRequest(to commander: BridgeCommander) {
+        commander.add("getLan") { (command) in
+            command.send(args: Storage.shared.lan)
+        }
+    }
+    
+    func addRenameWalletRequest(to commander: BridgeCommander) {
+        commander.add("renameWallet") { (command) in
+            let args = command.args.split(separator: ",")
+            guard args.count == 3 else {
+                return
+            }
+            let address = String(args[0])
+            let newName = String(args[1])
+            let currency = String(args[2])
+            APIClient.shared.renameWallet(with: address, for: currency, newName: newName, completion: { (error) in
+                if error == nil {
+                    command.send(args: "OK")
+                }
+            })
+        }
+    }
+    
+    func addDeleteWalletRequest(to commander: BridgeCommander) {
+        commander.add("deleteWallet") { (command) in
+            let args = command.args.split(separator: ",")
+            guard args.count == 2 else {
+                return
+            }
+            let address = String(args[0])
+            let currency = String(args[1])
+            APIClient.shared.deleteWallet(with: address, for: currency, completion: { (error) in
+                if error == nil {
+                    command.send(args: "OK")
+                }
+            })
+        }
     }
     
     func addGetAuthDataRequest(to commander: BridgeCommander) {

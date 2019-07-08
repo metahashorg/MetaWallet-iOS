@@ -121,6 +121,56 @@ class APIClient {
         }
     }
     
+    func deleteWallet(with address: String, for currency: String, completion: @escaping (Error?) -> Void) {
+        let params = ["id" : deviceIdentifier,
+                      "version": "1.0.0",
+                      "method" : "address.setSync",
+                      "token" : Storage.shared.token ?? "",
+                      "params" : [["address" : address,
+                                   "currency" : currency,
+                                   "flag" : false]]
+                    ]
+            as [String : Any]
+        Alamofire.request(HostProvider.Constants.baseURLWallet, method: .post, parameters: params, encoding: JSONEncoding.default, headers: nil).validate().responseJSON { (response) in
+            if response.error == nil {
+                var savedWallets = Storage.shared.getWallets(for: currency)
+                let walletIndexToDelete = savedWallets.firstIndex(where: { (a) -> Bool in
+                    return a.address == address
+                })
+                if let index = walletIndexToDelete {
+                    savedWallets.remove(at: index)
+                    Storage.shared.setWallets(savedWallets, for: currency)
+                }
+            }
+            completion(response.error)
+        }
+    }
+    
+    func renameWallet(with address: String, for currency: String, newName: String, completion: @escaping (Error?) -> Void) {
+        let params = ["id" : deviceIdentifier,
+                      "version": "1.0.0",
+                      "method" : "address.name.set",
+                      "token" : Storage.shared.token ?? "",
+                      "params" : [["address" : address,
+                                   "currency" : currency,
+                                   "name" : newName.data(using: .utf8)?.base64EncodedString()]]
+            ]
+            as [String : Any]
+        Alamofire.request(HostProvider.Constants.baseURLWallet, method: .post, parameters: params, encoding: JSONEncoding.default, headers: nil).validate().responseJSON { (response) in
+            if response.error == nil {
+                var savedWallets = Storage.shared.getWallets(for: currency)
+                let walletIndexToRename = savedWallets.firstIndex(where: { (a) -> Bool in
+                    return a.address == address
+                })
+                if let index = walletIndexToRename {
+                    savedWallets[index].name = newName
+                    Storage.shared.setWallets(savedWallets, for: currency)
+                }
+            }
+            completion(response.error)
+        }
+    }
+    
     func updateWallets(for currency: String, completion: @escaping (Error?, Int?, String?) -> Void) {
         let onlyLocal = Storage.shared.onlyLocalAddresses
         let savedWallets = Storage.shared.getWallets(for: currency)
