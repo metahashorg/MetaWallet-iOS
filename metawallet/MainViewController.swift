@@ -127,14 +127,14 @@ class MainViewController: UIViewController, WKNavigationDelegate {
     }
     
     func addSetLanRequest(to commander: BridgeCommander) {
-        commander.add("setLan") { (command) in
+        commander.add("setLanguage") { (command) in
             let arg = command.args
             Storage.shared.lan = arg
         }
     }
     
     func addGetLanRequest(to commander: BridgeCommander) {
-        commander.add("getLan") { (command) in
+        commander.add("getLanguage") { (command) in
             command.send(args: Storage.shared.lan)
         }
     }
