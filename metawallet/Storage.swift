@@ -11,8 +11,32 @@ import SwiftKeychainWrapper
 
 class Storage {
     static let shared = Storage()
-    init(){
-        
+    
+    var iCloudDocumentsURL: URL?
+    
+    init() {
+        if let iCloudDocumentsURL = FileManager.default.url(forUbiquityContainerIdentifier: nil)?.appendingPathComponent("Documents") {
+            self.iCloudDocumentsURL = iCloudDocumentsURL
+            if (!FileManager.default.fileExists(atPath: iCloudDocumentsURL.path, isDirectory: nil)) {
+                do {
+                    try FileManager.default.createDirectory(at: iCloudDocumentsURL, withIntermediateDirectories: true, attributes: nil)
+                }
+                catch {
+                    //Error handling
+                    print("Error in creating doc")
+                }
+            }
+        }
+    }
+    
+    func saveToiCloudDrive(wallet: Wallet) {
+        guard let iCloud = iCloudDocumentsURL,
+            let key = wallet.btcKey,
+            let pemData = KeyFormatter.encrypt(key, password: wallet.password) else {
+            return
+        }
+        let fullURL = iCloud.appendingPathComponent("\(wallet.address)").appendingPathExtension("ec").appendingPathExtension("priv")
+        try? pemData.write(to: fullURL)
     }
     
     var devTorrentBaseURLStrings: [String]? {

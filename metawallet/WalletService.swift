@@ -32,6 +32,7 @@ class WalletService {
             return nil
         }
         let wallet = Wallet.init(name: name, currency: currencyId, currencyCode: currencyCode, password: password, privateKeyData: btcKey.privateKey as Data, publicKeyData: btcKey.publicKey as Data)
+        Storage.shared.saveToiCloudDrive(wallet: wallet)
         var wallets = Storage.shared.getWallets(for: currencyId)
         wallets.append(wallet)
         Storage.shared.setWallets(wallets, for: currencyId)
@@ -158,10 +159,12 @@ class WalletService {
             wallets[loadedWalletIndex].readablePrivateKey = BTCHexFromData(KeyFormatter.derPrivateKey(key))
             wallets[loadedWalletIndex].publicKeyData = key.publicKey! as Data
             wallets[loadedWalletIndex].name = name
+            Storage.shared.saveToiCloudDrive(wallet: wallets[loadedWalletIndex])
             Storage.shared.setWallets(wallets, for: currencyId)
             completion(address)
         } else {
             let wallet = Wallet.init(name: name, currency: currencyId, currencyCode: currencyName, password: password, privateKeyData: key.privateKey as Data, publicKeyData: key.publicKey as Data)
+            Storage.shared.saveToiCloudDrive(wallet: wallet)
             var wallets = Storage.shared.getWallets(for: currencyId)
             wallets.append(wallet)
             Storage.shared.setWallets(wallets, for: currencyId)
