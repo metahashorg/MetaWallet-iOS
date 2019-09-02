@@ -977,7 +977,7 @@
 					"$(PROJECT_DIR)/metawallet/Vendor/CoreBitcoin",
 					"$(PROJECT_DIR)/metawallet/Vendor/CoreBitcoin/openssl",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = org.metahash.metawallet;
+				PRODUCT_BUNDLE_IDENTIFIER = org.metahash.metaview;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "metawallet/metawallet-Bridging-Header.h";
@@ -1014,7 +1014,7 @@
 					"$(PROJECT_DIR)/metawallet/Vendor/CoreBitcoin",
 					"$(PROJECT_DIR)/metawallet/Vendor/CoreBitcoin/openssl",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = org.metahash.metawallet;
+				PRODUCT_BUNDLE_IDENTIFIER = org.metahash.metaview;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "metawallet/metawallet-Bridging-Header.h";

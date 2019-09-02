@@ -5,7 +5,7 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleDisplayName</key>
-	<string>#MetaWallet</string>
+	<string>#MetaWallet X</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
@@ -45,12 +45,12 @@
 	<string>For importing your wallets</string>
 	<key>NSUbiquitousContainers</key>
 	<dict>
-		<key>iCloud.org.metahash.metawallet</key>
+		<key>iCloud.org.metahash.metaview</key>
 		<dict>
 			<key>NSUbiquitousContainerIsDocumentScopePublic</key>
 			<true/>
 			<key>NSUbiquitousContainerName</key>
-			<string>MetaWallet</string>
+			<string>MetaWallet X</string>
 			<key>NSUbiquitousContainerSupportedFolderLevels</key>
 			<string>Any</string>
 		</dict>
